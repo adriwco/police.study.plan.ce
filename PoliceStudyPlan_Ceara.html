@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plano Tático: Carreiras Policiais Ceará (Zero ao Topo)</title>
+    
+    
+    <meta name="description" content="Plano de estudo estratégico e interativo para concursos da Polícia Civil e Militar do Ceará (PC-CE / PM-CE). Roteiro completo do zero à aprovação com checklist e gráficos.">
+    <meta name="keywords" content="concurso policia ceara, plano de estudo pc-ce, cronograma pm-ce, edital policia civil ceara, policia militar ceara, estudo tatico, checklist concurso">
+    <meta name="author" content="Adriano">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#1e3a8a">
+
+
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Operação Aprovação Ceará - Plano Tático">
+    <meta property="og:description" content="Organize seus estudos para PC-CE e PM-CE com este painel tático interativo. Acompanhe seu progresso fase por fase.">
+    <meta property="og:url" content="https://mimos.blog.brplano-policia-ceara">
+    <meta property="og:image" content="https://mimos.blog.br/thumbnail-share.jpg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f3f4f6; }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            height: 300px;
+            max-height: 350px;
+        }
+        .phase-btn.active {
+            background-color: #1e3a8a; /* blue-900 */
+            color: white;
+            border-bottom: 4px solid #f59e0b; /* amber-500 */
+        }
+        .accordion-content {
+            transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+        .accordion-content.open {
+            max-height: 1000px; /* Arbitrary large height */
+            opacity: 1;
+        }
+        /* Progress Bar Styles */
+        .progress-track {
+            background-color: #e5e7eb; /* gray-200 */
+            border-radius: 9999px;
+            height: 12px;
+            width: 100%;
+            overflow: hidden;
+        }
+        .progress-fill {
+            background-color: #10b981; /* emerald-500 */
+            height: 100%;
+            width: 0%;
+            transition: width 0.5s ease-out;
+            border-radius: 9999px;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <header class="bg-blue-900 text-white p-6 shadow-lg">
+        <div class="container mx-auto max-w-6xl">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div>
+                    <h1 class="text-3xl font-bold tracking-wide uppercase">Operação: Aprovação Ceará</h1>
+                    <p class="text-blue-200 mt-1 text-sm">Roteiro Estratégico do Zero Absoluto (PC-CE / PM-CE)</p>
+                </div>
+                <div class="mt-4 md:mt-0 flex flex-col gap-3 min-w-[200px]">
+                    <div class="bg-blue-800 px-4 py-2 rounded-lg border border-blue-700 text-center">
+                        <span class="text-xs uppercase tracking-wider text-blue-300">Foco Atual</span>
+                        <div id="current-phase-display" class="font-bold text-lg text-amber-400">Fase 1: Fundação</div>
+                    </div>
+                    
+                    <div class="bg-blue-800/50 px-3 py-2 rounded-lg border border-blue-700/50">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="text-[10px] uppercase tracking-wider text-blue-300">Progresso Total</span>
+                            <span id="global-progress-text" class="text-xs font-bold text-amber-400">0%</span>
+                        </div>
+                        <div class="w-full bg-blue-950 rounded-full h-1.5">
+                            <div id="global-progress-fill" class="bg-amber-500 h-1.5 rounded-full transition-all duration-500" style="width: 0%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <section class="container mx-auto max-w-6xl mt-8 px-4">
+        <div class="bg-white rounded-lg shadow-sm p-6 border-l-4 border-amber-500">
+            <h2 class="text-xl font-bold text-gray-800 mb-2">Como usar este Painel Tático</h2>
+            <p class="text-gray-600 leading-relaxed">
+                Você está partindo do zero. Não tente estudar tudo de uma vez. Este plano organiza sua preparação em <strong>4 Fases Estratégicas</strong>. 
+                Selecione uma fase abaixo para visualizar as disciplinas prioritárias e a sequência lógica de tópicos. 
+                Utilize os gráficos à direita para entender o peso de cada matéria na prova e como distribuir seu tempo de estudo semanal.
+            </p>
+        </div>
+    </section>
+
+
+
+    <nav class="container mx-auto max-w-6xl mt-8 px-4">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
+            <button onclick="app.setPhase(0)" class="phase-btn active py-4 px-2 bg-white rounded-t-lg shadow-sm hover:bg-gray-50 font-semibold text-sm md:text-base text-gray-600 transition-all text-center">
+                FASE 1<br><span class="text-xs font-normal">A Base Obrigatória</span>
+            </button>
+            <button onclick="app.setPhase(1)" class="phase-btn py-4 px-2 bg-white rounded-t-lg shadow-sm hover:bg-gray-50 font-semibold text-sm md:text-base text-gray-600 transition-all text-center">
+                FASE 2<br><span class="text-xs font-normal">O Núcleo Jurídico</span>
+            </button>
+            <button onclick="app.setPhase(2)" class="phase-btn py-4 px-2 bg-white rounded-t-lg shadow-sm hover:bg-gray-50 font-semibold text-sm md:text-base text-gray-600 transition-all text-center">
+                FASE 3<br><span class="text-xs font-normal">Específicas CE</span>
+            </button>
+            <button onclick="app.setPhase(3)" class="phase-btn py-4 px-2 bg-white rounded-t-lg shadow-sm hover:bg-gray-50 font-semibold text-sm md:text-base text-gray-600 transition-all text-center">
+                FASE 4<br><span class="text-xs font-normal">Revisão & Elite</span>
+            </button>
+        </div>
+    </nav>
+
+
+
+    <main class="container mx-auto max-w-6xl px-4 pb-12">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 bg-white p-6 rounded-b-lg shadow-md min-h-[600px]">
+            
+
+            
+            <div class="lg:col-span-2">
+                <div class="mb-6">
+                    <h3 class="text-2xl font-bold text-gray-800 flex items-center">
+                        <span class="mr-2 text-amber-600">📂</span> Sequência de Estudo
+                    </h3>
+                    <p id="phase-description" class="text-gray-500 mt-2 text-sm mb-4">
+                    </p>
+
+                    <div class="bg-blue-50 p-4 rounded-lg border border-blue-100 mb-4">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="text-xs font-bold text-blue-900 uppercase">Progresso da Fase</span>
+                            <span id="progress-text" class="text-xs font-bold text-blue-900">0%</span>
+                        </div>
+                        <div class="progress-track">
+                            <div id="progress-fill" class="progress-fill"></div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div id="subject-list" class="space-y-4">
+                </div>
+            </div>
+
+
+
+            <div class="flex flex-col gap-8 border-t lg:border-t-0 lg:border-l border-gray-100 lg:pl-8 pt-8 lg:pt-0">
+                
+                <div>
+                    <h4 class="text-lg font-bold text-gray-800 mb-2 border-b-2 border-amber-500 inline-block">Relevância na Prova</h4>
+                    <p class="text-xs text-gray-500 mb-4">Baseado no histórico de questões da PC/PM-CE para esta fase.</p>
+                    <div class="chart-container">
+                        <canvas id="relevanceChart"></canvas>
+                    </div>
+                </div>
+
+
+
+                <div class="mt-4">
+                    <h4 class="text-lg font-bold text-gray-800 mb-2 border-b-2 border-blue-500 inline-block">Ciclo Sugerido (Horas/Semana)</h4>
+                    <p class="text-xs text-gray-500 mb-4">Sugestão para quem tem ~4h diárias de estudo.</p>
+                    <div class="chart-container">
+                        <canvas id="scheduleChart"></canvas>
+                    </div>
+                </div>
+
+
+
+                <div class="bg-blue-50 p-4 rounded-lg border border-blue-100 mt-auto">
+                    <h5 class="font-bold text-blue-900 mb-2">💡 Dica do Instrutor</h5>
+                    <p id="phase-tip" class="text-sm text-blue-800">
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-gray-400 py-6 text-center text-sm">
+        <p>Disciplina é a ponte entre metas e conquistas.</p>
+        <p class="mt-1 text-gray-600">Painel de Estudo Policial • Ceará</p>
+    </footer>
+
+    <script>
+        const curriculum = [
+            {
+                id: 0,
+                name: "Fase 1: Fundação",
+                description: "Nesta fase, você constrói a base. Sem Português e Lógica você não passa. Sem Constitucional você não entende as outras leis. Foco total em teoria e compreensão.",
+                tip: "Não avance se estiver com muitas dúvidas em Português. Ela corresponde a 20-25% da nota da prova.",
+                subjects: [
+                    {
+                        title: "Língua Portuguesa",
+                        topics: [
+                            "1. Ortografia oficial e Acentuação gráfica",
+                            "2. Classes de palavras (Substantivo, Adjetivo, Verbo)",
+                            "3. Análise Sintática (Sujeito, Predicado, Complementos)",
+                            "4. Concordância Verbal e Nominal",
+                            "5. Regência Verbal e Nominal (Crase)",
+                            "6. Pontuação",
+                            "7. Interpretação de Textos (Tipologia textual)"
+                        ],
+                        importance: 30,
+                        hours: 6
+                    },
+                    {
+                        title: "Raciocínio Lógico (RLM)",
+                        topics: [
+                            "1. Estruturas Lógicas e Proposições",
+                            "2. Conectivos Lógicos (E, OU, SE...ENTÃO)",
+                            "3. Tabela Verdade",
+                            "4. Negação de Proposições",
+                            "5. Lógica de Argumentação",
+                            "6. Diagramas Lógicos (Conjuntos)"
+                        ],
+                        importance: 15,
+                        hours: 4
+                    },
+                    {
+                        title: "Direito Constitucional (Base)",
+                        topics: [
+                            "1. Art. 5º: Direitos e Deveres Individuais e Coletivos (Vida, Liberdade, Igualdade)",
+                            "2. Art. 144: Da Segurança Pública (Essencial para carreiras policiais)",
+                            "3. Remédios Constitucionais (Habeas Corpus, Mandado de Segurança)",
+                            "4. Nacionalidade e Direitos Políticos"
+                        ],
+                        importance: 20,
+                        hours: 4
+                    },
+                    {
+                        title: "Informática Básica",
+                        topics: [
+                            "1. Conceitos de Hardware e Software",
+                            "2. Windows 10/11 (Manipulação de pastas e arquivos)",
+                            "3. Edição de Texto (Word/Writer) - Atalhos principais",
+                            "4. Navegadores e Segurança da Informação (Noções básicas)"
+                        ],
+                        importance: 10,
+                        hours: 2
+                    }
+                ]
+            },
+            {
+                id: 1,
+                name: "Fase 2: O Núcleo Jurídico",
+                description: "Agora entramos no 'Direito' pesado. Aqui você aprende como o Estado funciona e o que é crime. Mantenha as revisões da Fase 1.",
+                tip: "Em Direito Penal, foque muito na diferença entre os tipos de crimes (Furto x Roubo, Dolo x Culpa).",
+                subjects: [
+                    {
+                        title: "Direito Administrativo",
+                        topics: [
+                            "1. Princípios (LIMPE: Legalidade, Impessoalidade, Moralidade, Publicidade, Eficiência)",
+                            "2. Organização Administrativa (Administração Direta e Indireta)",
+                            "3. Agentes Públicos (Deveres, Proibições, Responsabilidades)",
+                            "4. Poderes Administrativos (Poder de Polícia - Essencial)",
+                            "5. Atos Administrativos (Requisitos: COFIFOMOB)"
+                        ],
+                        importance: 20,
+                        hours: 5
+                    },
+                    {
+                        title: "Direito Penal (Parte Geral)",
+                        topics: [
+                            "1. Aplicação da Lei Penal (Tempo e Espaço)",
+                            "2. Do Crime (Conceito, Fato Típico, Ilicitude, Culpabilidade)",
+                            "3. Imputabilidade Penal",
+                            "4. Concurso de Pessoas"
+                        ],
+                        importance: 25,
+                        hours: 5
+                    },
+                    {
+                        title: "Direito Penal (Parte Especial)",
+                        topics: [
+                            "1. Crimes contra a Pessoa (Homicídio, Lesão Corporal)",
+                            "2. Crimes contra o Patrimônio (Furto, Roubo, Extorsão)",
+                            "3. Crimes contra a Dignidade Sexual",
+                            "4. Crimes contra a Administração Pública (Peculato, Concussão, Corrupção)"
+                        ],
+                        importance: 25,
+                        hours: 6
+                    },
+                    {
+                        title: "Processo Penal",
+                        topics: [
+                            "1. Inquérito Policial (Características, Prazos, Indiciamento)",
+                            "2. Ação Penal (Pública e Privada)",
+                            "3. Prisões (Flagrante, Preventiva, Temporária)",
+                            "4. Provas (Exame de corpo de delito, interrogatório)"
+                        ],
+                        importance: 20,
+                        hours: 5
+                    }
+                ]
+            },
+            {
+                id: 2,
+                name: "Fase 3: Específicas CE & Leis",
+                description: "O diferencial do concurso. As leis 'soltas' (Extravagantes) e a legislação do Ceará. É muita leitura de 'lei seca'.",
+                tip: "Lei Seca é leitura repetitiva. Não tente decorar cada palavra, mas entenda as proibições e os prazos.",
+                subjects: [
+                    {
+                        title: "Legislação Extravagante",
+                        topics: [
+                            "1. Lei de Drogas (Lei 11.343/06)",
+                            "2. Estatuto do Desarmamento (Lei 10.826/03)",
+                            "3. Lei Maria da Penha (Lei 11.340/06)",
+                            "4. Abuso de Autoridade (Nova Lei)",
+                            "5. Tortura e Crimes Hediondos"
+                        ],
+                        importance: 30,
+                        hours: 6
+                    },
+                    {
+                        title: "Legislação Específica Ceará",
+                        topics: [
+                            "1. Constituição do Estado do Ceará (Segurança Pública)",
+                            "2. Estatuto dos Servidores Públicos do Ceará (Lei 9.826/74)",
+                            "3. Código Disciplinar PM/BM (Lei 13.407/03) - Se foco PM",
+                            "4. Estatuto da Polícia Civil (Lei 12.124/93) - Se foco PC"
+                        ],
+                        importance: 20,
+                        hours: 4
+                    },
+                    {
+                        title: "Informática Avançada",
+                        topics: [
+                            "1. Segurança Avançada (Malwares, Phishing, Criptografia)",
+                            "2. Redes de Computadores (Protocolos IP, TCP, Nuvem)",
+                            "3. Linux (Comandos básicos)"
+                        ],
+                        importance: 15,
+                        hours: 3
+                    }
+                ]
+            },
+            {
+                id: 3,
+                name: "Fase 4: Revisão & Elite",
+                description: "Fase final. Resolução massiva de questões, simulados e refinamento dos pontos fracos. O estudo aqui é reverso: Questão -> Teoria.",
+                tip: "Nesta fase, faça simulados cronometrados todos os domingos.",
+                subjects: [
+                    {
+                        title: "Revisão Geral (Questões)",
+                        topics: [
+                            "1. Baterias de questões da banca (IDEKAN, FGV, CEBRASPE)",
+                            "2. Mapeamento de erros",
+                            "3. Leitura de Resumos"
+                        ],
+                        importance: 50,
+                        hours: 10
+                    },
+                    {
+                        title: "Simulados",
+                        topics: [
+                            "1. Simulado Completo (Domingo)",
+                            "2. Correção analítica do Simulado (Segunda)"
+                        ],
+                        importance: 30,
+                        hours: 5
+                    },
+                    {
+                        title: "Legislação (Decoreba)",
+                        topics: [
+                            "1. Revisão de Prazos",
+                            "2. Revisão de Penas (apenas as principais)",
+                            "3. Súmulas vinculantes do STF"
+                        ],
+                        importance: 20,
+                        hours: 5
+                    }
+                ]
+            }
+        ];
+
+
+
+        const app = {
+            currentPhase: 0,
+            relevanceChartInstance: null,
+            scheduleChartInstance: null,
+            state: {},
+
+            init: function() {
+                this.loadState();
+                this.setPhase(0);
+            },
+
+            loadState: function() {
+                const saved = localStorage.getItem('studyPlanState');
+                if (saved) {
+                    try {
+                        this.state = JSON.parse(saved);
+                    } catch (e) {
+                        console.error("Erro ao carregar estado", e);
+                        this.state = {};
+                    }
+                }
+            },
+
+            saveState: function() {
+                localStorage.setItem('studyPlanState', JSON.stringify(this.state));
+            },
+
+
+            toggleTopic: function(topicId) {
+                this.state[topicId] = !this.state[topicId];
+                this.saveState();
+                
+                const label = document.querySelector(`label[for="${topicId}"]`);
+                if (label) {
+                    if (this.state[topicId]) {
+                        label.classList.add('line-through', 'text-gray-400');
+                    } else {
+                        label.classList.remove('line-through', 'text-gray-400');
+                    }
+                }
+                
+                this.updateProgress();
+            },
+
+            toggleNote: function(topicId) {
+                const container = document.getElementById(`note-container-${topicId}`);
+                if (container) {
+                    container.classList.toggle('hidden');
+                }
+            },
+
+            saveNote: function(topicId, value) {
+                this.state[`note-${topicId}`] = value;
+                this.saveState();
+            },
+
+            updateProgress: function() {
+                // Phase Progress
+                const phaseData = curriculum[this.currentPhase];
+                let phaseTotal = 0;
+                let phaseChecked = 0;
+
+                phaseData.subjects.forEach((subject, sIndex) => {
+                    subject.topics.forEach((topic, tIndex) => {
+                        phaseTotal++;
+                        const topicId = `phase-${this.currentPhase}-subject-${sIndex}-topic-${tIndex}`;
+                        if (this.state[topicId]) {
+                            phaseChecked++;
+                        }
+                    });
+                });
+
+                const phasePercentage = phaseTotal === 0 ? 0 : Math.round((phaseChecked / phaseTotal) * 100);
+
+                document.getElementById('progress-text').innerText = `${phasePercentage}% Concluído`;
+                document.getElementById('progress-fill').style.width = `${phasePercentage}%`;
+
+                // Global Progress
+                let globalTotal = 0;
+                let globalChecked = 0;
+
+                curriculum.forEach((phase, pIndex) => {
+                    phase.subjects.forEach((subject, sIndex) => {
+                        subject.topics.forEach((topic, tIndex) => {
+                            globalTotal++;
+                            const topicId = `phase-${pIndex}-subject-${sIndex}-topic-${tIndex}`;
+                            if (this.state[topicId]) {
+                                globalChecked++;
+                            }
+                        });
+                    });
+                });
+
+                const globalPercentage = globalTotal === 0 ? 0 : Math.round((globalChecked / globalTotal) * 100);
+                const globalText = document.getElementById('global-progress-text');
+                const globalFill = document.getElementById('global-progress-fill');
+
+                if (globalText) globalText.innerText = `${globalPercentage}%`;
+                if (globalFill) globalFill.style.width = `${globalPercentage}%`;
+            },
+
+
+            setPhase: function(phaseId) {
+                this.currentPhase = phaseId;
+                this.updateUI();
+                this.renderCharts();
+                this.updateProgress();
+            },
+
+            updateUI: function() {
+                document.querySelectorAll('.phase-btn').forEach((btn, index) => {
+                    if (index === this.currentPhase) {
+                        btn.classList.add('active');
+                        btn.classList.remove('text-gray-600');
+                    } else {
+                        btn.classList.remove('active');
+                        btn.classList.add('text-gray-600');
+                    }
+                });
+
+
+
+                const phaseData = curriculum[this.currentPhase];
+                document.getElementById('current-phase-display').innerText = phaseData.name;
+                document.getElementById('phase-description').innerText = phaseData.description;
+                document.getElementById('phase-tip').innerText = phaseData.tip;
+
+
+
+                const listContainer = document.getElementById('subject-list');
+                listContainer.innerHTML = '';
+
+                phaseData.subjects.forEach((subject, index) => {
+                    const subjectEl = document.createElement('div');
+                    subjectEl.className = 'border border-gray-200 rounded-lg overflow-hidden bg-white hover:border-blue-300 transition-colors duration-200';
+                    subjectEl.innerHTML = `
+                        <button onclick="app.toggleAccordion(${index})" class="w-full text-left px-5 py-4 focus:outline-none flex justify-between items-center bg-gray-50 hover:bg-white">
+                            <span class="font-bold text-gray-700 text-lg">${subject.title}</span>
+                            <span class="text-blue-500 transform transition-transform duration-200" id="icon-${index}">▼</span>
+                        </button>
+                        <div id="content-${index}" class="accordion-content bg-white">
+                                ${subject.topics.map((topic, topicIndex) => {
+                                    const topicId = `phase-${this.currentPhase}-subject-${index}-topic-${topicIndex}`;
+                                    const isChecked = this.state[topicId] ? 'checked' : '';
+                                    const decoration = this.state[topicId] ? 'line-through text-gray-400' : '';
+                                    
+                                    const noteKey = `note-${topicId}`;
+                                    const noteContent = this.state[noteKey] || '';
+                                    const hasNote = noteContent.trim().length > 0;
+
+                                    return `
+                                    <li class="flex flex-col p-2 rounded hover:bg-gray-50 transition-colors">
+                                        <div class="flex items-center w-full">
+                                            <div class="relative flex items-center">
+                                                <input type="checkbox" 
+                                                    id="${topicId}" 
+                                                    class="peer h-5 w-5 cursor-pointer appearance-none rounded border border-gray-300 shadow-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500 checked:bg-blue-600 checked:border-blue-600 transition-all"
+                                                    ${isChecked}
+                                                    onchange="app.toggleTopic('${topicId}')"
+                                                >
+                                                <svg class="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-3.5 h-3.5 text-white opacity-0 peer-checked:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                                </svg>
+                                            </div>
+                                            <label for="${topicId}" class="ml-3 text-sm md:text-base cursor-pointer ${decoration} transition-all duration-200 select-none flex-1">
+                                                ${topic}
+                                            </label>
+                                            <button onclick="app.toggleNote('${topicId}')" class="ml-2 p-1 text-gray-400 hover:text-blue-600 hover:bg-blue-50 rounded-full transition-colors focus:outline-none" title="Adicionar anotação">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                        <div id="note-container-${topicId}" class="${hasNote ? '' : 'hidden'} mt-2 pl-9 w-full">
+                                            <textarea 
+                                                id="note-${topicId}"
+                                                class="w-full p-2 text-sm text-gray-700 bg-yellow-50 border border-yellow-200 rounded focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400 outline-none resize-y placeholder-gray-400 shadow-sm"
+                                                rows="2"
+                                                placeholder="Anotações estratégicas..."
+                                                oninput="app.saveNote('${topicId}', this.value)"
+                                            >${noteContent}</textarea>
+                                        </div>
+                                    </li>
+                                    `;
+                                }).join('')}
+                            </ul>
+                        </div>
+                    `;
+                    listContainer.appendChild(subjectEl);
+                });
+            },
+
+            toggleAccordion: function(index) {
+                const content = document.getElementById(`content-${index}`);
+                const icon = document.getElementById(`icon-${index}`);
+                
+                if (content.classList.contains('open')) {
+                    content.classList.remove('open');
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    document.querySelectorAll('.accordion-content').forEach(el => el.classList.remove('open'));
+                    document.querySelectorAll('[id^="icon-"]').forEach(el => el.style.transform = 'rotate(0deg)');
+                    
+                    content.classList.add('open');
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            },
+
+            renderCharts: function() {
+                const phaseData = curriculum[this.currentPhase];
+                const labels = phaseData.subjects.map(s => s.title);
+                const relevanceData = phaseData.subjects.map(s => s.importance);
+                const hoursData = phaseData.subjects.map(s => s.hours);
+
+
+                if (this.relevanceChartInstance) this.relevanceChartInstance.destroy();
+                const ctxRelevance = document.getElementById('relevanceChart').getContext('2d');
+                this.relevanceChartInstance = new Chart(ctxRelevance, {
+                    type: 'doughnut',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            data: relevanceData,
+                            backgroundColor: [
+                                '#1e3a8a', '#2563eb', '#60a5fa', '#93c5fd', '#f59e0b'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { position: 'bottom', labels: { boxWidth: 10, font: { size: 10 } } },
+                            tooltip: { 
+                                callbacks: {
+                                    label: function(context) {
+                                        return ` ${context.label}: ${context.raw}% Importância Estimada`;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+
+
+
+                if (this.scheduleChartInstance) this.scheduleChartInstance.destroy();
+                const ctxSchedule = document.getElementById('scheduleChart').getContext('2d');
+                this.scheduleChartInstance = new Chart(ctxSchedule, {
+                    type: 'bar',
+                    data: {
+                        labels: labels.map(l => l.length > 15 ? l.substring(0, 15) + '...' : l), // Truncate long labels
+                        datasets: [{
+                            label: 'Horas Semanais',
+                            data: hoursData,
+                            backgroundColor: '#f59e0b',
+                            borderRadius: 4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        indexAxis: 'y',
+                        scales: {
+                            x: { beginAtZero: true, grid: { display: false } },
+                            y: { grid: { display: false } }
+                        },
+                        plugins: {
+                            legend: { display: false }
+                        }
+                    }
+                });
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            app.init();
+        });
+
+    </script>
+</body>
+</html>
