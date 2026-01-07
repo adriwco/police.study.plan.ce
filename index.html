@@ -18,10 +18,27 @@
     <meta property="og:url" content="https://mimos.blog.brplano-policia-ceara">
     <meta property="og:image" content="https://mimos.blog.br/thumbnail-share.jpg">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            bg: '#111827', // gray-900
+                            card: '#1f2937', // gray-800
+                            text: '#f3f4f6', // gray-100
+                            muted: '#9ca3af' // gray-400
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #f3f4f6; }
+        body { font-family: 'Inter', sans-serif; }
         .chart-container {
             position: relative;
             width: 100%;
@@ -62,16 +79,25 @@
         }
     </style>
 </head>
-<body class="text-gray-800">
+<body class="text-gray-800 bg-gray-100 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
 
     <header class="bg-blue-900 text-white p-6 shadow-lg">
         <div class="container mx-auto max-w-6xl">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div>
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                <div class="flex-1">
                     <h1 class="text-3xl font-bold tracking-wide uppercase">Operação: Aprovação Ceará</h1>
                     <p class="text-blue-200 mt-1 text-sm">Roteiro Estratégico do Zero Absoluto (PC-CE / PM-CE)</p>
                 </div>
-                <div class="mt-4 md:mt-0 flex flex-col gap-3 min-w-[200px]">
+                
+                <div class="flex items-center gap-4 w-full md:w-auto justify-end">
+                    <button onclick="app.toggleTheme()" class="p-2.5 rounded-full bg-blue-800 text-yellow-300 hover:bg-blue-700 hover:text-yellow-200 transition-all shadow-sm" title="Alternar Tema">
+                        <!-- Sun Icon (showing in dark mode) -->
+                        <svg id="icon-sun" class="w-6 h-6 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                        <!-- Moon Icon (showing in light mode) -->
+                        <svg id="icon-moon" class="w-6 h-6 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                    </button>
+
+                    <div class="flex flex-col gap-3 min-w-[200px]">
                     <div class="bg-blue-800 px-4 py-2 rounded-lg border border-blue-700 text-center">
                         <span class="text-xs uppercase tracking-wider text-blue-300">Foco Atual</span>
                         <div id="current-phase-display" class="font-bold text-lg text-amber-400">Fase 1: Fundação</div>
@@ -94,9 +120,9 @@
 
 
     <section class="container mx-auto max-w-6xl mt-8 px-4">
-        <div class="bg-white rounded-lg shadow-sm p-6 border-l-4 border-amber-500">
-            <h2 class="text-xl font-bold text-gray-800 mb-2">Como usar este Painel Tático</h2>
-            <p class="text-gray-600 leading-relaxed">
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6 border-l-4 border-amber-500 transition-colors">
+            <h2 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Como usar este Painel Tático</h2>
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
                 Você está partindo do zero. Não tente estudar tudo de uma vez. Este plano organiza sua preparação em <strong>4 Fases Estratégicas</strong>. 
                 Selecione uma fase abaixo para visualizar as disciplinas prioritárias e a sequência lógica de tópicos. 
                 Utilize os gráficos à direita para entender o peso de cada matéria na prova e como distribuir seu tempo de estudo semanal.
@@ -108,16 +134,16 @@
 
     <nav class="container mx-auto max-w-6xl mt-8 px-4">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
-            <button onclick="app.setPhase(0)" class="phase-btn active py-4 px-2 bg-white rounded-t-lg shadow-sm hover:bg-gray-50 font-semibold text-sm md:text-base text-gray-600 transition-all text-center">
+            <button onclick="app.setPhase(0)" class="phase-btn active py-4 px-2 bg-white dark:bg-gray-800 rounded-t-lg shadow-sm hover:bg-gray-50 dark:hover:bg-gray-700 font-semibold text-sm md:text-base text-gray-600 dark:text-gray-400 transition-all text-center">
                 FASE 1<br><span class="text-xs font-normal">A Base Obrigatória</span>
             </button>
-            <button onclick="app.setPhase(1)" class="phase-btn py-4 px-2 bg-white rounded-t-lg shadow-sm hover:bg-gray-50 font-semibold text-sm md:text-base text-gray-600 transition-all text-center">
+            <button onclick="app.setPhase(1)" class="phase-btn py-4 px-2 bg-white dark:bg-gray-800 rounded-t-lg shadow-sm hover:bg-gray-50 dark:hover:bg-gray-700 font-semibold text-sm md:text-base text-gray-600 dark:text-gray-400 transition-all text-center">
                 FASE 2<br><span class="text-xs font-normal">O Núcleo Jurídico</span>
             </button>
-            <button onclick="app.setPhase(2)" class="phase-btn py-4 px-2 bg-white rounded-t-lg shadow-sm hover:bg-gray-50 font-semibold text-sm md:text-base text-gray-600 transition-all text-center">
+            <button onclick="app.setPhase(2)" class="phase-btn py-4 px-2 bg-white dark:bg-gray-800 rounded-t-lg shadow-sm hover:bg-gray-50 dark:hover:bg-gray-700 font-semibold text-sm md:text-base text-gray-600 dark:text-gray-400 transition-all text-center">
                 FASE 3<br><span class="text-xs font-normal">Específicas CE</span>
             </button>
-            <button onclick="app.setPhase(3)" class="phase-btn py-4 px-2 bg-white rounded-t-lg shadow-sm hover:bg-gray-50 font-semibold text-sm md:text-base text-gray-600 transition-all text-center">
+            <button onclick="app.setPhase(3)" class="phase-btn py-4 px-2 bg-white dark:bg-gray-800 rounded-t-lg shadow-sm hover:bg-gray-50 dark:hover:bg-gray-700 font-semibold text-sm md:text-base text-gray-600 dark:text-gray-400 transition-all text-center">
                 FASE 4<br><span class="text-xs font-normal">Revisão & Elite</span>
             </button>
         </div>
@@ -126,24 +152,22 @@
 
 
     <main class="container mx-auto max-w-6xl px-4 pb-12">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 bg-white p-6 rounded-b-lg shadow-md min-h-[600px]">
-            
-
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 bg-white dark:bg-gray-800 p-6 rounded-b-lg shadow-md min-h-[600px] transition-colors">
             
             <div class="lg:col-span-2">
                 <div class="mb-6">
-                    <h3 class="text-2xl font-bold text-gray-800 flex items-center">
+                    <h3 class="text-2xl font-bold text-gray-800 dark:text-white flex items-center">
                         <span class="mr-2 text-amber-600">📂</span> Sequência de Estudo
                     </h3>
-                    <p id="phase-description" class="text-gray-500 mt-2 text-sm mb-4">
+                    <p id="phase-description" class="text-gray-500 dark:text-gray-400 mt-2 text-sm mb-4">
                     </p>
 
-                    <div class="bg-blue-50 p-4 rounded-lg border border-blue-100 mb-4">
+                    <div class="bg-blue-50 dark:bg-blue-900/30 p-4 rounded-lg border border-blue-100 dark:border-blue-900/50 mb-4">
                         <div class="flex justify-between items-center mb-1">
-                            <span class="text-xs font-bold text-blue-900 uppercase">Progresso da Fase</span>
-                            <span id="progress-text" class="text-xs font-bold text-blue-900">0%</span>
+                            <span class="text-xs font-bold text-blue-900 dark:text-blue-200 uppercase">Progresso da Fase</span>
+                            <span id="progress-text" class="text-xs font-bold text-blue-900 dark:text-blue-200">0%</span>
                         </div>
-                        <div class="progress-track">
+                        <div class="progress-track dark:bg-blue-900/50">
                             <div id="progress-fill" class="progress-fill"></div>
                         </div>
                     </div>
@@ -157,31 +181,27 @@
 
 
 
-            <div class="flex flex-col gap-8 border-t lg:border-t-0 lg:border-l border-gray-100 lg:pl-8 pt-8 lg:pt-0">
+            <div class="flex flex-col gap-8 border-t lg:border-t-0 lg:border-l border-gray-100 dark:border-gray-700 lg:pl-8 pt-8 lg:pt-0">
                 
                 <div>
-                    <h4 class="text-lg font-bold text-gray-800 mb-2 border-b-2 border-amber-500 inline-block">Relevância na Prova</h4>
-                    <p class="text-xs text-gray-500 mb-4">Baseado no histórico de questões da PC/PM-CE para esta fase.</p>
+                    <h4 class="text-lg font-bold text-gray-800 dark:text-white mb-2 border-b-2 border-amber-500 inline-block">Relevância na Prova</h4>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mb-4">Baseado no histórico de questões da PC/PM-CE para esta fase.</p>
                     <div class="chart-container">
                         <canvas id="relevanceChart"></canvas>
                     </div>
                 </div>
 
-
-
                 <div class="mt-4">
-                    <h4 class="text-lg font-bold text-gray-800 mb-2 border-b-2 border-blue-500 inline-block">Ciclo Sugerido (Horas/Semana)</h4>
-                    <p class="text-xs text-gray-500 mb-4">Sugestão para quem tem ~4h diárias de estudo.</p>
+                    <h4 class="text-lg font-bold text-gray-800 dark:text-white mb-2 border-b-2 border-blue-500 inline-block">Ciclo Sugerido (Horas/Semana)</h4>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mb-4">Sugestão para quem tem ~4h diárias de estudo.</p>
                     <div class="chart-container">
                         <canvas id="scheduleChart"></canvas>
                     </div>
                 </div>
 
-
-
-                <div class="bg-blue-50 p-4 rounded-lg border border-blue-100 mt-auto">
-                    <h5 class="font-bold text-blue-900 mb-2">💡 Dica do Instrutor</h5>
-                    <p id="phase-tip" class="text-sm text-blue-800">
+                <div class="bg-blue-50 dark:bg-blue-900/30 p-4 rounded-lg border border-blue-100 dark:border-blue-900/50 mt-auto">
+                    <h5 class="font-bold text-blue-900 dark:text-blue-200 mb-2">💡 Dica do Instrutor</h5>
+                    <p id="phase-tip" class="text-sm text-blue-800 dark:text-blue-300">
                     </p>
                 </div>
             </div>
@@ -395,6 +415,7 @@
 
             init: function() {
                 this.loadState();
+                this.loadTheme(); // Load theme
                 this.setPhase(0);
             },
 
@@ -407,6 +428,27 @@
                         console.error("Erro ao carregar estado", e);
                         this.state = {};
                     }
+                }
+            },
+
+            // Theme Management
+            toggleTheme: function() {
+                const html = document.documentElement;
+                if (html.classList.contains('dark')) {
+                    html.classList.remove('dark');
+                    localStorage.setItem('theme', 'light');
+                } else {
+                    html.classList.add('dark');
+                    localStorage.setItem('theme', 'dark');
+                }
+            },
+
+            loadTheme: function() {
+                const theme = localStorage.getItem('theme');
+                if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.documentElement.classList.add('dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
                 }
             },
 
@@ -521,13 +563,13 @@
 
                 phaseData.subjects.forEach((subject, index) => {
                     const subjectEl = document.createElement('div');
-                    subjectEl.className = 'border border-gray-200 rounded-lg overflow-hidden bg-white hover:border-blue-300 transition-colors duration-200';
+                    subjectEl.className = 'border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden bg-white dark:bg-gray-800 hover:border-blue-300 dark:hover:border-blue-500 transition-colors duration-200';
                     subjectEl.innerHTML = `
-                        <button onclick="app.toggleAccordion(${index})" class="w-full text-left px-5 py-4 focus:outline-none flex justify-between items-center bg-gray-50 hover:bg-white">
-                            <span class="font-bold text-gray-700 text-lg">${subject.title}</span>
+                        <button onclick="app.toggleAccordion(${index})" class="w-full text-left px-5 py-4 focus:outline-none flex justify-between items-center bg-gray-50 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800">
+                            <span class="font-bold text-gray-700 dark:text-gray-200 text-lg">${subject.title}</span>
                             <span class="text-blue-500 transform transition-transform duration-200" id="icon-${index}">▼</span>
                         </button>
-                        <div id="content-${index}" class="accordion-content bg-white">
+                        <div id="content-${index}" class="accordion-content bg-white dark:bg-gray-800">
                                 ${subject.topics.map((topic, topicIndex) => {
                                     const topicId = `phase-${this.currentPhase}-subject-${index}-topic-${topicIndex}`;
                                     const isChecked = this.state[topicId] ? 'checked' : '';
@@ -538,12 +580,12 @@
                                     const hasNote = noteContent.trim().length > 0;
 
                                     return `
-                                    <li class="flex flex-col p-2 rounded hover:bg-gray-50 transition-colors">
+                                    <li class="flex flex-col p-2 rounded hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors border-b border-gray-100 dark:border-gray-700 last:border-0">
                                         <div class="flex items-center w-full">
                                             <div class="relative flex items-center">
                                                 <input type="checkbox" 
                                                     id="${topicId}" 
-                                                    class="peer h-5 w-5 cursor-pointer appearance-none rounded border border-gray-300 shadow-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500 checked:bg-blue-600 checked:border-blue-600 transition-all"
+                                                    class="peer h-5 w-5 cursor-pointer appearance-none rounded border border-gray-300 dark:border-gray-600 shadow-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500 checked:bg-blue-600 checked:border-blue-600 dark:bg-gray-700 dark:checked:bg-blue-600 transition-all"
                                                     ${isChecked}
                                                     onchange="app.toggleTopic('${topicId}')"
                                                 >
@@ -551,10 +593,10 @@
                                                     <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                                                 </svg>
                                             </div>
-                                            <label for="${topicId}" class="ml-3 text-sm md:text-base cursor-pointer ${decoration} transition-all duration-200 select-none flex-1">
+                                            <label for="${topicId}" class="ml-3 text-sm md:text-base cursor-pointer ${decoration} transition-all duration-200 select-none flex-1 dark:text-gray-300">
                                                 ${topic}
                                             </label>
-                                            <button onclick="app.toggleNote('${topicId}')" class="ml-2 p-1 text-gray-400 hover:text-blue-600 hover:bg-blue-50 rounded-full transition-colors focus:outline-none" title="Adicionar anotação">
+                                            <button onclick="app.toggleNote('${topicId}')" class="ml-2 p-1 text-gray-400 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-gray-700 rounded-full transition-colors focus:outline-none" title="Adicionar anotação">
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                                     <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                                                 </svg>
@@ -563,7 +605,7 @@
                                         <div id="note-container-${topicId}" class="${hasNote ? '' : 'hidden'} mt-2 pl-9 w-full">
                                             <textarea 
                                                 id="note-${topicId}"
-                                                class="w-full p-2 text-sm text-gray-700 bg-yellow-50 border border-yellow-200 rounded focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400 outline-none resize-y placeholder-gray-400 shadow-sm"
+                                                class="w-full p-2 text-sm text-gray-700 dark:text-gray-200 bg-yellow-50 dark:bg-gray-700 border border-yellow-200 dark:border-gray-600 rounded focus:border-yellow-400 dark:focus:border-blue-500 focus:ring-1 focus:ring-yellow-400 dark:focus:ring-blue-500 outline-none resize-y placeholder-gray-400 shadow-sm"
                                                 rows="2"
                                                 placeholder="Anotações estratégicas..."
                                                 oninput="app.saveNote('${topicId}', this.value)"
