@@ -15,7 +15,8 @@
      "titulo": "Como estudar do zero (o método)",
      "arquivo": "aulas/00-comece-aqui/02-como-estudar-do-zero.md"
     }
-   ]
+   ],
+   "pasta": "00-comece-aqui"
   },
   {
    "id": "01",
@@ -82,7 +83,8 @@
      "titulo": "Glossário de sobrevivência",
      "arquivo": "aulas/01-alfabetizacao-juridica/12-glossario-de-sobrevivencia.md"
     }
-   ]
+   ],
+   "pasta": "01-alfabetizacao-juridica"
   },
   {
    "id": "02",
@@ -92,39 +94,40 @@
     {
      "id": "02-01",
      "titulo": "Frações e números decimais",
-     "arquivo": null
+     "arquivo": "aulas/02-matematica/01-fracoes-e-numeros-decimais.md"
     },
     {
      "id": "02-02",
      "titulo": "Potências e raízes",
-     "arquivo": null
+     "arquivo": "aulas/02-matematica/02-potencias-e-raizes.md"
     },
     {
      "id": "02-03",
      "titulo": "Razão e proporção",
-     "arquivo": null
+     "arquivo": "aulas/02-matematica/03-razao-e-proporcao.md"
     },
     {
      "id": "02-04",
      "titulo": "Regra de três simples e composta",
-     "arquivo": null
+     "arquivo": "aulas/02-matematica/04-regra-de-tres.md"
     },
     {
      "id": "02-05",
      "titulo": "Porcentagem",
-     "arquivo": null
+     "arquivo": "aulas/02-matematica/05-porcentagem.md"
     },
     {
      "id": "02-06",
      "titulo": "Conjuntos e diagramas de Venn",
-     "arquivo": null
+     "arquivo": "aulas/02-matematica/06-conjuntos-e-diagramas-de-venn.md"
     },
     {
      "id": "02-07",
      "titulo": "Médias",
-     "arquivo": null
+     "arquivo": "aulas/02-matematica/07-medias.md"
     }
-   ]
+   ],
+   "pasta": "02-matematica"
   },
   {
    "id": "03",
@@ -206,7 +209,8 @@
      "titulo": "Sequências e problemas",
      "arquivo": null
     }
-   ]
+   ],
+   "pasta": "03-raciocinio-logico"
   },
   {
    "id": "04",
@@ -333,7 +337,8 @@
      "titulo": "Manual de Redação da Presidência",
      "arquivo": null
     }
-   ]
+   ],
+   "pasta": "04-portugues"
   },
   {
    "id": "05",
@@ -435,7 +440,8 @@
      "titulo": "Redes sociais",
      "arquivo": null
     }
-   ]
+   ],
+   "pasta": "05-informatica"
   },
   {
    "id": "06",
@@ -587,7 +593,8 @@
      "titulo": "Ordem social",
      "arquivo": null
     }
-   ]
+   ],
+   "pasta": "06-constitucional"
   },
   {
    "id": "07",
@@ -714,7 +721,8 @@
      "titulo": "Lei Orgânica Nacional das Polícias Civis (Lei 14.735/2023)",
      "arquivo": null
     }
-   ]
+   ],
+   "pasta": "07-administrativo"
   },
   {
    "id": "08",
@@ -856,7 +864,8 @@
      "titulo": "Extinção da punibilidade e prescrição",
      "arquivo": null
     }
-   ]
+   ],
+   "pasta": "08-penal-geral"
   },
   {
    "id": "09",
@@ -943,7 +952,8 @@
      "titulo": "Crimes contra a incolumidade pública",
      "arquivo": null
     }
-   ]
+   ],
+   "pasta": "09-penal-especial"
   },
   {
    "id": "10",
@@ -1065,7 +1075,8 @@
      "titulo": "Interceptação telefônica",
      "arquivo": null
     }
-   ]
+   ],
+   "pasta": "10-processo-penal"
   },
   {
    "id": "11",
@@ -1172,7 +1183,8 @@
      "titulo": "Demais leis do edital",
      "arquivo": null
     }
-   ]
+   ],
+   "pasta": "11-legislacao-especial"
   },
   {
    "id": "12",
@@ -1239,7 +1251,8 @@
      "titulo": "Estatuto dos Servidores do CE: penalidades",
      "arquivo": null
     }
-   ]
+   ],
+   "pasta": "12-legislacao-estadual"
   },
   {
    "id": "13",
@@ -1291,7 +1304,8 @@
      "titulo": "Prevenção primária, secundária e terciária",
      "arquivo": null
     }
-   ]
+   ],
+   "pasta": "13-criminologia"
   },
   {
    "id": "14",
@@ -1353,7 +1367,8 @@
      "titulo": "Imputabilidade e capacidade civil",
      "arquivo": null
     }
-   ]
+   ],
+   "pasta": "14-medicina-legal"
   },
   {
    "id": "15",
@@ -1395,7 +1410,8 @@
      "titulo": "NBC TSP (noção)",
      "arquivo": null
     }
-   ]
+   ],
+   "pasta": "15-contabilidade"
   },
   {
    "id": "16",
@@ -1442,7 +1458,8 @@
      "titulo": "Inferência (noção)",
      "arquivo": null
     }
-   ]
+   ],
+   "pasta": "16-estatistica"
   },
   {
    "id": "17",
@@ -1469,7 +1486,8 @@
      "titulo": "Repertório de atualidades",
      "arquivo": null
     }
-   ]
+   ],
+   "pasta": "17-redacao"
   },
   {
    "id": "18",
@@ -1491,7 +1509,8 @@
      "titulo": "Avaliação psicológica e investigação social",
      "arquivo": null
     }
-   ]
+   ],
+   "pasta": "18-reta-final"
   }
  ]
 }

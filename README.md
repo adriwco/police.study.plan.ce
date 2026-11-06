@@ -20,29 +20,29 @@ Um curso em aulas para quem **não tem base nenhuma**: nunca estudou Direito, n�
 
 ## A trilha
 
-| Módulo | Conteúdo | Situação |
-|---|---|---|
-| 00 | Comece aqui: como o curso funciona e como estudar | ✅ Pronto |
-| 01 | Alfabetização jurídica: a língua do Direito | ✅ Pronto |
-| 02 | Matemática do zero | Em breve |
-| 03 | Raciocínio Lógico | Em breve |
-| 04 | Língua Portuguesa | Em breve |
-| 05 | Informática (LibreOffice, Windows/Linux, segurança) | Em breve |
-| 06 | Direito Constitucional | Em breve |
-| 07 | Direito Administrativo | Em breve |
-| 08 | Direito Penal — Parte Geral | Em breve |
-| 09 | Direito Penal — Parte Especial | Em breve |
-| 10 | Processo Penal | Em breve |
-| 11 | Legislação Especial | Em breve |
-| 12 | Legislação Estadual (CE) | Em breve |
-| 13 | Criminologia | Em breve |
-| 14 | Medicina Legal | Em breve |
-| 15 | Contabilidade | Em breve |
-| 16 | Estatística | Em breve |
-| 17 | Redação | Em breve |
-| 18 | Reta final (simulados, TAF, demais fases) | Em breve |
+| Módulo | Conteúdo |
+|---|---|
+| 00 | Comece aqui: como o curso funciona e como estudar |
+| 01 | Alfabetização jurídica: a língua do Direito |
+| 02 | Matemática do zero |
+| 03 | Raciocínio Lógico |
+| 04 | Língua Portuguesa |
+| 05 | Informática (LibreOffice, Windows/Linux, segurança) |
+| 06 | Direito Constitucional |
+| 07 | Direito Administrativo |
+| 08 | Direito Penal — Parte Geral |
+| 09 | Direito Penal — Parte Especial |
+| 10 | Processo Penal |
+| 11 | Legislação Especial |
+| 12 | Legislação Estadual (CE) |
+| 13 | Criminologia |
+| 14 | Medicina Legal |
+| 15 | Contabilidade |
+| 16 | Estatística |
+| 17 | Redação |
+| 18 | Reta final (simulados, TAF, demais fases) |
 
-O plano de estudos completo (rotina, ciclos, revisões, edital, TAF e referências) está em [GUIA-COMPLETO-PCCE.md](GUIA-COMPLETO-PCCE.md).
+O site mostra quais aulas já estão prontas. O plano de estudos completo (rotina, ciclos, revisões, edital, TAF e referências) está em [GUIA-COMPLETO-PCCE.md](GUIA-COMPLETO-PCCE.md).
 
 ## Funcionalidades do site
 
