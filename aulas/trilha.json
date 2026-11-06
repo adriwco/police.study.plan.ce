@@ -1421,42 +1421,42 @@
     {
      "id": "16-01",
      "titulo": "População, amostra e variáveis",
-     "arquivo": null
+     "arquivo": "aulas/16-estatistica/01-populacao-amostra-e-variaveis.md"
     },
     {
      "id": "16-02",
      "titulo": "Tabelas e gráficos",
-     "arquivo": null
+     "arquivo": "aulas/16-estatistica/02-tabelas-e-graficos.md"
     },
     {
      "id": "16-03",
      "titulo": "Média, mediana e moda",
-     "arquivo": null
+     "arquivo": "aulas/16-estatistica/03-media-mediana-moda.md"
     },
     {
      "id": "16-04",
      "titulo": "Variância e desvio-padrão",
-     "arquivo": null
+     "arquivo": "aulas/16-estatistica/04-variancia-e-desvio-padrao.md"
     },
     {
      "id": "16-05",
      "titulo": "Probabilidade",
-     "arquivo": null
+     "arquivo": "aulas/16-estatistica/05-probabilidade.md"
     },
     {
      "id": "16-06",
      "titulo": "Distribuição normal (noção)",
-     "arquivo": null
+     "arquivo": "aulas/16-estatistica/06-distribuicao-normal.md"
     },
     {
      "id": "16-07",
      "titulo": "Amostragem",
-     "arquivo": null
+     "arquivo": "aulas/16-estatistica/07-amostragem.md"
     },
     {
      "id": "16-08",
      "titulo": "Inferência (noção)",
-     "arquivo": null
+     "arquivo": "aulas/16-estatistica/08-inferencia.md"
     }
    ],
    "pasta": "16-estatistica"
