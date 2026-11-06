@@ -348,52 +348,52 @@
     {
      "id": "05-01",
      "titulo": "Hardware e software",
-     "arquivo": null
+     "arquivo": "aulas/05-informatica/01-hardware-e-software.md"
     },
     {
      "id": "05-02",
      "titulo": "Windows: arquivos e pastas",
-     "arquivo": null
+     "arquivo": "aulas/05-informatica/02-windows-arquivos-e-pastas.md"
     },
     {
      "id": "05-03",
      "titulo": "Linux: noções e comandos",
-     "arquivo": null
+     "arquivo": "aulas/05-informatica/03-linux-nocoes-e-comandos.md"
     },
     {
      "id": "05-04",
      "titulo": "Atalhos de teclado",
-     "arquivo": null
+     "arquivo": "aulas/05-informatica/04-atalhos-de-teclado.md"
     },
     {
      "id": "05-05",
      "titulo": "Writer (editor de texto)",
-     "arquivo": null
+     "arquivo": "aulas/05-informatica/05-writer.md"
     },
     {
      "id": "05-06",
      "titulo": "Calc: células e referências",
-     "arquivo": null
+     "arquivo": "aulas/05-informatica/06-calc-celulas-e-referencias.md"
     },
     {
      "id": "05-07",
      "titulo": "Calc: fórmulas e funções",
-     "arquivo": null
+     "arquivo": "aulas/05-informatica/07-calc-formulas-e-funcoes.md"
     },
     {
      "id": "05-08",
      "titulo": "Calc: gráficos e dados",
-     "arquivo": null
+     "arquivo": "aulas/05-informatica/08-calc-graficos-e-dados.md"
     },
     {
      "id": "05-09",
      "titulo": "Impress (apresentações)",
-     "arquivo": null
+     "arquivo": "aulas/05-informatica/09-impress.md"
     },
     {
      "id": "05-10",
      "titulo": "E-mail e os protocolos SMTP e IMAP",
-     "arquivo": null
+     "arquivo": "aulas/05-informatica/10-email-smtp-imap.md"
     },
     {
      "id": "05-11",
