@@ -1378,37 +1378,37 @@
     {
      "id": "15-01",
      "titulo": "Conceitos e patrimônio",
-     "arquivo": null
+     "arquivo": "aulas/15-contabilidade/01-conceitos-e-patrimonio.md"
     },
     {
      "id": "15-02",
      "titulo": "Equação patrimonial",
-     "arquivo": null
+     "arquivo": "aulas/15-contabilidade/02-equacao-patrimonial.md"
     },
     {
      "id": "15-03",
      "titulo": "Fatos contábeis",
-     "arquivo": null
+     "arquivo": "aulas/15-contabilidade/03-fatos-contabeis.md"
     },
     {
      "id": "15-04",
      "titulo": "Contas e partidas dobradas",
-     "arquivo": null
+     "arquivo": "aulas/15-contabilidade/04-contas-e-partidas-dobradas.md"
     },
     {
      "id": "15-05",
      "titulo": "Regime de caixa e de competência",
-     "arquivo": null
+     "arquivo": "aulas/15-contabilidade/05-regimes-de-caixa-e-competencia.md"
     },
     {
      "id": "15-06",
      "titulo": "Balanço patrimonial e DRE",
-     "arquivo": null
+     "arquivo": "aulas/15-contabilidade/06-balanco-e-dre.md"
     },
     {
      "id": "15-07",
      "titulo": "NBC TSP (noção)",
-     "arquivo": null
+     "arquivo": "aulas/15-contabilidade/07-nbc-tsp.md"
     }
    ],
    "pasta": "15-contabilidade"
