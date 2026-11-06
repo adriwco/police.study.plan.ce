@@ -137,77 +137,77 @@
     {
      "id": "03-01",
      "titulo": "Proposição: o que é",
-     "arquivo": null
+     "arquivo": "aulas/03-raciocinio-logico/01-proposicao.md"
     },
     {
      "id": "03-02",
      "titulo": "Conectivos: e, ou",
-     "arquivo": null
+     "arquivo": "aulas/03-raciocinio-logico/02-conectivos-e-ou.md"
     },
     {
      "id": "03-03",
      "titulo": "Condicional e bicondicional",
-     "arquivo": null
+     "arquivo": "aulas/03-raciocinio-logico/03-condicional-e-bicondicional.md"
     },
     {
      "id": "03-04",
      "titulo": "Tabela-verdade",
-     "arquivo": null
+     "arquivo": "aulas/03-raciocinio-logico/04-tabela-verdade.md"
     },
     {
      "id": "03-05",
      "titulo": "Tautologia, contradição e contingência",
-     "arquivo": null
+     "arquivo": "aulas/03-raciocinio-logico/05-tautologia-contradicao-contingencia.md"
     },
     {
      "id": "03-06",
      "titulo": "Negação e Leis de De Morgan",
-     "arquivo": null
+     "arquivo": "aulas/03-raciocinio-logico/06-negacao-e-leis-de-de-morgan.md"
     },
     {
      "id": "03-07",
      "titulo": "Equivalências lógicas",
-     "arquivo": null
+     "arquivo": "aulas/03-raciocinio-logico/07-equivalencias-logicas.md"
     },
     {
      "id": "03-08",
      "titulo": "Diagramas lógicos",
-     "arquivo": null
+     "arquivo": "aulas/03-raciocinio-logico/08-diagramas-logicos.md"
     },
     {
      "id": "03-09",
      "titulo": "Quantificadores e sua negação",
-     "arquivo": null
+     "arquivo": "aulas/03-raciocinio-logico/09-quantificadores-e-negacao.md"
     },
     {
      "id": "03-10",
      "titulo": "Argumentos válidos e inválidos",
-     "arquivo": null
+     "arquivo": "aulas/03-raciocinio-logico/10-argumentos-validos-e-invalidos.md"
     },
     {
      "id": "03-11",
      "titulo": "Lógica de associação",
-     "arquivo": null
+     "arquivo": "aulas/03-raciocinio-logico/11-logica-de-associacao.md"
     },
     {
      "id": "03-12",
      "titulo": "Princípio fundamental da contagem",
-     "arquivo": null
+     "arquivo": "aulas/03-raciocinio-logico/12-principio-fundamental-da-contagem.md"
     },
     {
      "id": "03-13",
      "titulo": "Arranjo, permutação e combinação",
-     "arquivo": null
+     "arquivo": "aulas/03-raciocinio-logico/13-arranjo-permutacao-combinacao.md"
     },
     {
      "id": "03-14",
      "titulo": "Probabilidade",
-     "arquivo": null
+     "arquivo": "aulas/03-raciocinio-logico/14-probabilidade.md"
     },
     {
      "id": "03-15",
      "titulo": "Sequências e problemas",
-     "arquivo": null
+     "arquivo": "aulas/03-raciocinio-logico/15-sequencias-e-problemas.md"
     }
    ],
    "pasta": "03-raciocinio-logico"
