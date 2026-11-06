@@ -1262,47 +1262,47 @@
     {
      "id": "13-01",
      "titulo": "Conceito e método",
-     "arquivo": null
+     "arquivo": "aulas/13-criminologia/01-conceito-e-metodo.md"
     },
     {
      "id": "13-02",
      "titulo": "Objetos da Criminologia",
-     "arquivo": null
+     "arquivo": "aulas/13-criminologia/02-objetos-da-criminologia.md"
     },
     {
      "id": "13-03",
      "titulo": "Criminologia e política criminal",
-     "arquivo": null
+     "arquivo": "aulas/13-criminologia/03-criminologia-e-politica-criminal.md"
     },
     {
      "id": "13-04",
      "titulo": "Escolas clássica e positiva",
-     "arquivo": null
+     "arquivo": "aulas/13-criminologia/04-escolas-classica-e-positiva.md"
     },
     {
      "id": "13-05",
      "titulo": "Escola de Chicago",
-     "arquivo": null
+     "arquivo": "aulas/13-criminologia/05-escola-de-chicago.md"
     },
     {
      "id": "13-06",
      "titulo": "Associação diferencial e anomia",
-     "arquivo": null
+     "arquivo": "aulas/13-criminologia/06-associacao-diferencial-e-anomia.md"
     },
     {
      "id": "13-07",
      "titulo": "Labeling approach e criminologia crítica",
-     "arquivo": null
+     "arquivo": "aulas/13-criminologia/07-labeling-e-criminologia-critica.md"
     },
     {
      "id": "13-08",
      "titulo": "Vitimologia e cifra negra",
-     "arquivo": null
+     "arquivo": "aulas/13-criminologia/08-vitimologia-e-cifra-negra.md"
     },
     {
      "id": "13-09",
      "titulo": "Prevenção primária, secundária e terciária",
-     "arquivo": null
+     "arquivo": "aulas/13-criminologia/09-prevencao.md"
     }
    ],
    "pasta": "13-criminologia"
