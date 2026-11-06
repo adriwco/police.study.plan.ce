@@ -42,7 +42,7 @@ Um curso em aulas para quem **não tem base nenhuma**: nunca estudou Direito, n�
 | 17 | Redação |
 | 18 | Reta final (simulados, TAF, demais fases) |
 
-O site mostra quais aulas já estão prontas. O plano de estudos completo (rotina, ciclos, revisões, edital, TAF e referências) está em [GUIA-COMPLETO-PCCE.md](GUIA-COMPLETO-PCCE.md).
+São **272 aulas** em 19 módulos. O plano de estudos completo (rotina, ciclos, revisões, edital, TAF e referências) está em [GUIA-COMPLETO-PCCE.md](GUIA-COMPLETO-PCCE.md).
 
 ## Funcionalidades do site
 

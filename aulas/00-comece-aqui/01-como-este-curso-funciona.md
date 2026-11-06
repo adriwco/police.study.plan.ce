@@ -17,7 +17,8 @@ O curso é uma **trilha**. Os módulos estão na ordem em que você deve estudar
 | 0 — Comece aqui | Como o curso funciona e como estudar | Sem método, você esquece tudo |
 | 1 — Alfabetização jurídica | A "língua" do Direito: o que é lei, como ler um artigo, quem é quem | Sem isso, nenhuma aula de Direito faz sentido |
 | 2 — Matemática do zero | Frações, porcentagem, regra de três | Base de Raciocínio Lógico e Estatística |
-| 3 em diante | As matérias da prova, uma a uma | Seguindo os pré-requisitos |
+| 3 a 16 | As matérias da prova, uma a uma | Seguindo os pré-requisitos |
+| 17 e 18 | Redação e reta final (simulados, TAF, demais fases) | Para quando a base estiver pronta |
 
 ## O formato de cada aula
 
@@ -38,7 +39,7 @@ Toda aula segue o mesmo roteiro, para você saber onde está:
 - Clique numa aula na trilha para abri-la.
 - Ao terminar, clique em **"Marcar como concluída"**. O progresso fica salvo no seu navegador.
 - Use o campo **"Minhas anotações"** no fim de cada aula para escrever suas dúvidas e o seu resumo.
-- Aulas marcadas como **"em breve"** ainda estão sendo escritas.
+- São **19 módulos e 272 aulas**, do zero até a reta final.
 
 ## A regra mais importante
 

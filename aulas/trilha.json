@@ -1469,22 +1469,22 @@
     {
      "id": "17-01",
      "titulo": "Estrutura do texto dissertativo",
-     "arquivo": null
+     "arquivo": "aulas/17-redacao/01-estrutura-do-texto-dissertativo.md"
     },
     {
      "id": "17-02",
      "titulo": "Tese e argumentação",
-     "arquivo": null
+     "arquivo": "aulas/17-redacao/02-tese-e-argumentacao.md"
     },
     {
      "id": "17-03",
      "titulo": "Critérios de correção da banca",
-     "arquivo": null
+     "arquivo": "aulas/17-redacao/03-criterios-de-correcao.md"
     },
     {
      "id": "17-04",
      "titulo": "Repertório de atualidades",
-     "arquivo": null
+     "arquivo": "aulas/17-redacao/04-repertorio-de-atualidades.md"
     }
    ],
    "pasta": "17-redacao"
@@ -1497,17 +1497,17 @@
     {
      "id": "18-01",
      "titulo": "Como fazer simulados",
-     "arquivo": null
+     "arquivo": "aulas/18-reta-final/01-como-fazer-simulados.md"
     },
     {
      "id": "18-02",
      "titulo": "Preparação para o TAF",
-     "arquivo": null
+     "arquivo": "aulas/18-reta-final/02-preparacao-para-o-taf.md"
     },
     {
      "id": "18-03",
      "titulo": "Avaliação psicológica e investigação social",
-     "arquivo": null
+     "arquivo": "aulas/18-reta-final/03-demais-fases.md"
     }
    ],
    "pasta": "18-reta-final"
