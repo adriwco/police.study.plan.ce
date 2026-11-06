@@ -16,6 +16,10 @@ Este projeto é uma ferramenta interativa de organização de estudos focada nos
     4.  **Revisão & Elite**: Simulados e refinamento.
 -   **Gráficos de Análise**: Entenda a relevância de cada matéria e a sugestão de carga horária semanal.
 
+## 📘 Guia completo (do zero absoluto)
+
+O roteiro detalhado de estudos para Oficial Investigador da PC-CE, com o conteúdo oficial do edital, a ordem de estudo, rotinas, ciclos, revisão, redação, TAF e referências, está em [GUIA-COMPLETO-PCCE.md](GUIA-COMPLETO-PCCE.md).
+
 ## 🛠️ Tecnologias Utilizadas
 
 -   **HTML5 & Semantic SEO**: Estrutura otimizada e acessível.
