@@ -1,0 +1,1497 @@
+{
+ "modulos": [
+  {
+   "id": "00",
+   "titulo": "Comece aqui",
+   "descricao": "Como o curso funciona e como estudar para não esquecer.",
+   "aulas": [
+    {
+     "id": "00-01",
+     "titulo": "Como este curso funciona",
+     "arquivo": "aulas/00-comece-aqui/01-como-este-curso-funciona.md"
+    },
+    {
+     "id": "00-02",
+     "titulo": "Como estudar do zero (o método)",
+     "arquivo": "aulas/00-comece-aqui/02-como-estudar-do-zero.md"
+    }
+   ]
+  },
+  {
+   "id": "01",
+   "titulo": "Alfabetização jurídica",
+   "descricao": "A língua do Direito: lei, artigo, Judiciário, polícia e o caminho de um crime.",
+   "aulas": [
+    {
+     "id": "01-01",
+     "titulo": "O que é o Direito e o que é uma norma jurídica",
+     "arquivo": "aulas/01-alfabetizacao-juridica/01-o-que-e-o-direito.md"
+    },
+    {
+     "id": "01-02",
+     "titulo": "A pirâmide das normas: quem manda em quem",
+     "arquivo": "aulas/01-alfabetizacao-juridica/02-piramide-das-normas.md"
+    },
+    {
+     "id": "01-03",
+     "titulo": "Como ler um artigo de lei",
+     "arquivo": "aulas/01-alfabetizacao-juridica/03-como-ler-um-artigo-de-lei.md"
+    },
+    {
+     "id": "01-04",
+     "titulo": "Lei, decreto e medida provisória",
+     "arquivo": "aulas/01-alfabetizacao-juridica/04-lei-decreto-e-medida-provisoria.md"
+    },
+    {
+     "id": "01-05",
+     "titulo": "Quando uma lei começa e deixa de valer",
+     "arquivo": "aulas/01-alfabetizacao-juridica/05-vigencia-e-revogacao.md"
+    },
+    {
+     "id": "01-06",
+     "titulo": "Os ramos do Direito e o mapa da sua prova",
+     "arquivo": "aulas/01-alfabetizacao-juridica/06-ramos-do-direito.md"
+    },
+    {
+     "id": "01-07",
+     "titulo": "Doutrina, jurisprudência e súmula",
+     "arquivo": "aulas/01-alfabetizacao-juridica/07-doutrina-jurisprudencia-e-sumula.md"
+    },
+    {
+     "id": "01-08",
+     "titulo": "Como o Judiciário é organizado",
+     "arquivo": "aulas/01-alfabetizacao-juridica/08-como-o-judiciario-e-organizado.md"
+    },
+    {
+     "id": "01-09",
+     "titulo": "Quem é quem no processo penal",
+     "arquivo": "aulas/01-alfabetizacao-juridica/09-quem-e-quem-no-processo-penal.md"
+    },
+    {
+     "id": "01-10",
+     "titulo": "Polícia judiciária x polícia ostensiva",
+     "arquivo": "aulas/01-alfabetizacao-juridica/10-policia-judiciaria-e-policia-ostensiva.md"
+    },
+    {
+     "id": "01-11",
+     "titulo": "A história de um crime: do fato à sentença",
+     "arquivo": "aulas/01-alfabetizacao-juridica/11-a-historia-de-um-crime.md"
+    },
+    {
+     "id": "01-12",
+     "titulo": "Glossário de sobrevivência",
+     "arquivo": "aulas/01-alfabetizacao-juridica/12-glossario-de-sobrevivencia.md"
+    }
+   ]
+  },
+  {
+   "id": "02",
+   "titulo": "Matemática do zero",
+   "descricao": "A base para Raciocínio Lógico, Estatística e Contabilidade.",
+   "aulas": [
+    {
+     "id": "02-01",
+     "titulo": "Frações e números decimais",
+     "arquivo": null
+    },
+    {
+     "id": "02-02",
+     "titulo": "Potências e raízes",
+     "arquivo": null
+    },
+    {
+     "id": "02-03",
+     "titulo": "Razão e proporção",
+     "arquivo": null
+    },
+    {
+     "id": "02-04",
+     "titulo": "Regra de três simples e composta",
+     "arquivo": null
+    },
+    {
+     "id": "02-05",
+     "titulo": "Porcentagem",
+     "arquivo": null
+    },
+    {
+     "id": "02-06",
+     "titulo": "Conjuntos e diagramas de Venn",
+     "arquivo": null
+    },
+    {
+     "id": "02-07",
+     "titulo": "Médias",
+     "arquivo": null
+    }
+   ]
+  },
+  {
+   "id": "03",
+   "titulo": "Raciocínio Lógico",
+   "descricao": "10 questões na prova. Aprende-se fazendo exercício.",
+   "aulas": [
+    {
+     "id": "03-01",
+     "titulo": "Proposição: o que é",
+     "arquivo": null
+    },
+    {
+     "id": "03-02",
+     "titulo": "Conectivos: e, ou",
+     "arquivo": null
+    },
+    {
+     "id": "03-03",
+     "titulo": "Condicional e bicondicional",
+     "arquivo": null
+    },
+    {
+     "id": "03-04",
+     "titulo": "Tabela-verdade",
+     "arquivo": null
+    },
+    {
+     "id": "03-05",
+     "titulo": "Tautologia, contradição e contingência",
+     "arquivo": null
+    },
+    {
+     "id": "03-06",
+     "titulo": "Negação e Leis de De Morgan",
+     "arquivo": null
+    },
+    {
+     "id": "03-07",
+     "titulo": "Equivalências lógicas",
+     "arquivo": null
+    },
+    {
+     "id": "03-08",
+     "titulo": "Diagramas lógicos",
+     "arquivo": null
+    },
+    {
+     "id": "03-09",
+     "titulo": "Quantificadores e sua negação",
+     "arquivo": null
+    },
+    {
+     "id": "03-10",
+     "titulo": "Argumentos válidos e inválidos",
+     "arquivo": null
+    },
+    {
+     "id": "03-11",
+     "titulo": "Lógica de associação",
+     "arquivo": null
+    },
+    {
+     "id": "03-12",
+     "titulo": "Princípio fundamental da contagem",
+     "arquivo": null
+    },
+    {
+     "id": "03-13",
+     "titulo": "Arranjo, permutação e combinação",
+     "arquivo": null
+    },
+    {
+     "id": "03-14",
+     "titulo": "Probabilidade",
+     "arquivo": null
+    },
+    {
+     "id": "03-15",
+     "titulo": "Sequências e problemas",
+     "arquivo": null
+    }
+   ]
+  },
+  {
+   "id": "04",
+   "titulo": "Língua Portuguesa",
+   "descricao": "10 questões na prova + a base da redação.",
+   "aulas": [
+    {
+     "id": "04-01",
+     "titulo": "Classes de palavras",
+     "arquivo": null
+    },
+    {
+     "id": "04-02",
+     "titulo": "Verbos: tempos e modos",
+     "arquivo": null
+    },
+    {
+     "id": "04-03",
+     "titulo": "Sujeito e predicado",
+     "arquivo": null
+    },
+    {
+     "id": "04-04",
+     "titulo": "Transitividade e objetos",
+     "arquivo": null
+    },
+    {
+     "id": "04-05",
+     "titulo": "Termos acessórios da oração",
+     "arquivo": null
+    },
+    {
+     "id": "04-06",
+     "titulo": "Orações coordenadas",
+     "arquivo": null
+    },
+    {
+     "id": "04-07",
+     "titulo": "Orações subordinadas substantivas",
+     "arquivo": null
+    },
+    {
+     "id": "04-08",
+     "titulo": "Orações subordinadas adjetivas",
+     "arquivo": null
+    },
+    {
+     "id": "04-09",
+     "titulo": "Orações subordinadas adverbiais",
+     "arquivo": null
+    },
+    {
+     "id": "04-10",
+     "titulo": "Concordância verbal",
+     "arquivo": null
+    },
+    {
+     "id": "04-11",
+     "titulo": "Concordância nominal",
+     "arquivo": null
+    },
+    {
+     "id": "04-12",
+     "titulo": "Regência verbal e nominal",
+     "arquivo": null
+    },
+    {
+     "id": "04-13",
+     "titulo": "Crase",
+     "arquivo": null
+    },
+    {
+     "id": "04-14",
+     "titulo": "Colocação pronominal",
+     "arquivo": null
+    },
+    {
+     "id": "04-15",
+     "titulo": "Vírgula",
+     "arquivo": null
+    },
+    {
+     "id": "04-16",
+     "titulo": "Outros sinais de pontuação",
+     "arquivo": null
+    },
+    {
+     "id": "04-17",
+     "titulo": "Acentuação gráfica",
+     "arquivo": null
+    },
+    {
+     "id": "04-18",
+     "titulo": "Ortografia",
+     "arquivo": null
+    },
+    {
+     "id": "04-19",
+     "titulo": "Coesão: referência e substituição",
+     "arquivo": null
+    },
+    {
+     "id": "04-20",
+     "titulo": "Coesão: conectivos",
+     "arquivo": null
+    },
+    {
+     "id": "04-21",
+     "titulo": "Interpretação: ideia central e inferência",
+     "arquivo": null
+    },
+    {
+     "id": "04-22",
+     "titulo": "Tipos e gêneros textuais",
+     "arquivo": null
+    },
+    {
+     "id": "04-23",
+     "titulo": "Reescrita de frases",
+     "arquivo": null
+    },
+    {
+     "id": "04-24",
+     "titulo": "Manual de Redação da Presidência",
+     "arquivo": null
+    }
+   ]
+  },
+  {
+   "id": "05",
+   "titulo": "Informática",
+   "descricao": "10 questões. Atenção: o edital cobra LibreOffice.",
+   "aulas": [
+    {
+     "id": "05-01",
+     "titulo": "Hardware e software",
+     "arquivo": null
+    },
+    {
+     "id": "05-02",
+     "titulo": "Windows: arquivos e pastas",
+     "arquivo": null
+    },
+    {
+     "id": "05-03",
+     "titulo": "Linux: noções e comandos",
+     "arquivo": null
+    },
+    {
+     "id": "05-04",
+     "titulo": "Atalhos de teclado",
+     "arquivo": null
+    },
+    {
+     "id": "05-05",
+     "titulo": "Writer (editor de texto)",
+     "arquivo": null
+    },
+    {
+     "id": "05-06",
+     "titulo": "Calc: células e referências",
+     "arquivo": null
+    },
+    {
+     "id": "05-07",
+     "titulo": "Calc: fórmulas e funções",
+     "arquivo": null
+    },
+    {
+     "id": "05-08",
+     "titulo": "Calc: gráficos e dados",
+     "arquivo": null
+    },
+    {
+     "id": "05-09",
+     "titulo": "Impress (apresentações)",
+     "arquivo": null
+    },
+    {
+     "id": "05-10",
+     "titulo": "E-mail e os protocolos SMTP e IMAP",
+     "arquivo": null
+    },
+    {
+     "id": "05-11",
+     "titulo": "Navegadores",
+     "arquivo": null
+    },
+    {
+     "id": "05-12",
+     "titulo": "Internet, intranet e extranet",
+     "arquivo": null
+    },
+    {
+     "id": "05-13",
+     "titulo": "Nuvem e backup",
+     "arquivo": null
+    },
+    {
+     "id": "05-14",
+     "titulo": "Segurança da informação: os pilares",
+     "arquivo": null
+    },
+    {
+     "id": "05-15",
+     "titulo": "Malware",
+     "arquivo": null
+    },
+    {
+     "id": "05-16",
+     "titulo": "Phishing e engenharia social",
+     "arquivo": null
+    },
+    {
+     "id": "05-17",
+     "titulo": "Criptografia e certificado digital",
+     "arquivo": null
+    },
+    {
+     "id": "05-18",
+     "titulo": "Criptomoedas",
+     "arquivo": null
+    },
+    {
+     "id": "05-19",
+     "titulo": "Redes sociais",
+     "arquivo": null
+    }
+   ]
+  },
+  {
+   "id": "06",
+   "titulo": "Direito Constitucional",
+   "descricao": "8 questões. Base de todo o Direito.",
+   "aulas": [
+    {
+     "id": "06-01",
+     "titulo": "O que é uma Constituição",
+     "arquivo": null
+    },
+    {
+     "id": "06-02",
+     "titulo": "Classificação das Constituições",
+     "arquivo": null
+    },
+    {
+     "id": "06-03",
+     "titulo": "Poder constituinte",
+     "arquivo": null
+    },
+    {
+     "id": "06-04",
+     "titulo": "Eficácia das normas constitucionais",
+     "arquivo": null
+    },
+    {
+     "id": "06-05",
+     "titulo": "Princípios fundamentais (arts. 1º a 4º)",
+     "arquivo": null
+    },
+    {
+     "id": "06-06",
+     "titulo": "Direitos fundamentais: características",
+     "arquivo": null
+    },
+    {
+     "id": "06-07",
+     "titulo": "Legalidade e igualdade",
+     "arquivo": null
+    },
+    {
+     "id": "06-08",
+     "titulo": "Liberdades do art. 5º",
+     "arquivo": null
+    },
+    {
+     "id": "06-09",
+     "titulo": "Inviolabilidade do domicílio",
+     "arquivo": null
+    },
+    {
+     "id": "06-10",
+     "titulo": "Sigilo das comunicações",
+     "arquivo": null
+    },
+    {
+     "id": "06-11",
+     "titulo": "Garantias do processo",
+     "arquivo": null
+    },
+    {
+     "id": "06-12",
+     "titulo": "Provas ilícitas",
+     "arquivo": null
+    },
+    {
+     "id": "06-13",
+     "titulo": "Prisão e direitos do preso",
+     "arquivo": null
+    },
+    {
+     "id": "06-14",
+     "titulo": "Crimes inafiançáveis e imprescritíveis",
+     "arquivo": null
+    },
+    {
+     "id": "06-15",
+     "titulo": "Habeas corpus",
+     "arquivo": null
+    },
+    {
+     "id": "06-16",
+     "titulo": "Mandado de segurança, injunção, habeas data e ação popular",
+     "arquivo": null
+    },
+    {
+     "id": "06-17",
+     "titulo": "Direitos sociais",
+     "arquivo": null
+    },
+    {
+     "id": "06-18",
+     "titulo": "Nacionalidade",
+     "arquivo": null
+    },
+    {
+     "id": "06-19",
+     "titulo": "Direitos políticos",
+     "arquivo": null
+    },
+    {
+     "id": "06-20",
+     "titulo": "Organização do Estado",
+     "arquivo": null
+    },
+    {
+     "id": "06-21",
+     "titulo": "Repartição de competências",
+     "arquivo": null
+    },
+    {
+     "id": "06-22",
+     "titulo": "Administração pública (art. 37)",
+     "arquivo": null
+    },
+    {
+     "id": "06-23",
+     "titulo": "Servidores públicos",
+     "arquivo": null
+    },
+    {
+     "id": "06-24",
+     "titulo": "Poder Legislativo",
+     "arquivo": null
+    },
+    {
+     "id": "06-25",
+     "titulo": "Poder Executivo",
+     "arquivo": null
+    },
+    {
+     "id": "06-26",
+     "titulo": "Poder Judiciário, STF e STJ",
+     "arquivo": null
+    },
+    {
+     "id": "06-27",
+     "titulo": "Funções essenciais à Justiça",
+     "arquivo": null
+    },
+    {
+     "id": "06-28",
+     "titulo": "Segurança pública (art. 144) completo",
+     "arquivo": null
+    },
+    {
+     "id": "06-29",
+     "titulo": "Ordem social",
+     "arquivo": null
+    }
+   ]
+  },
+  {
+   "id": "07",
+   "titulo": "Direito Administrativo",
+   "descricao": "8 questões. Base da Legislação Estadual.",
+   "aulas": [
+    {
+     "id": "07-01",
+     "titulo": "Estado, Governo e Administração",
+     "arquivo": null
+    },
+    {
+     "id": "07-02",
+     "titulo": "Regime jurídico-administrativo",
+     "arquivo": null
+    },
+    {
+     "id": "07-03",
+     "titulo": "Princípios LIMPE",
+     "arquivo": null
+    },
+    {
+     "id": "07-04",
+     "titulo": "Princípios implícitos",
+     "arquivo": null
+    },
+    {
+     "id": "07-05",
+     "titulo": "Modelos de administração",
+     "arquivo": null
+    },
+    {
+     "id": "07-06",
+     "titulo": "Administração direta e indireta",
+     "arquivo": null
+    },
+    {
+     "id": "07-07",
+     "titulo": "Entidades da administração indireta",
+     "arquivo": null
+    },
+    {
+     "id": "07-08",
+     "titulo": "Poder hierárquico e disciplinar",
+     "arquivo": null
+    },
+    {
+     "id": "07-09",
+     "titulo": "Poder regulamentar",
+     "arquivo": null
+    },
+    {
+     "id": "07-10",
+     "titulo": "Poder de polícia",
+     "arquivo": null
+    },
+    {
+     "id": "07-11",
+     "titulo": "Uso e abuso de poder",
+     "arquivo": null
+    },
+    {
+     "id": "07-12",
+     "titulo": "Ato administrativo: conceito",
+     "arquivo": null
+    },
+    {
+     "id": "07-13",
+     "titulo": "Elementos do ato",
+     "arquivo": null
+    },
+    {
+     "id": "07-14",
+     "titulo": "Atributos do ato",
+     "arquivo": null
+    },
+    {
+     "id": "07-15",
+     "titulo": "Classificação dos atos",
+     "arquivo": null
+    },
+    {
+     "id": "07-16",
+     "titulo": "Anulação, revogação e convalidação",
+     "arquivo": null
+    },
+    {
+     "id": "07-17",
+     "titulo": "Teoria dos motivos determinantes",
+     "arquivo": null
+    },
+    {
+     "id": "07-18",
+     "titulo": "Licitações (noções)",
+     "arquivo": null
+    },
+    {
+     "id": "07-19",
+     "titulo": "Contratos administrativos",
+     "arquivo": null
+    },
+    {
+     "id": "07-20",
+     "titulo": "Controle da Administração",
+     "arquivo": null
+    },
+    {
+     "id": "07-21",
+     "titulo": "Responsabilidade civil do Estado",
+     "arquivo": null
+    },
+    {
+     "id": "07-22",
+     "titulo": "Improbidade administrativa",
+     "arquivo": null
+    },
+    {
+     "id": "07-23",
+     "titulo": "LGPD",
+     "arquivo": null
+    },
+    {
+     "id": "07-24",
+     "titulo": "Lei Orgânica Nacional das Polícias Civis (Lei 14.735/2023)",
+     "arquivo": null
+    }
+   ]
+  },
+  {
+   "id": "08",
+   "titulo": "Direito Penal — Parte Geral",
+   "descricao": "A estrutura do crime. A cadeia mais rígida: não pule a ordem.",
+   "aulas": [
+    {
+     "id": "08-01",
+     "titulo": "Conceito de crime",
+     "arquivo": null
+    },
+    {
+     "id": "08-02",
+     "titulo": "Legalidade e anterioridade",
+     "arquivo": null
+    },
+    {
+     "id": "08-03",
+     "titulo": "Lei penal no tempo",
+     "arquivo": null
+    },
+    {
+     "id": "08-04",
+     "titulo": "Lei penal no espaço, tempo e lugar do crime",
+     "arquivo": null
+    },
+    {
+     "id": "08-05",
+     "titulo": "Os três substratos do crime",
+     "arquivo": null
+    },
+    {
+     "id": "08-06",
+     "titulo": "Conduta",
+     "arquivo": null
+    },
+    {
+     "id": "08-07",
+     "titulo": "Resultado e nexo causal",
+     "arquivo": null
+    },
+    {
+     "id": "08-08",
+     "titulo": "Tipicidade e insignificância",
+     "arquivo": null
+    },
+    {
+     "id": "08-09",
+     "titulo": "Dolo",
+     "arquivo": null
+    },
+    {
+     "id": "08-10",
+     "titulo": "Culpa",
+     "arquivo": null
+    },
+    {
+     "id": "08-11",
+     "titulo": "Dolo eventual x culpa consciente",
+     "arquivo": null
+    },
+    {
+     "id": "08-12",
+     "titulo": "Preterdolo e erro de tipo",
+     "arquivo": null
+    },
+    {
+     "id": "08-13",
+     "titulo": "Ilicitude",
+     "arquivo": null
+    },
+    {
+     "id": "08-14",
+     "titulo": "Legítima defesa",
+     "arquivo": null
+    },
+    {
+     "id": "08-15",
+     "titulo": "Estado de necessidade",
+     "arquivo": null
+    },
+    {
+     "id": "08-16",
+     "titulo": "Estrito cumprimento do dever legal e exercício regular de direito",
+     "arquivo": null
+    },
+    {
+     "id": "08-17",
+     "titulo": "Excesso punível",
+     "arquivo": null
+    },
+    {
+     "id": "08-18",
+     "titulo": "Culpabilidade e imputabilidade",
+     "arquivo": null
+    },
+    {
+     "id": "08-19",
+     "titulo": "Embriaguez",
+     "arquivo": null
+    },
+    {
+     "id": "08-20",
+     "titulo": "Erro de proibição e coação",
+     "arquivo": null
+    },
+    {
+     "id": "08-21",
+     "titulo": "Iter criminis e tentativa",
+     "arquivo": null
+    },
+    {
+     "id": "08-22",
+     "titulo": "Desistência voluntária e arrependimento",
+     "arquivo": null
+    },
+    {
+     "id": "08-23",
+     "titulo": "Crime impossível",
+     "arquivo": null
+    },
+    {
+     "id": "08-24",
+     "titulo": "Concurso de pessoas",
+     "arquivo": null
+    },
+    {
+     "id": "08-25",
+     "titulo": "Concurso de crimes",
+     "arquivo": null
+    },
+    {
+     "id": "08-26",
+     "titulo": "Penas",
+     "arquivo": null
+    },
+    {
+     "id": "08-27",
+     "titulo": "Extinção da punibilidade e prescrição",
+     "arquivo": null
+    }
+   ]
+  },
+  {
+   "id": "09",
+   "titulo": "Direito Penal — Parte Especial",
+   "descricao": "Os crimes em espécie.",
+   "aulas": [
+    {
+     "id": "09-01",
+     "titulo": "Homicídio",
+     "arquivo": null
+    },
+    {
+     "id": "09-02",
+     "titulo": "Feminicídio",
+     "arquivo": null
+    },
+    {
+     "id": "09-03",
+     "titulo": "Lesão corporal",
+     "arquivo": null
+    },
+    {
+     "id": "09-04",
+     "titulo": "Crimes contra a honra",
+     "arquivo": null
+    },
+    {
+     "id": "09-05",
+     "titulo": "Ameaça, sequestro e perseguição",
+     "arquivo": null
+    },
+    {
+     "id": "09-06",
+     "titulo": "Furto",
+     "arquivo": null
+    },
+    {
+     "id": "09-07",
+     "titulo": "Roubo e latrocínio",
+     "arquivo": null
+    },
+    {
+     "id": "09-08",
+     "titulo": "Extorsão",
+     "arquivo": null
+    },
+    {
+     "id": "09-09",
+     "titulo": "Estelionato",
+     "arquivo": null
+    },
+    {
+     "id": "09-10",
+     "titulo": "Receptação e apropriação indébita",
+     "arquivo": null
+    },
+    {
+     "id": "09-11",
+     "titulo": "Crimes contra a dignidade sexual",
+     "arquivo": null
+    },
+    {
+     "id": "09-12",
+     "titulo": "Crimes contra a paz pública",
+     "arquivo": null
+    },
+    {
+     "id": "09-13",
+     "titulo": "Crimes contra a fé pública",
+     "arquivo": null
+    },
+    {
+     "id": "09-14",
+     "titulo": "Crimes de funcionário público contra a Administração",
+     "arquivo": null
+    },
+    {
+     "id": "09-15",
+     "titulo": "Crimes de particular contra a Administração",
+     "arquivo": null
+    },
+    {
+     "id": "09-16",
+     "titulo": "Crimes contra a incolumidade pública",
+     "arquivo": null
+    }
+   ]
+  },
+  {
+   "id": "10",
+   "titulo": "Processo Penal",
+   "descricao": "8 questões. O inquérito é o coração do cargo.",
+   "aulas": [
+    {
+     "id": "10-01",
+     "titulo": "Princípios do processo penal",
+     "arquivo": null
+    },
+    {
+     "id": "10-02",
+     "titulo": "Sistemas processuais",
+     "arquivo": null
+    },
+    {
+     "id": "10-03",
+     "titulo": "Lei processual penal",
+     "arquivo": null
+    },
+    {
+     "id": "10-04",
+     "titulo": "Inquérito: conceito e características",
+     "arquivo": null
+    },
+    {
+     "id": "10-05",
+     "titulo": "Instauração e notitia criminis",
+     "arquivo": null
+    },
+    {
+     "id": "10-06",
+     "titulo": "Diligências do art. 6º",
+     "arquivo": null
+    },
+    {
+     "id": "10-07",
+     "titulo": "Indiciamento",
+     "arquivo": null
+    },
+    {
+     "id": "10-08",
+     "titulo": "Prazos e conclusão do inquérito",
+     "arquivo": null
+    },
+    {
+     "id": "10-09",
+     "titulo": "Arquivamento",
+     "arquivo": null
+    },
+    {
+     "id": "10-10",
+     "titulo": "Ação penal (noção)",
+     "arquivo": null
+    },
+    {
+     "id": "10-11",
+     "titulo": "Prisão em flagrante: espécies",
+     "arquivo": null
+    },
+    {
+     "id": "10-12",
+     "titulo": "Auto de prisão e audiência de custódia",
+     "arquivo": null
+    },
+    {
+     "id": "10-13",
+     "titulo": "Prisão preventiva",
+     "arquivo": null
+    },
+    {
+     "id": "10-14",
+     "titulo": "Prisão temporária",
+     "arquivo": null
+    },
+    {
+     "id": "10-15",
+     "titulo": "Liberdade provisória e fiança",
+     "arquivo": null
+    },
+    {
+     "id": "10-16",
+     "titulo": "Medidas cautelares diversas",
+     "arquivo": null
+    },
+    {
+     "id": "10-17",
+     "titulo": "Provas: teoria e provas ilícitas",
+     "arquivo": null
+    },
+    {
+     "id": "10-18",
+     "titulo": "Corpo de delito e cadeia de custódia",
+     "arquivo": null
+    },
+    {
+     "id": "10-19",
+     "titulo": "Interrogatório e confissão",
+     "arquivo": null
+    },
+    {
+     "id": "10-20",
+     "titulo": "Testemunhas e ofendido",
+     "arquivo": null
+    },
+    {
+     "id": "10-21",
+     "titulo": "Reconhecimento de pessoas e coisas",
+     "arquivo": null
+    },
+    {
+     "id": "10-22",
+     "titulo": "Busca e apreensão",
+     "arquivo": null
+    },
+    {
+     "id": "10-23",
+     "titulo": "Interceptação telefônica",
+     "arquivo": null
+    }
+   ]
+  },
+  {
+   "id": "11",
+   "titulo": "Legislação Especial",
+   "descricao": "8 questões, 25 leis. Núcleo primeiro.",
+   "aulas": [
+    {
+     "id": "11-01",
+     "titulo": "Drogas: uso pessoal",
+     "arquivo": null
+    },
+    {
+     "id": "11-02",
+     "titulo": "Drogas: tráfico",
+     "arquivo": null
+    },
+    {
+     "id": "11-03",
+     "titulo": "Estatuto do Desarmamento",
+     "arquivo": null
+    },
+    {
+     "id": "11-04",
+     "titulo": "Maria da Penha: formas de violência",
+     "arquivo": null
+    },
+    {
+     "id": "11-05",
+     "titulo": "Maria da Penha: medidas protetivas",
+     "arquivo": null
+    },
+    {
+     "id": "11-06",
+     "titulo": "Crimes hediondos",
+     "arquivo": null
+    },
+    {
+     "id": "11-07",
+     "titulo": "Tortura",
+     "arquivo": null
+    },
+    {
+     "id": "11-08",
+     "titulo": "Abuso de autoridade",
+     "arquivo": null
+    },
+    {
+     "id": "11-09",
+     "titulo": "Organização criminosa",
+     "arquivo": null
+    },
+    {
+     "id": "11-10",
+     "titulo": "ECA: ato infracional",
+     "arquivo": null
+    },
+    {
+     "id": "11-11",
+     "titulo": "Juizados Especiais Criminais",
+     "arquivo": null
+    },
+    {
+     "id": "11-12",
+     "titulo": "Identificação criminal",
+     "arquivo": null
+    },
+    {
+     "id": "11-13",
+     "titulo": "Investigação pelo delegado (Lei 12.830/2013)",
+     "arquivo": null
+    },
+    {
+     "id": "11-14",
+     "titulo": "Racismo",
+     "arquivo": null
+    },
+    {
+     "id": "11-15",
+     "titulo": "Crimes de trânsito",
+     "arquivo": null
+    },
+    {
+     "id": "11-16",
+     "titulo": "Estatuto do Idoso",
+     "arquivo": null
+    },
+    {
+     "id": "11-17",
+     "titulo": "Crimes ambientais",
+     "arquivo": null
+    },
+    {
+     "id": "11-18",
+     "titulo": "Lavagem de dinheiro",
+     "arquivo": null
+    },
+    {
+     "id": "11-19",
+     "titulo": "Contravenções penais",
+     "arquivo": null
+    },
+    {
+     "id": "11-20",
+     "titulo": "Demais leis do edital",
+     "arquivo": null
+    }
+   ]
+  },
+  {
+   "id": "12",
+   "titulo": "Legislação Estadual",
+   "descricao": "10 questões: o maior peso individual da prova.",
+   "aulas": [
+    {
+     "id": "12-01",
+     "titulo": "Constituição do Ceará: segurança pública",
+     "arquivo": null
+    },
+    {
+     "id": "12-02",
+     "titulo": "Estatuto da PC/CE: estrutura da carreira",
+     "arquivo": null
+    },
+    {
+     "id": "12-03",
+     "titulo": "Estatuto da PC/CE: ingresso e posse",
+     "arquivo": null
+    },
+    {
+     "id": "12-04",
+     "titulo": "Estatuto da PC/CE: prerrogativas",
+     "arquivo": null
+    },
+    {
+     "id": "12-05",
+     "titulo": "Estatuto da PC/CE: direitos e vantagens",
+     "arquivo": null
+    },
+    {
+     "id": "12-06",
+     "titulo": "Estatuto da PC/CE: deveres e proibições",
+     "arquivo": null
+    },
+    {
+     "id": "12-07",
+     "titulo": "Estatuto da PC/CE: transgressões e penalidades",
+     "arquivo": null
+    },
+    {
+     "id": "12-08",
+     "titulo": "Estatuto da PC/CE: processo disciplinar",
+     "arquivo": null
+    },
+    {
+     "id": "12-09",
+     "titulo": "Estatuto dos Servidores do CE: provimento",
+     "arquivo": null
+    },
+    {
+     "id": "12-10",
+     "titulo": "Estatuto dos Servidores do CE: vacância e licenças",
+     "arquivo": null
+    },
+    {
+     "id": "12-11",
+     "titulo": "Estatuto dos Servidores do CE: deveres e responsabilidades",
+     "arquivo": null
+    },
+    {
+     "id": "12-12",
+     "titulo": "Estatuto dos Servidores do CE: penalidades",
+     "arquivo": null
+    }
+   ]
+  },
+  {
+   "id": "13",
+   "titulo": "Criminologia",
+   "descricao": "5 questões. Melhor custo-benefício da prova.",
+   "aulas": [
+    {
+     "id": "13-01",
+     "titulo": "Conceito e método",
+     "arquivo": null
+    },
+    {
+     "id": "13-02",
+     "titulo": "Objetos da Criminologia",
+     "arquivo": null
+    },
+    {
+     "id": "13-03",
+     "titulo": "Criminologia e política criminal",
+     "arquivo": null
+    },
+    {
+     "id": "13-04",
+     "titulo": "Escolas clássica e positiva",
+     "arquivo": null
+    },
+    {
+     "id": "13-05",
+     "titulo": "Escola de Chicago",
+     "arquivo": null
+    },
+    {
+     "id": "13-06",
+     "titulo": "Associação diferencial e anomia",
+     "arquivo": null
+    },
+    {
+     "id": "13-07",
+     "titulo": "Labeling approach e criminologia crítica",
+     "arquivo": null
+    },
+    {
+     "id": "13-08",
+     "titulo": "Vitimologia e cifra negra",
+     "arquivo": null
+    },
+    {
+     "id": "13-09",
+     "titulo": "Prevenção primária, secundária e terciária",
+     "arquivo": null
+    }
+   ]
+  },
+  {
+   "id": "14",
+   "titulo": "Medicina Legal",
+   "descricao": "5 questões.",
+   "aulas": [
+    {
+     "id": "14-01",
+     "titulo": "Conceito, perícia e peritos",
+     "arquivo": null
+    },
+    {
+     "id": "14-02",
+     "titulo": "Documentos médico-legais",
+     "arquivo": null
+    },
+    {
+     "id": "14-03",
+     "titulo": "Identidade e identificação",
+     "arquivo": null
+    },
+    {
+     "id": "14-04",
+     "titulo": "Lesões por ação contundente",
+     "arquivo": null
+    },
+    {
+     "id": "14-05",
+     "titulo": "Lesões por armas brancas",
+     "arquivo": null
+    },
+    {
+     "id": "14-06",
+     "titulo": "Lesões por arma de fogo",
+     "arquivo": null
+    },
+    {
+     "id": "14-07",
+     "titulo": "Diagnóstico da morte",
+     "arquivo": null
+    },
+    {
+     "id": "14-08",
+     "titulo": "Fenômenos cadavéricos",
+     "arquivo": null
+    },
+    {
+     "id": "14-09",
+     "titulo": "Cronotanatognose, comoriência e premoriência",
+     "arquivo": null
+    },
+    {
+     "id": "14-10",
+     "titulo": "Exame de local de crime",
+     "arquivo": null
+    },
+    {
+     "id": "14-11",
+     "titulo": "Imputabilidade e capacidade civil",
+     "arquivo": null
+    }
+   ]
+  },
+  {
+   "id": "15",
+   "titulo": "Contabilidade",
+   "descricao": "5 questões. Regime reduzido: o essencial.",
+   "aulas": [
+    {
+     "id": "15-01",
+     "titulo": "Conceitos e patrimônio",
+     "arquivo": null
+    },
+    {
+     "id": "15-02",
+     "titulo": "Equação patrimonial",
+     "arquivo": null
+    },
+    {
+     "id": "15-03",
+     "titulo": "Fatos contábeis",
+     "arquivo": null
+    },
+    {
+     "id": "15-04",
+     "titulo": "Contas e partidas dobradas",
+     "arquivo": null
+    },
+    {
+     "id": "15-05",
+     "titulo": "Regime de caixa e de competência",
+     "arquivo": null
+    },
+    {
+     "id": "15-06",
+     "titulo": "Balanço patrimonial e DRE",
+     "arquivo": null
+    },
+    {
+     "id": "15-07",
+     "titulo": "NBC TSP (noção)",
+     "arquivo": null
+    }
+   ]
+  },
+  {
+   "id": "16",
+   "titulo": "Estatística",
+   "descricao": "5 questões. Regime reduzido: o essencial.",
+   "aulas": [
+    {
+     "id": "16-01",
+     "titulo": "População, amostra e variáveis",
+     "arquivo": null
+    },
+    {
+     "id": "16-02",
+     "titulo": "Tabelas e gráficos",
+     "arquivo": null
+    },
+    {
+     "id": "16-03",
+     "titulo": "Média, mediana e moda",
+     "arquivo": null
+    },
+    {
+     "id": "16-04",
+     "titulo": "Variância e desvio-padrão",
+     "arquivo": null
+    },
+    {
+     "id": "16-05",
+     "titulo": "Probabilidade",
+     "arquivo": null
+    },
+    {
+     "id": "16-06",
+     "titulo": "Distribuição normal (noção)",
+     "arquivo": null
+    },
+    {
+     "id": "16-07",
+     "titulo": "Amostragem",
+     "arquivo": null
+    },
+    {
+     "id": "16-08",
+     "titulo": "Inferência (noção)",
+     "arquivo": null
+    }
+   ]
+  },
+  {
+   "id": "17",
+   "titulo": "Redação",
+   "descricao": "30 pontos. Mínimo de 15.",
+   "aulas": [
+    {
+     "id": "17-01",
+     "titulo": "Estrutura do texto dissertativo",
+     "arquivo": null
+    },
+    {
+     "id": "17-02",
+     "titulo": "Tese e argumentação",
+     "arquivo": null
+    },
+    {
+     "id": "17-03",
+     "titulo": "Critérios de correção da banca",
+     "arquivo": null
+    },
+    {
+     "id": "17-04",
+     "titulo": "Repertório de atualidades",
+     "arquivo": null
+    }
+   ]
+  },
+  {
+   "id": "18",
+   "titulo": "Reta final",
+   "descricao": "Simulados, TAF e as demais fases.",
+   "aulas": [
+    {
+     "id": "18-01",
+     "titulo": "Como fazer simulados",
+     "arquivo": null
+    },
+    {
+     "id": "18-02",
+     "titulo": "Preparação para o TAF",
+     "arquivo": null
+    },
+    {
+     "id": "18-03",
+     "titulo": "Avaliação psicológica e investigação social",
+     "arquivo": null
+    }
+   ]
+  }
+ ]
+}

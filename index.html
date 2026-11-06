@@ -1,705 +1,219 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plano Tático: Carreiras Policiais Ceará (Zero ao Topo)</title>   
-    <meta name="description" content="Plano de estudo estratégico e interativo para concursos da Polícia Civil e Militar do Ceará (PC-CE / PM-CE). Roteiro completo do zero à aprovação com checklist e gráficos.">
-    <meta name="keywords" content="concurso policia ceara, plano de estudo pc-ce, cronograma pm-ce, edital policia civil ceara, policia militar ceara, estudo tatico, checklist concurso">
-    <meta name="author" content="Adriano">
-    <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#1e3a8a">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Operação Aprovação Ceará - Plano Tático">
-    <meta property="og:description" content="Organize seus estudos para PC-CE e PM-CE com este painel tático interativo. Acompanhe seu progresso fase por fase.">
-    <meta property="og:url" content="https://mimos.blog.brplano-policia-ceara">
-    <meta property="og:image" content="https://mimos.blog.br/thumbnail-share.jpg">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        dark: {
-                            bg: '#111827',
-                            card: '#1f2937',
-                            text: '#f3f4f6',
-                            muted: '#9ca3af'
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-        .chart-container {
-            position: relative;
-            width: 100%;
-            max-width: 500px;
-            margin: 0 auto;
-            height: 300px;
-            max-height: 350px;
-        }
-        .phase-btn.active {
-            background-color: #1e3a8a;
-            color: white;
-            border-bottom: 4px solid #f59e0b;
-        }
-        .accordion-content {
-            transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
-            max-height: 0;
-            opacity: 0;
-            overflow: hidden;
-        }
-        .accordion-content.open {
-            max-height: 1000px;
-            opacity: 1;
-        }
-        .progress-track {
-            background-color: #e5e7eb;
-            border-radius: 9999px;
-            height: 12px;
-            width: 100%;
-            overflow: hidden;
-        }
-        .progress-fill {
-            background-color: #10b981;
-            height: 100%;
-            width: 0%;
-            transition: width 0.5s ease-out;
-            border-radius: 9999px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curso PCCE do Zero</title>
+<meta name="description" content="Curso gratuito do zero absoluto para Oficial Investigador da Polícia Civil do Ceará: aulas explicadas passo a passo, trilha de estudo, progresso e anotações.">
+<meta name="theme-color" content="#1e3a8a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+<style>
+:root{
+  --bg:#f5f6f8;--card:#ffffff;--text:#1f2937;--muted:#6b7280;--line:#e5e7eb;
+  --brand:#1e3a8a;--brand-2:#2547a8;--accent:#f59e0b;--ok:#059669;--soft:#eef2ff;--code:#f3f4f6;
+}
+:root[data-theme="dark"]{
+  --bg:#0f141c;--card:#18202b;--text:#e5e7eb;--muted:#9ca3af;--line:#2a3442;
+  --brand:#1e3a8a;--brand-2:#3b5bd1;--accent:#fbbf24;--ok:#34d399;--soft:#1c2740;--code:#222c3a;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
+a{color:var(--brand-2)}
+header{background:var(--brand);color:#fff;padding:12px 16px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:20}
+header h1{font-size:1.05rem;margin:0;flex:1;letter-spacing:.3px}
+header h1 small{display:block;font-weight:400;font-size:.75rem;opacity:.8}
+.btn{border:1px solid var(--line);background:var(--card);color:var(--text);border-radius:8px;padding:8px 12px;cursor:pointer;font:inherit;font-size:.9rem}
+.btn:hover{border-color:var(--brand-2)}
+a.btn{text-decoration:none;display:inline-block}
+.btn.primary{background:var(--ok);color:#fff;border-color:var(--ok)}
+.btn.done{background:transparent;color:var(--ok);border-color:var(--ok)}
+header .btn{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.25)}
+#menu-btn{display:none}
+.global{min-width:160px}
+.global span{font-size:.72rem;opacity:.85}
+.bar{height:6px;background:rgba(255,255,255,.2);border-radius:99px;overflow:hidden;margin-top:4px}
+.bar>div{height:100%;background:var(--accent);width:0;transition:width .4s}
+.layout{display:grid;grid-template-columns:320px 1fr;min-height:calc(100vh - 60px)}
+aside{background:var(--card);border-right:1px solid var(--line);overflow-y:auto;max-height:calc(100vh - 60px);position:sticky;top:60px}
+aside .top{padding:14px 16px;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:8px}
+aside .top a{text-decoration:none;font-weight:600}
+.mod{border-bottom:1px solid var(--line)}
+.mod>button{all:unset;cursor:pointer;display:flex;width:100%;box-sizing:border-box;padding:12px 16px;gap:10px;align-items:center}
+.mod>button:hover{background:var(--soft)}
+.mod .num{font-size:.75rem;font-weight:700;color:#fff;background:var(--brand-2);border-radius:6px;padding:2px 7px}
+.mod .name{flex:1;font-weight:600;font-size:.92rem}
+.mod .cnt{font-size:.75rem;color:var(--muted)}
+.mod ul{list-style:none;margin:0;padding:0 0 8px;display:none}
+.mod.open ul{display:block}
+.mod li a{display:flex;gap:8px;padding:6px 16px 6px 22px;text-decoration:none;color:var(--text);font-size:.88rem;align-items:flex-start}
+.mod li a:hover{background:var(--soft)}
+.mod li a.active{background:var(--soft);border-left:3px solid var(--accent);padding-left:19px}
+.mod li a.soon{color:var(--muted)}
+.mod li .dot{flex:0 0 16px;height:16px;border-radius:50%;border:2px solid var(--line);margin-top:3px}
+.mod li a.ok .dot{background:var(--ok);border-color:var(--ok)}
+.tag{font-size:.68rem;border:1px solid var(--line);border-radius:99px;padding:0 6px;color:var(--muted);margin-left:auto;white-space:nowrap}
+main{padding:24px 16px 64px;overflow-x:hidden}
+article{max-width:820px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:28px 32px}
+article h1{font-size:1.7rem;line-height:1.25;margin-top:0;color:var(--brand-2)}
+article h2{font-size:1.25rem;margin-top:2rem;padding-bottom:4px;border-bottom:2px solid var(--line)}
+article h3{font-size:1.05rem}
+article blockquote{margin:1rem 0;padding:10px 16px;background:var(--soft);border-left:4px solid var(--accent);border-radius:6px}
+article blockquote p{margin:.3rem 0}
+article table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.92rem;display:block;overflow-x:auto}
+article th,article td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top}
+article th{background:var(--soft)}
+article pre{background:var(--code);padding:14px;border-radius:8px;overflow-x:auto;font-size:.82rem;line-height:1.45}
+article code{background:var(--code);padding:1px 5px;border-radius:4px;font-size:.88em}
+article pre code{background:none;padding:0}
+article details{background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:8px 14px;margin:.4rem 0 1.2rem}
+article summary{cursor:pointer;font-weight:600;color:var(--ok)}
+article img{max-width:100%}
+.lesson-nav{max-width:820px;margin:18px auto 0;display:flex;gap:10px;flex-wrap:wrap;justify-content:space-between;align-items:center}
+.notes{max-width:820px;margin:18px auto 0;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 20px}
+.notes h3{margin:0 0 8px;font-size:1rem}
+.notes textarea{width:100%;min-height:120px;border:1px solid var(--line);border-radius:8px;padding:10px;font:inherit;background:var(--bg);color:var(--text);resize:vertical}
+.notes small{color:var(--muted)}
+.home-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;margin-top:1rem}
+.card{border:1px solid var(--line);border-radius:10px;padding:14px;text-decoration:none;color:var(--text);display:block;background:var(--card)}
+.card:hover{border-color:var(--brand-2)}
+.card b{display:block;margin-bottom:4px}
+.card p{margin:0 0 8px;font-size:.85rem;color:var(--muted)}
+.card .mini{height:6px;background:var(--line);border-radius:99px;overflow:hidden}
+.card .mini>div{height:100%;background:var(--ok)}
+.soon-box{text-align:center;padding:30px 10px;color:var(--muted)}
+@media (max-width:900px){
+  .layout{grid-template-columns:1fr}
+  #menu-btn{display:inline-block}
+  aside{position:fixed;top:60px;left:0;bottom:0;width:min(88vw,340px);max-height:none;transform:translateX(-100%);transition:transform .25s;z-index:15;box-shadow:0 0 30px rgba(0,0,0,.3)}
+  aside.show{transform:none}
+  article{padding:20px 16px}
+  .global{display:none}
+}
+</style>
 </head>
-<body class="text-gray-800 bg-gray-100 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
-
-    <header class="bg-blue-900 text-white p-6 shadow-lg">
-        <div class="container mx-auto max-w-6xl">
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-                <div class="flex-1">
-                    <h1 class="text-3xl font-bold tracking-wide uppercase">Operação: Aprovação Ceará</h1>
-                    <p class="text-blue-200 mt-1 text-sm">Roteiro Estratégico do Zero Absoluto (PC-CE / PM-CE)</p>
-                </div>
-                
-                <div class="flex items-start gap-4 w-full md:w-auto justify-end">
-                    <button onclick="app.toggleTheme()" class="p-2.5 rounded-full bg-blue-800 text-yellow-300 hover:bg-blue-700 hover:text-yellow-200 transition-all shadow-sm" title="Alternar Tema">
-                        <svg id="icon-sun" class="w-6 h-6 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
-                        <svg id="icon-moon" class="w-6 h-6 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
-                    </button>
-
-                    <div class="flex flex-col gap-3 min-w-[200px]">
-                    <div class="bg-blue-800 px-4 py-2 rounded-lg border border-blue-700 text-center">
-                        <span class="text-xs uppercase tracking-wider text-blue-300">Foco Atual</span>
-                        <div id="current-phase-display" class="font-bold text-lg text-amber-400">Fase 1: Fundação</div>
-                    </div>
-                    
-                    <div class="bg-blue-800/50 px-3 py-2 rounded-lg border border-blue-700/50">
-                        <div class="flex justify-between items-center mb-1">
-                            <span class="text-[10px] uppercase tracking-wider text-blue-300">Progresso Total</span>
-                            <span id="global-progress-text" class="text-xs font-bold text-amber-400">0%</span>
-                        </div>
-                        <div class="w-full bg-blue-950 rounded-full h-1.5">
-                            <div id="global-progress-fill" class="bg-amber-500 h-1.5 rounded-full transition-all duration-500" style="width: 0%"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
-
-
-    <section class="container mx-auto max-w-6xl mt-8 px-4">
-        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6 border-l-4 border-amber-500 transition-colors">
-            <h2 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Como usar este Painel Tático</h2>
-            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-                Você está partindo do zero. Não tente estudar tudo de uma vez. Este plano organiza sua preparação em <strong>4 Fases Estratégicas</strong>. 
-                Selecione uma fase abaixo para visualizar as disciplinas prioritárias e a sequência lógica de tópicos. 
-                Utilize os gráficos à direita para entender o peso de cada matéria na prova e como distribuir seu tempo de estudo semanal.
-            </p>
-        </div>
-    </section>
-
-
-
-    <nav class="container mx-auto max-w-6xl mt-8 px-4">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
-            <button onclick="app.setPhase(0)" class="phase-btn active py-4 px-2 bg-white dark:bg-gray-800 rounded-t-lg shadow-sm hover:bg-gray-50 dark:hover:bg-gray-700 font-semibold text-sm md:text-base text-gray-600 dark:text-gray-400 transition-all text-center">
-                FASE 1<br><span class="text-xs font-normal">A Base Obrigatória</span>
-            </button>
-            <button onclick="app.setPhase(1)" class="phase-btn py-4 px-2 bg-white dark:bg-gray-800 rounded-t-lg shadow-sm hover:bg-gray-50 dark:hover:bg-gray-700 font-semibold text-sm md:text-base text-gray-600 dark:text-gray-400 transition-all text-center">
-                FASE 2<br><span class="text-xs font-normal">O Núcleo Jurídico</span>
-            </button>
-            <button onclick="app.setPhase(2)" class="phase-btn py-4 px-2 bg-white dark:bg-gray-800 rounded-t-lg shadow-sm hover:bg-gray-50 dark:hover:bg-gray-700 font-semibold text-sm md:text-base text-gray-600 dark:text-gray-400 transition-all text-center">
-                FASE 3<br><span class="text-xs font-normal">Específicas CE</span>
-            </button>
-            <button onclick="app.setPhase(3)" class="phase-btn py-4 px-2 bg-white dark:bg-gray-800 rounded-t-lg shadow-sm hover:bg-gray-50 dark:hover:bg-gray-700 font-semibold text-sm md:text-base text-gray-600 dark:text-gray-400 transition-all text-center">
-                FASE 4<br><span class="text-xs font-normal">Revisão & Elite</span>
-            </button>
-        </div>
-    </nav>
-
-
-
-    <main class="container mx-auto max-w-6xl px-4 pb-12">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 bg-white dark:bg-gray-800 p-6 rounded-b-lg shadow-md min-h-[600px] transition-colors">
-            
-            <div class="lg:col-span-2">
-                <div class="mb-6">
-                    <h3 class="text-2xl font-bold text-gray-800 dark:text-white flex items-center">
-                        <span class="mr-2 text-amber-600">📂</span> Sequência de Estudo
-                    </h3>
-                    <p id="phase-description" class="text-gray-500 dark:text-gray-400 mt-2 text-sm mb-4">
-                    </p>
-
-                    <div class="bg-blue-50 dark:bg-blue-900/30 p-4 rounded-lg border border-blue-100 dark:border-blue-900/50 mb-4">
-                        <div class="flex justify-between items-center mb-1">
-                            <span class="text-xs font-bold text-blue-900 dark:text-blue-200 uppercase">Progresso da Fase</span>
-                            <span id="progress-text" class="text-xs font-bold text-blue-900 dark:text-blue-200">0%</span>
-                        </div>
-                        <div class="progress-track dark:bg-blue-900/50">
-                            <div id="progress-fill" class="progress-fill"></div>
-                        </div>
-                    </div>
-                </div>
-
-
-
-                <div id="subject-list" class="space-y-4">
-                </div>
-            </div>
-
-
-
-            <div class="flex flex-col gap-8 border-t lg:border-t-0 lg:border-l border-gray-100 dark:border-gray-700 lg:pl-8 pt-8 lg:pt-0">
-                
-                <div>
-                    <h4 class="text-lg font-bold text-gray-800 dark:text-white mb-2 border-b-2 border-amber-500 inline-block">Relevância na Prova</h4>
-                    <p class="text-xs text-gray-500 dark:text-gray-400 mb-4">Baseado no histórico de questões da PC/PM-CE para esta fase.</p>
-                    <div class="chart-container">
-                        <canvas id="relevanceChart"></canvas>
-                    </div>
-                </div>
-
-                <div class="mt-4">
-                    <h4 class="text-lg font-bold text-gray-800 dark:text-white mb-2 border-b-2 border-blue-500 inline-block">Ciclo Sugerido (Horas/Semana)</h4>
-                    <p class="text-xs text-gray-500 dark:text-gray-400 mb-4">Sugestão para quem tem ~4h diárias de estudo.</p>
-                    <div class="chart-container">
-                        <canvas id="scheduleChart"></canvas>
-                    </div>
-                </div>
-
-                <div class="bg-blue-50 dark:bg-blue-900/30 p-4 rounded-lg border border-blue-100 dark:border-blue-900/50 mt-auto">
-                    <h5 class="font-bold text-blue-900 dark:text-blue-200 mb-2">💡 Dica do Instrutor</h5>
-                    <p id="phase-tip" class="text-sm text-blue-800 dark:text-blue-300">
-                    </p>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <footer class="bg-gray-800 text-gray-400 py-6 text-center text-sm">
-        <p>Disciplina é a ponte entre metas e conquistas.</p>
-        <p class="mt-1 text-gray-600">Painel de Estudo Policial • Ceará</p>
-    </footer>
-
-    <script>
-        const curriculum = [
-            {
-                id: 0,
-                name: "Fase 1: Fundação",
-                description: "Nesta fase, você constrói a base. Sem Português e Lógica você não passa. Sem Constitucional você não entende as outras leis. Foco total em teoria e compreensão.",
-                tip: "Não avance se estiver com muitas dúvidas em Português. Ela corresponde a 20-25% da nota da prova.",
-                subjects: [
-                    {
-                        title: "Língua Portuguesa",
-                        topics: [
-                            "1. Ortografia oficial e Acentuação gráfica",
-                            "2. Classes de palavras (Substantivo, Adjetivo, Verbo)",
-                            "3. Análise Sintática (Sujeito, Predicado, Complementos)",
-                            "4. Concordância Verbal e Nominal",
-                            "5. Regência Verbal e Nominal (Crase)",
-                            "6. Pontuação",
-                            "7. Interpretação de Textos (Tipologia textual)"
-                        ],
-                        importance: 30,
-                        hours: 6
-                    },
-                    {
-                        title: "Raciocínio Lógico (RLM)",
-                        topics: [
-                            "1. Estruturas Lógicas e Proposições",
-                            "2. Conectivos Lógicos (E, OU, SE...ENTÃO)",
-                            "3. Tabela Verdade",
-                            "4. Negação de Proposições",
-                            "5. Lógica de Argumentação",
-                            "6. Diagramas Lógicos (Conjuntos)"
-                        ],
-                        importance: 15,
-                        hours: 4
-                    },
-                    {
-                        title: "Direito Constitucional (Base)",
-                        topics: [
-                            "1. Art. 5º: Direitos e Deveres Individuais e Coletivos (Vida, Liberdade, Igualdade)",
-                            "2. Art. 144: Da Segurança Pública (Essencial para carreiras policiais)",
-                            "3. Remédios Constitucionais (Habeas Corpus, Mandado de Segurança)",
-                            "4. Nacionalidade e Direitos Políticos"
-                        ],
-                        importance: 20,
-                        hours: 4
-                    },
-                    {
-                        title: "Informática Básica",
-                        topics: [
-                            "1. Conceitos de Hardware e Software",
-                            "2. Windows 10/11 (Manipulação de pastas e arquivos)",
-                            "3. Edição de Texto (Word/Writer) - Atalhos principais",
-                            "4. Navegadores e Segurança da Informação (Noções básicas)"
-                        ],
-                        importance: 10,
-                        hours: 2
-                    }
-                ]
-            },
-            {
-                id: 1,
-                name: "Fase 2: O Núcleo Jurídico",
-                description: "Agora entramos no 'Direito' pesado. Aqui você aprende como o Estado funciona e o que é crime. Mantenha as revisões da Fase 1.",
-                tip: "Em Direito Penal, foque muito na diferença entre os tipos de crimes (Furto x Roubo, Dolo x Culpa).",
-                subjects: [
-                    {
-                        title: "Direito Administrativo",
-                        topics: [
-                            "1. Princípios (LIMPE: Legalidade, Impessoalidade, Moralidade, Publicidade, Eficiência)",
-                            "2. Organização Administrativa (Administração Direta e Indireta)",
-                            "3. Agentes Públicos (Deveres, Proibições, Responsabilidades)",
-                            "4. Poderes Administrativos (Poder de Polícia - Essencial)",
-                            "5. Atos Administrativos (Requisitos: COFIFOMOB)"
-                        ],
-                        importance: 20,
-                        hours: 5
-                    },
-                    {
-                        title: "Direito Penal (Parte Geral)",
-                        topics: [
-                            "1. Aplicação da Lei Penal (Tempo e Espaço)",
-                            "2. Do Crime (Conceito, Fato Típico, Ilicitude, Culpabilidade)",
-                            "3. Imputabilidade Penal",
-                            "4. Concurso de Pessoas"
-                        ],
-                        importance: 25,
-                        hours: 5
-                    },
-                    {
-                        title: "Direito Penal (Parte Especial)",
-                        topics: [
-                            "1. Crimes contra a Pessoa (Homicídio, Lesão Corporal)",
-                            "2. Crimes contra o Patrimônio (Furto, Roubo, Extorsão)",
-                            "3. Crimes contra a Dignidade Sexual",
-                            "4. Crimes contra a Administração Pública (Peculato, Concussão, Corrupção)"
-                        ],
-                        importance: 25,
-                        hours: 6
-                    },
-                    {
-                        title: "Processo Penal",
-                        topics: [
-                            "1. Inquérito Policial (Características, Prazos, Indiciamento)",
-                            "2. Ação Penal (Pública e Privada)",
-                            "3. Prisões (Flagrante, Preventiva, Temporária)",
-                            "4. Provas (Exame de corpo de delito, interrogatório)"
-                        ],
-                        importance: 20,
-                        hours: 5
-                    }
-                ]
-            },
-            {
-                id: 2,
-                name: "Fase 3: Específicas CE & Leis",
-                description: "O diferencial do concurso. As leis 'soltas' (Extravagantes) e a legislação do Ceará. É muita leitura de 'lei seca'.",
-                tip: "Lei Seca é leitura repetitiva. Não tente decorar cada palavra, mas entenda as proibições e os prazos.",
-                subjects: [
-                    {
-                        title: "Legislação Extravagante",
-                        topics: [
-                            "1. Lei de Drogas (Lei 11.343/06)",
-                            "2. Estatuto do Desarmamento (Lei 10.826/03)",
-                            "3. Lei Maria da Penha (Lei 11.340/06)",
-                            "4. Abuso de Autoridade (Nova Lei)",
-                            "5. Tortura e Crimes Hediondos"
-                        ],
-                        importance: 30,
-                        hours: 6
-                    },
-                    {
-                        title: "Legislação Específica Ceará",
-                        topics: [
-                            "1. Constituição do Estado do Ceará (Segurança Pública)",
-                            "2. Estatuto dos Servidores Públicos do Ceará (Lei 9.826/74)",
-                            "3. Código Disciplinar PM/BM (Lei 13.407/03) - Se foco PM",
-                            "4. Estatuto da Polícia Civil (Lei 12.124/93) - Se foco PC"
-                        ],
-                        importance: 20,
-                        hours: 4
-                    },
-                    {
-                        title: "Informática Avançada",
-                        topics: [
-                            "1. Segurança Avançada (Malwares, Phishing, Criptografia)",
-                            "2. Redes de Computadores (Protocolos IP, TCP, Nuvem)",
-                            "3. Linux (Comandos básicos)"
-                        ],
-                        importance: 15,
-                        hours: 3
-                    }
-                ]
-            },
-            {
-                id: 3,
-                name: "Fase 4: Revisão & Elite",
-                description: "Fase final. Resolução massiva de questões, simulados e refinamento dos pontos fracos. O estudo aqui é reverso: Questão -> Teoria.",
-                tip: "Nesta fase, faça simulados cronometrados todos os domingos.",
-                subjects: [
-                    {
-                        title: "Revisão Geral (Questões)",
-                        topics: [
-                            "1. Baterias de questões da banca (IDEKAN, FGV, CEBRASPE)",
-                            "2. Mapeamento de erros",
-                            "3. Leitura de Resumos"
-                        ],
-                        importance: 50,
-                        hours: 10
-                    },
-                    {
-                        title: "Simulados",
-                        topics: [
-                            "1. Simulado Completo (Domingo)",
-                            "2. Correção analítica do Simulado (Segunda)"
-                        ],
-                        importance: 30,
-                        hours: 5
-                    },
-                    {
-                        title: "Legislação (Decoreba)",
-                        topics: [
-                            "1. Revisão de Prazos",
-                            "2. Revisão de Penas (apenas as principais)",
-                            "3. Súmulas vinculantes do STF"
-                        ],
-                        importance: 20,
-                        hours: 5
-                    }
-                ]
-            }
-        ];
-
-
-
-        const app = {
-            currentPhase: 0,
-            relevanceChartInstance: null,
-            scheduleChartInstance: null,
-            state: {},
-
-            init: function() {
-                this.loadState();
-                this.loadTheme();
-                this.setPhase(0);
-            },
-
-            loadState: function() {
-                const saved = localStorage.getItem('studyPlanState');
-                if (saved) {
-                    try {
-                        this.state = JSON.parse(saved);
-                    } catch (e) {
-                        console.error("Erro ao carregar estado", e);
-                        this.state = {};
-                    }
-                }
-            },
-
-            toggleTheme: function() {
-                const html = document.documentElement;
-                if (html.classList.contains('dark')) {
-                    html.classList.remove('dark');
-                    localStorage.setItem('theme', 'light');
-                } else {
-                    html.classList.add('dark');
-                    localStorage.setItem('theme', 'dark');
-                }
-            },
-
-            loadTheme: function() {
-                const theme = localStorage.getItem('theme');
-                if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                    document.documentElement.classList.add('dark');
-                } else {
-                    document.documentElement.classList.remove('dark');
-                }
-            },
-
-            saveState: function() {
-                localStorage.setItem('studyPlanState', JSON.stringify(this.state));
-            },
-
-
-            toggleTopic: function(topicId) {
-                this.state[topicId] = !this.state[topicId];
-                this.saveState();
-                
-                const label = document.querySelector(`label[for="${topicId}"]`);
-                if (label) {
-                    if (this.state[topicId]) {
-                        label.classList.add('line-through', 'text-gray-400');
-                    } else {
-                        label.classList.remove('line-through', 'text-gray-400');
-                    }
-                }
-                
-                this.updateProgress();
-            },
-
-            toggleNote: function(topicId) {
-                const container = document.getElementById(`note-container-${topicId}`);
-                if (container) {
-                    container.classList.toggle('hidden');
-                }
-            },
-
-            saveNote: function(topicId, value) {
-                this.state[`note-${topicId}`] = value;
-                this.saveState();
-            },
-
-            updateProgress: function() {
-                const phaseData = curriculum[this.currentPhase];
-                let phaseTotal = 0;
-                let phaseChecked = 0;
-
-                phaseData.subjects.forEach((subject, sIndex) => {
-                    subject.topics.forEach((topic, tIndex) => {
-                        phaseTotal++;
-                        const topicId = `phase-${this.currentPhase}-subject-${sIndex}-topic-${tIndex}`;
-                        if (this.state[topicId]) {
-                            phaseChecked++;
-                        }
-                    });
-                });
-
-                const phasePercentage = phaseTotal === 0 ? 0 : Math.round((phaseChecked / phaseTotal) * 100);
-
-                document.getElementById('progress-text').innerText = `${phasePercentage}% Concluído`;
-                document.getElementById('progress-fill').style.width = `${phasePercentage}%`;
-
-                let globalTotal = 0;
-                let globalChecked = 0;
-
-                curriculum.forEach((phase, pIndex) => {
-                    phase.subjects.forEach((subject, sIndex) => {
-                        subject.topics.forEach((topic, tIndex) => {
-                            globalTotal++;
-                            const topicId = `phase-${pIndex}-subject-${sIndex}-topic-${tIndex}`;
-                            if (this.state[topicId]) {
-                                globalChecked++;
-                            }
-                        });
-                    });
-                });
-
-                const globalPercentage = globalTotal === 0 ? 0 : Math.round((globalChecked / globalTotal) * 100);
-                const globalText = document.getElementById('global-progress-text');
-                const globalFill = document.getElementById('global-progress-fill');
-
-                if (globalText) globalText.innerText = `${globalPercentage}%`;
-                if (globalFill) globalFill.style.width = `${globalPercentage}%`;
-            },
-
-
-            setPhase: function(phaseId) {
-                this.currentPhase = phaseId;
-                this.updateUI();
-                this.renderCharts();
-                this.updateProgress();
-            },
-
-            updateUI: function() {
-                document.querySelectorAll('.phase-btn').forEach((btn, index) => {
-                    if (index === this.currentPhase) {
-                        btn.classList.add('active');
-                        btn.classList.remove('text-gray-600');
-                    } else {
-                        btn.classList.remove('active');
-                        btn.classList.add('text-gray-600');
-                    }
-                });
-
-
-
-                const phaseData = curriculum[this.currentPhase];
-                document.getElementById('current-phase-display').innerText = phaseData.name;
-                document.getElementById('phase-description').innerText = phaseData.description;
-                document.getElementById('phase-tip').innerText = phaseData.tip;
-
-
-
-                const listContainer = document.getElementById('subject-list');
-                listContainer.innerHTML = '';
-
-                phaseData.subjects.forEach((subject, index) => {
-                    const subjectEl = document.createElement('div');
-                    subjectEl.className = 'border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden bg-white dark:bg-gray-800 hover:border-blue-300 dark:hover:border-blue-500 transition-colors duration-200';
-                    subjectEl.innerHTML = `
-                        <button onclick="app.toggleAccordion(${index})" class="w-full text-left px-5 py-4 focus:outline-none flex justify-between items-center bg-gray-50 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800">
-                            <span class="font-bold text-gray-700 dark:text-gray-200 text-lg">${subject.title}</span>
-                            <span class="text-blue-500 transform transition-transform duration-200" id="icon-${index}">▼</span>
-                        </button>
-                        <div id="content-${index}" class="accordion-content bg-white dark:bg-gray-800">
-                                ${subject.topics.map((topic, topicIndex) => {
-                                    const topicId = `phase-${this.currentPhase}-subject-${index}-topic-${topicIndex}`;
-                                    const isChecked = this.state[topicId] ? 'checked' : '';
-                                    const decoration = this.state[topicId] ? 'line-through text-gray-400' : '';
-                                    
-                                    const noteKey = `note-${topicId}`;
-                                    const noteContent = this.state[noteKey] || '';
-                                    const hasNote = noteContent.trim().length > 0;
-
-                                    return `
-                                    <li class="flex flex-col p-2 rounded hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors border-b border-gray-100 dark:border-gray-700 last:border-0">
-                                        <div class="flex items-center w-full">
-                                            <div class="relative flex items-center">
-                                                <input type="checkbox" 
-                                                    id="${topicId}" 
-                                                    class="peer h-5 w-5 cursor-pointer appearance-none rounded border border-gray-300 dark:border-gray-600 shadow-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500 checked:bg-blue-600 checked:border-blue-600 dark:bg-gray-700 dark:checked:bg-blue-600 transition-all"
-                                                    ${isChecked}
-                                                    onchange="app.toggleTopic('${topicId}')"
-                                                >
-                                                <svg class="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-3.5 h-3.5 text-white opacity-0 peer-checked:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                                                </svg>
-                                            </div>
-                                            <label for="${topicId}" class="ml-3 text-sm md:text-base cursor-pointer ${decoration} transition-all duration-200 select-none flex-1 dark:text-gray-300">
-                                                ${topic}
-                                            </label>
-                                            <button onclick="app.toggleNote('${topicId}')" class="ml-2 p-1 text-gray-400 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-gray-700 rounded-full transition-colors focus:outline-none" title="Adicionar anotação">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                                                </svg>
-                                            </button>
-                                        </div>
-                                        <div id="note-container-${topicId}" class="${hasNote ? '' : 'hidden'} mt-2 pl-9 w-full">
-                                            <textarea 
-                                                id="note-${topicId}"
-                                                class="w-full p-2 text-sm text-gray-700 dark:text-gray-200 bg-yellow-50 dark:bg-gray-700 border border-yellow-200 dark:border-gray-600 rounded focus:border-yellow-400 dark:focus:border-blue-500 focus:ring-1 focus:ring-yellow-400 dark:focus:ring-blue-500 outline-none resize-y placeholder-gray-400 shadow-sm"
-                                                rows="2"
-                                                placeholder="Anotações estratégicas..."
-                                                oninput="app.saveNote('${topicId}', this.value)"
-                                            >${noteContent}</textarea>
-                                        </div>
-                                    </li>
-                                    `;
-                                }).join('')}
-                            </ul>
-                        </div>
-                    `;
-                    listContainer.appendChild(subjectEl);
-                });
-            },
-
-            toggleAccordion: function(index) {
-                const content = document.getElementById(`content-${index}`);
-                const icon = document.getElementById(`icon-${index}`);
-                
-                if (content.classList.contains('open')) {
-                    content.classList.remove('open');
-                    icon.style.transform = 'rotate(0deg)';
-                } else {
-                    document.querySelectorAll('.accordion-content').forEach(el => el.classList.remove('open'));
-                    document.querySelectorAll('[id^="icon-"]').forEach(el => el.style.transform = 'rotate(0deg)');
-                    
-                    content.classList.add('open');
-                    icon.style.transform = 'rotate(180deg)';
-                }
-            },
-
-            renderCharts: function() {
-                const phaseData = curriculum[this.currentPhase];
-                const labels = phaseData.subjects.map(s => s.title);
-                const relevanceData = phaseData.subjects.map(s => s.importance);
-                const hoursData = phaseData.subjects.map(s => s.hours);
-
-
-                if (this.relevanceChartInstance) this.relevanceChartInstance.destroy();
-                const ctxRelevance = document.getElementById('relevanceChart').getContext('2d');
-                this.relevanceChartInstance = new Chart(ctxRelevance, {
-                    type: 'doughnut',
-                    data: {
-                        labels: labels,
-                        datasets: [{
-                            data: relevanceData,
-                            backgroundColor: [
-                                '#1e3a8a', '#2563eb', '#60a5fa', '#93c5fd', '#f59e0b'
-                            ],
-                            borderWidth: 1
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: {
-                            legend: { position: 'bottom', labels: { boxWidth: 10, font: { size: 10 } } },
-                            tooltip: { 
-                                callbacks: {
-                                    label: function(context) {
-                                        return ` ${context.label}: ${context.raw}% Importância Estimada`;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                });
-
-
-
-                if (this.scheduleChartInstance) this.scheduleChartInstance.destroy();
-                const ctxSchedule = document.getElementById('scheduleChart').getContext('2d');
-                this.scheduleChartInstance = new Chart(ctxSchedule, {
-                    type: 'bar',
-                    data: {
-                        labels: labels.map(l => l.length > 15 ? l.substring(0, 15) + '...' : l),
-                        datasets: [{
-                            label: 'Horas Semanais',
-                            data: hoursData,
-                            backgroundColor: '#f59e0b',
-                            borderRadius: 4
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        indexAxis: 'y',
-                        scales: {
-                            x: { beginAtZero: true, grid: { display: false } },
-                            y: { grid: { display: false } }
-                        },
-                        plugins: {
-                            legend: { display: false }
-                        }
-                    }
-                });
-            }
-        };
-
-        document.addEventListener('DOMContentLoaded', () => {
-            app.init();
-        });
-
-    </script>
+<body>
+<header>
+  <button id="menu-btn" class="btn" onclick="ui.toggleMenu()" aria-label="Abrir trilha">☰</button>
+  <h1>Curso PCCE do Zero<small>Oficial Investigador · Polícia Civil do Ceará</small></h1>
+  <div class="global"><span id="g-text">Progresso: 0%</span><div class="bar"><div id="g-bar"></div></div></div>
+  <button class="btn" onclick="ui.toggleTheme()" aria-label="Alternar tema">🌓 Tema</button>
+</header>
+<div class="layout">
+  <aside id="side">
+    <div class="top">
+      <a href="#/">🏠 Início</a>
+      <a href="#/guia">📘 Guia completo (plano de estudos)</a>
+    </div>
+    <nav id="tree"></nav>
+  </aside>
+  <main id="main"></main>
+</div>
+<script>
+const store={
+  get(k,d){try{const v=localStorage.getItem(k);return v===null?d:JSON.parse(v)}catch(e){return d}},
+  set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+};
+const ui={
+  trilha:null,lista:[],feitas:store.get('pcce.feitas',{}),abertos:store.get('pcce.abertos',{'00':true,'01':true}),
+  async init(){
+    const t=store.get('pcce.tema',null);
+    if(t)document.documentElement.dataset.theme=t;
+    else if(matchMedia('(prefers-color-scheme: dark)').matches)document.documentElement.dataset.theme='dark';
+    try{this.trilha=await (await fetch('aulas/trilha.json',{cache:'no-cache'})).json()}
+    catch(e){document.getElementById('main').innerHTML='<article><h1>Não foi possível carregar a trilha</h1><p>Abra o site pelo endereço do GitHub Pages ou rode <code>python3 -m http.server</code> na pasta do projeto e acesse <code>http://localhost:8000</code>.</p></article>';return}
+    this.trilha.modulos.forEach(m=>m.aulas.forEach(a=>this.lista.push({...a,modulo:m})));
+    this.renderTree();this.updateGlobal();
+    addEventListener('hashchange',()=>this.route());this.route();
+  },
+  toggleTheme(){
+    const r=document.documentElement,n=r.dataset.theme==='dark'?'light':'dark';
+    r.dataset.theme=n;store.set('pcce.tema',n);
+  },
+  toggleMenu(f){document.getElementById('side').classList.toggle('show',f)},
+  toggleMod(id){this.abertos[id]=!this.abertos[id];store.set('pcce.abertos',this.abertos);this.renderTree()},
+  prontas(m){return m.aulas.filter(a=>a.arquivo)},
+  renderTree(){
+    const atual=(location.hash.match(/#\/aula\/(.+)/)||[])[1];
+    document.getElementById('tree').innerHTML=this.trilha.modulos.map(m=>{
+      const p=this.prontas(m),ok=p.filter(a=>this.feitas[a.id]).length;
+      const cnt=p.length?`${ok}/${p.length}`:'em breve';
+      return `<div class="mod ${this.abertos[m.id]?'open':''}">
+        <button onclick="ui.toggleMod('${m.id}')"><span class="num">${m.id}</span><span class="name">${m.titulo}</span><span class="cnt">${cnt}</span></button>
+        <ul>${m.aulas.map(a=>`<li><a href="#/aula/${a.id}" class="${a.arquivo?'':'soon'} ${this.feitas[a.id]?'ok':''} ${a.id===atual?'active':''}"><span class="dot"></span><span>${a.titulo}</span>${a.arquivo?'':'<span class="tag">em breve</span>'}</a></li>`).join('')}</ul>
+      </div>`}).join('');
+  },
+  updateGlobal(){
+    const p=this.lista.filter(a=>a.arquivo),ok=p.filter(a=>this.feitas[a.id]).length,pc=p.length?Math.round(ok*100/p.length):0;
+    document.getElementById('g-text').textContent=`Progresso: ${ok}/${p.length} aulas (${pc}%)`;
+    document.getElementById('g-bar').style.width=pc+'%';
+  },
+  async route(){
+    this.toggleMenu(false);
+    const h=location.hash;
+    if(h.startsWith('#/aula/'))await this.aula(h.slice(7));
+    else if(h==='#/guia')await this.md('GUIA-COMPLETO-PCCE.md');
+    else this.home();
+    this.renderTree();scrollTo(0,0);
+  },
+  home(){
+    const prox=this.lista.find(a=>a.arquivo&&!this.feitas[a.id]);
+    document.getElementById('main').innerHTML=`<article>
+      <h1>Do zero absoluto à Polícia Civil do Ceará</h1>
+      <p>Este é um curso para quem <b>nunca estudou Direito</b> e não tem base em nenhuma matéria. Cada aula explica um assunto passo a passo: o porquê, a explicação em linguagem simples, as palavras novas, a lei traduzida, exemplos, o que confunde, como cai na prova e exercícios com resposta.</p>
+      <blockquote><p><b>Comece pelo Módulo 0</b> e siga a ordem da trilha. Cada módulo depende dos anteriores.</p></blockquote>
+      ${prox?`<p><a class="btn primary" href="#/aula/${prox.id}">▶ Continuar: ${prox.titulo}</a></p>`:''}
+      <h2>Módulos</h2>
+      <div class="home-grid">${this.trilha.modulos.map(m=>{
+        const p=this.prontas(m),ok=p.filter(a=>this.feitas[a.id]).length,pc=p.length?Math.round(ok*100/p.length):0,primeira=m.aulas[0];
+        return `<a class="card" href="#/aula/${primeira.id}"><b>${m.id} · ${m.titulo}</b><p>${m.descricao}</p><p>${p.length?`${ok}/${p.length} aulas concluídas · ${m.aulas.length} no total`:`${m.aulas.length} aulas · em breve`}</p><div class="mini"><div style="width:${pc}%"></div></div></a>`}).join('')}</div>
+      <h2>Como usar</h2>
+      <ul><li>Leia a aula e faça o <b>Teste-se</b> antes de abrir as respostas.</li><li>Marque a aula como concluída: o progresso fica salvo neste navegador.</li><li>Use <b>Minhas anotações</b> para o seu resumo e as suas dúvidas.</li><li>O <a href="#/guia">Guia completo</a> traz o plano: rotina, ciclos, revisões, edital, TAF e referências.</li></ul>
+    </article>`;
+  },
+  async md(arquivo){
+    const r=await fetch(arquivo,{cache:'no-cache'});
+    const txt=r.ok?await r.text():'# Arquivo não encontrado';
+    document.getElementById('main').innerHTML=`<article>${marked.parse(txt)}</article>`;
+    document.querySelectorAll('article a[href^="#"]').forEach(a=>{
+      const alvo=a.getAttribute('href').slice(1);
+      if(!alvo.startsWith('/'))a.addEventListener('click',e=>{e.preventDefault();const el=document.getElementById(alvo);if(el)el.scrollIntoView({behavior:'smooth'})});
+    });
+    document.querySelectorAll('article h1,article h2,article h3').forEach(h=>{if(!h.id)h.id=h.textContent.trim().toLowerCase().replace(/[^\p{L}\p{N}\s-]/gu,'').replace(/\s/g,'-')});
+  },
+  async aula(id){
+    const i=this.lista.findIndex(a=>a.id===id);
+    if(i<0)return this.home();
+    const a=this.lista[i];this.abertos[a.modulo.id]=true;store.set('pcce.abertos',this.abertos);
+    const ant=this.lista.slice(0,i).reverse().find(x=>x.arquivo),prox=this.lista.slice(i+1).find(x=>x.arquivo);
+    const main=document.getElementById('main');
+    if(!a.arquivo){
+      main.innerHTML=`<article><p class="tag" style="display:inline-block">Módulo ${a.modulo.id} · ${a.modulo.titulo}</p><h1>${a.titulo}</h1><div class="soon-box"><p>Esta aula ainda está sendo escrita.</p><p>Enquanto isso, veja o conteúdo deste assunto no <a href="#/guia">Guia completo</a>.</p></div></article>${this.nav(ant,prox)}`;
+      return;
+    }
+    await this.md(a.arquivo);
+    const nota=store.get('pcce.nota.'+id,'');
+    main.insertAdjacentHTML('afterbegin',`<div style="max-width:820px;margin:0 auto 10px"><span class="tag">Módulo ${a.modulo.id} · ${a.modulo.titulo}</span></div>`);
+    main.insertAdjacentHTML('beforeend',`
+      <div class="lesson-nav"><span></span><button id="done-btn" class="btn ${this.feitas[id]?'done':'primary'}" onclick="ui.marcar('${id}')">${this.feitas[id]?'✓ Concluída (desmarcar)':'Marcar como concluída'}</button></div>
+      <div class="notes"><h3>📝 Minhas anotações</h3><textarea id="nota" placeholder="Seu resumo com suas palavras, dúvidas, exemplos próprios...">${nota.replace(/</g,'&lt;')}</textarea><small>Salvo automaticamente neste navegador.</small></div>
+      ${this.nav(ant,prox)}`);
+    document.getElementById('nota').addEventListener('input',e=>store.set('pcce.nota.'+id,e.target.value));
+  },
+  nav(ant,prox){
+    return `<div class="lesson-nav">${ant?`<a class="btn" href="#/aula/${ant.id}">← ${ant.titulo}</a>`:'<span></span>'}${prox?`<a class="btn" href="#/aula/${prox.id}">${prox.titulo} →</a>`:''}</div>`;
+  },
+  marcar(id){
+    if(this.feitas[id])delete this.feitas[id];else this.feitas[id]=new Date().toISOString().slice(0,10);
+    store.set('pcce.feitas',this.feitas);
+    const b=document.getElementById('done-btn'),f=!!this.feitas[id];
+    b.className='btn '+(f?'done':'primary');b.textContent=f?'✓ Concluída (desmarcar)':'Marcar como concluída';
+    this.renderTree();this.updateGlobal();
+  }
+};
+ui.init();
+</script>
 </body>
 </html>
