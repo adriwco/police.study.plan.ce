@@ -1,0 +1,19 @@
+{
+  "name": "Curso PCCE do Zero — Oficial Investigador",
+  "short_name": "PCCE do Zero",
+  "description": "Plataforma gratuita de estudos do zero absoluto para Oficial Investigador da Polícia Civil do Ceará: 19 módulos, 272 aulas, edital verticalizado, revisões espaçadas e caderno inteligente.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#050914",
+  "theme_color": "#050914",
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
