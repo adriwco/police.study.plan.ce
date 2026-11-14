@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 290" width="1080" height="290" role="img" aria-label="Arquitetura pedagógica e ciclo de retenção espaçada">
+  <rect width="1080" height="290" fill="#F6F5F0"/>
+  <rect x="16" y="16" width="1048" height="258" fill="#FCFBF8" stroke="#D8D5CC" stroke-width="1"/>
+  <line x1="16" y1="74" x2="1064" y2="74" stroke="#D8D5CC" stroke-width="1"/>
+
+  <rect x="36" y="34" width="6" height="12" fill="#0E7C5B"/>
+  <text x="52" y="44" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" font-weight="700" fill="#52514E" letter-spacing="1.4">SISTEMA DE RETENÇÃO E APRENDIZAGEM ATIVA</text>
+  <text x="36" y="63" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="800" fill="#111110">Da Leitura Guiada (§ 01–§ 09) à Memória de Longo Prazo (24h · 7d · 30d)</text>
+
+  <g transform="translate(36, 96)">
+    <rect x="0" y="0" width="232" height="152" fill="#F6F5F0" stroke="#D8D5CC" stroke-width="1"/>
+    <text x="16" y="26" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" font-weight="700" fill="#0E7C5B">ETAPA 01 · BASE &amp; INTUIÇÃO</text>
+    <text x="16" y="50" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="800" fill="#111110">Decodificação do Zero</text>
+    <text x="16" y="76" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#52514E">§ 01 Por que importa (caso real)</text>
+    <text x="16" y="96" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#52514E">§ 02 Explicação sem juridiquês</text>
+    <text x="16" y="116" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#52514E">§ 03 Vocabulário técnico</text>
+    <text x="16" y="136" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" fill="#7D7B74">COMPREENSÃO CONCEITUAL</text>
+  </g>
+
+  <g transform="translate(284, 96)">
+    <rect x="0" y="0" width="232" height="152" fill="#F6F5F0" stroke="#D8D5CC" stroke-width="1"/>
+    <text x="16" y="26" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" font-weight="700" fill="#B45309">ETAPA 02 · LETRA DA LEI</text>
+    <text x="16" y="50" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="800" fill="#111110">Domínio Normativo</text>
+    <text x="16" y="76" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#52514E">§ 04 Artigos traduzidos</text>
+    <text x="16" y="96" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#52514E">§ 05 Casos práticos policiais</text>
+    <text x="16" y="116" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#52514E">§ 06 Pegadinhas e distinções</text>
+    <text x="16" y="136" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" fill="#7D7B74">LEITURA SECA + CONTEXTO</text>
+  </g>
+
+  <g transform="translate(532, 96)">
+    <rect x="0" y="0" width="232" height="152" fill="#F6F5F0" stroke="#D8D5CC" stroke-width="1"/>
+    <text x="16" y="26" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" font-weight="700" fill="#111110">ETAPA 03 · EXTRAÇÃO ATIVA</text>
+    <text x="16" y="50" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="800" fill="#111110">Prova &amp; Caderno</text>
+    <text x="16" y="76" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#52514E">§ 07 Padrão CEV/UECE</text>
+    <text x="16" y="96" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#52514E">§ 08 Síntese + § 09 Teste-se</text>
+    <text x="16" y="116" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#52514E">Caderno (/lei, /pegadinha)</text>
+    <text x="16" y="136" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" fill="#7D7B74">AUTOAVALIAÇÃO IMEDIATA</text>
+  </g>
+
+  <g transform="translate(780, 96)">
+    <rect x="0" y="0" width="264" height="152" fill="#111110" stroke="#111110" stroke-width="1"/>
+    <text x="16" y="26" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" font-weight="700" fill="#10B981">ETAPA 04 · REPETIÇÃO ESPAÇADA</text>
+    <text x="16" y="50" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="800" fill="#FCFBF8">Agenda Automática</text>
+    <text x="16" y="76" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" fill="#EDEDEA">CICLO R1 · +24 HORAS (Fixação)</text>
+    <text x="16" y="96" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" fill="#EDEDEA">CICLO R2 · +07 DIAS  (Consolidação)</text>
+    <text x="16" y="116" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" fill="#EDEDEA">CICLO R3 · +30 DIAS  (Retenção)</text>
+    <text x="16" y="136" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" fill="#A0A09C">REVISÃO DE ERROS DO CADERNO</text>
+  </g>
+</svg>

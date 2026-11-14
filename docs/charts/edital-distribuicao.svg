@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 420" width="1080" height="420" role="img" aria-label="Matriz de distribuição de questões e aulas do Curso PCCE">
+  <rect width="1080" height="420" fill="#F6F5F0"/>
+  <rect x="16" y="16" width="1048" height="388" fill="#FCFBF8" stroke="#D8D5CC" stroke-width="1"/>
+  <line x1="540" y1="16" x2="540" y2="404" stroke="#D8D5CC" stroke-width="1"/>
+  <line x1="16" y1="84" x2="1064" y2="84" stroke="#D8D5CC" stroke-width="1"/>
+
+  <rect x="36" y="38" width="6" height="12" fill="#0E7C5B"/>
+  <text x="52" y="48" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" font-weight="700" fill="#52514E" letter-spacing="1.4">01 / PROVA OBJETIVA CEV/UECE · 100 QUESTÕES + DISCURSIVA</text>
+  <text x="36" y="70" font-family="system-ui, -apple-system, sans-serif" font-size="17" font-weight="800" fill="#111110">Distribuição de Peso na Prova por Bloco</text>
+
+  <rect x="560" y="38" width="6" height="12" fill="#111110"/>
+  <text x="576" y="48" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" font-weight="700" fill="#52514E" letter-spacing="1.4">02 / CARGA DIDÁTICA · 19 MÓDULOS · 272 AULAS</text>
+  <text x="560" y="70" font-family="system-ui, -apple-system, sans-serif" font-size="17" font-weight="800" fill="#111110">Volume de Aulas por Eixo de Formação</text>
+
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12">
+    <text x="36" y="122" fill="#111110" font-weight="700">BLOCO JURÍDICO (7 DISCIPLINAS)</text>
+    <text x="516" y="122" fill="#0E7C5B" font-weight="700" text-anchor="end">50 QUESTÕES (50%)</text>
+    <rect x="36" y="132" width="480" height="18" fill="#EFECE6" stroke="#D8D5CC" stroke-width="1"/>
+    <rect x="36" y="132" width="240" height="18" fill="#0E7C5B"/>
+    <text x="36" y="165" fill="#7D7B74" font-family="system-ui, -apple-system, sans-serif" font-size="11.5">Constitucional (8) · Administrativo (8) · Penal (16) · Proc. Penal (8) · Leg. Esp. (8) · Estadual CE (10)</text>
+
+    <text x="36" y="206" fill="#111110" font-weight="700">CONHECIMENTOS BÁSICOS (3 DISCIPLINAS)</text>
+    <text x="516" y="206" fill="#111110" font-weight="700" text-anchor="end">30 QUESTÕES (30%)</text>
+    <rect x="36" y="216" width="480" height="18" fill="#EFECE6" stroke="#D8D5CC" stroke-width="1"/>
+    <rect x="36" y="216" width="144" height="18" fill="#111110"/>
+    <text x="36" y="249" fill="#7D7B74" font-family="system-ui, -apple-system, sans-serif" font-size="11.5">Língua Portuguesa (10) · Raciocínio Lógico (10) · Informática (10)</text>
+
+    <text x="36" y="290" fill="#111110" font-weight="700">ESPECÍFICAS NÃO-JURÍDICAS (4 DISCIPLINAS)</text>
+    <text x="516" y="290" fill="#B45309" font-weight="700" text-anchor="end">20 QUESTÕES (20%)</text>
+    <rect x="36" y="300" width="480" height="18" fill="#EFECE6" stroke="#D8D5CC" stroke-width="1"/>
+    <rect x="36" y="300" width="96" height="18" fill="#B45309"/>
+    <text x="36" y="333" fill="#7D7B74" font-family="system-ui, -apple-system, sans-serif" font-size="11.5">Criminologia (5) · Medicina Legal (5) · Contabilidade (5) · Estatística (5)</text>
+
+    <line x1="36" y1="352" x2="516" y2="352" stroke="#E6E4DC" stroke-width="1"/>
+    <text x="36" y="378" fill="#111110" font-weight="700">PROVA DISCURSIVA + TAF</text>
+    <text x="516" y="378" fill="#52514E" font-weight="700" text-anchor="end">REDAÇÃO (30 PTS) + 4 TESTES FÍSICOS</text>
+  </g>
+
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12">
+    <text x="560" y="122" fill="#111110" font-weight="700">EIXO 01 · NÚCLEO JURÍDICO (MÓD. 06–12)</text>
+    <text x="1040" y="122" fill="#0E7C5B" font-weight="700" text-anchor="end">151 AULAS (55,5%)</text>
+    <rect x="560" y="132" width="480" height="16" fill="#EFECE6" stroke="#D8D5CC" stroke-width="1"/>
+    <rect x="560" y="132" width="266" height="16" fill="#0E7C5B"/>
+
+    <text x="560" y="182" fill="#111110" font-weight="700">EIXO 02 · CONHECIMENTOS BÁSICOS (MÓD. 03–05)</text>
+    <text x="1040" y="182" fill="#111110" font-weight="700" text-anchor="end">58 AULAS (21,3%)</text>
+    <rect x="560" y="192" width="480" height="16" fill="#EFECE6" stroke="#D8D5CC" stroke-width="1"/>
+    <rect x="560" y="192" width="102" height="16" fill="#111110"/>
+
+    <text x="560" y="242" fill="#111110" font-weight="700">EIXO 03 · ESPECÍFICAS TÉCNICAS (MÓD. 13–16)</text>
+    <text x="1040" y="242" fill="#B45309" font-weight="700" text-anchor="end">35 AULAS (12,9%)</text>
+    <rect x="560" y="252" width="480" height="16" fill="#EFECE6" stroke="#D8D5CC" stroke-width="1"/>
+    <rect x="560" y="252" width="62" height="16" fill="#B45309"/>
+
+    <text x="560" y="302" fill="#111110" font-weight="700">EIXO 04 · NIVELAMENTO ZERO (MÓD. 00–02)</text>
+    <text x="1040" y="302" fill="#52514E" font-weight="700" text-anchor="end">21 AULAS (7,7%)</text>
+    <rect x="560" y="312" width="480" height="16" fill="#EFECE6" stroke="#D8D5CC" stroke-width="1"/>
+    <rect x="560" y="312" width="37" height="16" fill="#52514E"/>
+
+    <text x="560" y="362" fill="#111110" font-weight="700">EIXO 05 · REDAÇÃO &amp; RETA FINAL (MÓD. 17–18)</text>
+    <text x="1040" y="362" fill="#52514E" font-weight="700" text-anchor="end">07 AULAS (2,6%)</text>
+    <rect x="560" y="372" width="480" height="16" fill="#EFECE6" stroke="#D8D5CC" stroke-width="1"/>
+    <rect x="560" y="372" width="13" height="16" fill="#52514E"/>
+  </g>
+</svg>
