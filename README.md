@@ -23,7 +23,7 @@ A interface foi desenhada sobre princípios de **Grade Arquitetural Suíça** e 
 | Tema Papel Editorial (`#F6F5F0` / `#111110`) | Tema Carbono Obsidiana (`#0B0B0C` / `#EDEDEA`) |
 | :---: | :---: |
 | ![Painel Geral no Tema Papel Editorial](docs/screenshots/01-painel-editorial.png) | ![Painel Geral no Tema Carbono Obsidiana](docs/screenshots/02-painel-obsidian.png) |
-| *Grade Suíça com métricas de cobertura por bloco, matriz de constância de 28 dias, cronômetro de sessão e fila de retenção.* | *Modo noturno de carbono neutro sem brilho artificial, calibrado para sessões noturnas prolongadas.* |
+| *Grade Suíça com métricas de cobertura por bloco, matriz de constância de 28 dias, cronômetro de sessão, fila de retenção e luz de projetor do modo Cinema.* | *Modo noturno de carbono neutro sem brilho artificial, calibrado para sessões noturnas prolongadas.* |
 
 ### 02 · Leitura Normativa (`§ 01..§ 10`), Autoavaliação e Caderno de Estudos
 
@@ -157,11 +157,11 @@ Cada uma das **272 aulas** segue rigorosamente uma estrutura em **9 seções pad
   - `JetBrains Mono` (`tabular-nums` para contadores, cronômetro, índices `§ 01` e códigos de módulo).
 - **Acessibilidade (`a11y`):**
   - Landmarks semânticos (`header`, `nav`, `main`, `aside`, `article`), link de salto rápido (*Pular para o conteúdo principal*), atributos `aria-live`, `aria-expanded`, `aria-current="page"` e `aria-pressed`.
-  - Navegação integral por teclado: `Ctrl+K` ou `/` (busca global), `F` (modo foco), `[` e `]` (aula anterior/próxima), `Esc` (fechar modais).
+  - Navegação integral por teclado: `Ctrl+K` ou `/` (busca global), `F` (modo foco), `↑` `↓` e `Enter` (resultados da busca), `Esc` (fechar janelas e o menu lateral).
   - Suporte a `prefers-reduced-motion: reduce`, 4 escalas de fonte (`Aa`) e estilo dedicado de impressão (`@media print`).
 - **Performance e Resiliência:**
   - Cada aula vira um *chunk* próprio no build (`import.meta.glob`), com cache em memória do conteúdo renderizado e *prefetch* automático da próxima aula via `requestIdleCallback`.
-  - Persistência 100% local (`localStorage`) retrocompatível (`pcce.feitas`, `pcce.abertos`, `pcce.tema`, `pcce.nota.<id>`, `pcce.dias`, `pcce.revisoes`, `pcce.questoes`, `pcce.favoritos`) com exportação e restauração em `.json` e `.md`.
+  - Persistência 100% local (`localStorage`) retrocompatível (`pcce.feitas`, `pcce.abertos`, `pcce.ultima`, `pcce.nota.<id>`, `pcce.dias`, `pcce.revisoes`, `pcce.questoes`, `pcce.favoritos`, `pcce.pomoStats`, `pcce.tema`, `pcce.escalaFonte`, `pcce.cinema`, `pcce.somCinema`) com exportação e restauração em `.json` e `.md`.
 - **Segurança Web:**
   - Política de Segurança de Conteúdo (`Content-Security-Policy`) declarada e sanitização de DOM pós-renderização Markdown contra injeção de scripts ou atributos `on*`.
 
@@ -171,6 +171,7 @@ Cada uma das **272 aulas** segue rigorosamente uma estrutura em **9 seções pad
 
 ```text
 .
+├── .github/workflows/          deploy no GitHub Pages (lint, testes e build a cada push na main)
 ├── index.html                  ponto de entrada do Vite (SEO, CSP e JSON-LD)
 ├── GUIA-COMPLETO-PCCE.md       plano diretor completo (edital, ciclos, TAF e bibliografia)
 ├── aulas/
@@ -181,10 +182,11 @@ Cada uma das **272 aulas** segue rigorosamente uma estrutura em **9 seções pad
 │   ├── main.tsx · App.tsx      inicialização, provedores e rotas
 │   ├── config/ constants/      configuração do roteador, metadados do edital, chaves e atalhos
 │   ├── contexts/               estudo, preferências, cronômetro, avisos e janelas
-│   ├── hooks/                  navegação cinematográfica, atalhos, leitura e sumário
+│   ├── hooks/                  navegação cinematográfica, rolagem suave, atalhos, leitura e sumário
 │   ├── modules/study/
 │   │   ├── layout/             estrutura com cabeçalho, trilha lateral e conteúdo
-│   │   ├── components/         cabeçalho, trilha, busca Ctrl+K, backup, aula, caderno, sumário
+│   │   ├── components/         cabeçalho, trilha, busca Ctrl+K, backup, aula, caderno, sumário, luz WebGL
+│   │   ├── scenes/             cenas guiadas pela rolagem (GSAP ScrollTrigger) do painel e da aula
 │   │   └── screens/            Painel, Aula, Edital, Revisões, Caderno e Guia
 │   ├── service/                catálogo da trilha e carregamento das aulas
 │   ├── styles/                 sistema Swiss Editorial e camada cinematográfica
