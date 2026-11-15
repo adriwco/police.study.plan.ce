@@ -245,3 +245,59 @@ html.cine-iris .reading-progress-track {
 @keyframes cine-section {
   from { opacity: 0.15; transform: translateY(18px); }
 }
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+html.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-stopped {
+  overflow: clip;
+}
+
+.lenis [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.swiss-hero-cell {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.swiss-hero-cell > :not(.cine-shader-wrap) {
+  position: relative;
+  z-index: 1;
+}
+
+.cine-shader-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.cine-shader {
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 0.42;
+  mix-blend-mode: multiply;
+  filter: blur(6px) saturate(1.1);
+  animation: cine-fade-in 2.4s var(--ease-cine) backwards;
+}
+
+:root[data-theme='dark'] .cine-shader {
+  opacity: 0.58;
+  mix-blend-mode: screen;
+}
+
+@keyframes cine-fade-in {
+  from {
+    opacity: 0;
+  }
+}

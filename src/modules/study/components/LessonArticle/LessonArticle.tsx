@@ -8,6 +8,7 @@ import {
   QuizScoreBanner,
 } from '@/modules/study/components/LessonArticle/QuizControls';
 import { LessonDocument } from '@/utils/lessonDocument';
+import { scrollToElement } from '@/utils/smoothScroll';
 import { quizScore } from '@/utils/studyMetrics';
 
 interface LessonArticleProps {
@@ -29,9 +30,7 @@ const scrollToAnchor = (event: MouseEvent) => {
   const href = anchor?.getAttribute('href') ?? '';
   if (href.length <= 1 || href.startsWith('#/')) return;
   event.preventDefault();
-  document
-    .getElementById(decodeURIComponent(href.slice(1)))
-    ?.scrollIntoView({ behavior: 'smooth' });
+  scrollToElement(document.getElementById(decodeURIComponent(href.slice(1))));
 };
 
 const LessonArticle = ({

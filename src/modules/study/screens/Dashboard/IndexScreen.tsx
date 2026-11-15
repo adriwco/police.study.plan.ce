@@ -1,4 +1,4 @@
-import { CSSProperties, useState } from 'react';
+import { CSSProperties, useRef, useState } from 'react';
 
 import { Link } from 'react-router-dom';
 
@@ -7,13 +7,17 @@ import { ROUTES } from '@/constants/navigation';
 import { useOverlay } from '@/contexts/OverlayContext';
 import { usePomodoro } from '@/contexts/PomodoroContext';
 import { useStudy } from '@/contexts/StudyContext';
+import { useCinemaActive } from '@/hooks/useCinemaActive';
 import { useDashboardIntro } from '@/hooks/useDashboardIntro';
 import { useDocumentTitle } from '@/hooks/useDocumentTitle';
+import { useScrollScene } from '@/hooks/useScrollScene';
 import BlockTabs from '@/modules/study/components/BlockTabs/BlockTabs';
+import CinematicShader from '@/modules/study/components/CinematicShader/CinematicShader';
 import ProgressTrack from '@/modules/study/components/ProgressTrack/ProgressTrack';
 import RevealWords from '@/modules/study/components/RevealWords/RevealWords';
 import RevisionItem from '@/modules/study/components/RevisionItem/RevisionItem';
 import SectionBar from '@/modules/study/components/SectionBar/SectionBar';
+import { buildDashboardScene } from '@/modules/study/scenes/dashboardScene';
 import MetricNumber from '@/modules/study/screens/Dashboard/MetricNumber';
 import { catalog } from '@/service/catalogService';
 import { BlockFilter, PomodoroMode } from '@/types/study';
@@ -35,6 +39,9 @@ const POMODORO_MODES: { mode: PomodoroMode; label: string }[] = [
 const DashboardScreen = () => {
   useDocumentTitle('PCCE · Plano de Estudos — Oficial Investigador');
   const [blockFilter, setBlockFilter] = useState<BlockFilter>('all');
+  const sceneRef = useRef<HTMLDivElement>(null);
+  const cinemaActive = useCinemaActive();
+  useScrollScene(sceneRef, buildDashboardScene, blockFilter);
   const playIntro = useDashboardIntro();
   const { feitas, dias, revisoes, ultimaAula, toggleRevision } = useStudy();
   const { open } = useOverlay();
@@ -63,12 +70,13 @@ const DashboardScreen = () => {
   );
 
   return (
-    <div className="page-container">
+    <div ref={sceneRef} className="page-container">
       <section
         className={`swiss-board ${playIntro ? 'cine-intro' : ''}`}
         aria-labelledby="hero-title"
       >
         <div className="swiss-hero-cell">
+          {cinemaActive ? <CinematicShader /> : null}
           <div>
             <div className="eyebrow-mono">
               POLÍCIA CIVIL DO CEARÁ · OFICIAL INVESTIGADOR · {lista.length} AULAS

@@ -150,6 +150,7 @@ Cada uma das **272 aulas** segue rigorosamente uma estrutura em **9 seções pad
   - Abertura do painel com revelação tipográfica por máscara, contagem dos indicadores e matriz de constância acendendo em sequência (somente na primeira visita da sessão).
   - Barra de leitura e entrada das seções `§` guiadas pela rolagem (`animation-timeline`), com *fallback* para navegadores sem suporte.
   - Modo Foco em "sala escura" (faixas de cinema e vinheta) e granulação de filme sutil no tema escuro. Tudo desligado com `prefers-reduced-motion`.
+  - Modo **Cinema** (botão no cabeçalho, ligado por padrão): rolagem suave com Lenis, cenas guiadas pela rolagem com GSAP ScrollTrigger (painel em recuo, módulos entrando em perspectiva, citações de lei e questões surgindo na aula), luz de projetor em WebGL no destaque do painel e som sintetizado opcional (botão **Som**, desligado por padrão).
 - **Tipografia Tripartida:**
   - `Newsreader` (serifada editorial para subtítulos em itálico e dispositivos de lei seca em `blockquote`).
   - `Plus Jakarta Sans` + `Inter` (estrutura Neo-Grotesca com largura de linha travada em `66ch` para conforto ocular).

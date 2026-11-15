@@ -22,7 +22,7 @@ const CommandPalette = () => {
   const [query, setQuery] = useState('');
   const [selected, setSelected] = useState(0);
   const { active, open, close } = useOverlay();
-  const { toggleTheme } = usePreferences();
+  const { toggleTheme, toggleCinema, toggleSound } = usePreferences();
   const { feitas, notas } = useStudy();
   const go = useCinematicNavigate();
   const isOpen = active === 'command';
@@ -36,8 +36,10 @@ const CommandPalette = () => {
         notas,
         toggleTheme: () => toggleTheme(),
         openBackup: () => open('backup'),
+        toggleCinema,
+        toggleSound,
       }),
-    [feitas, notas, open, query, toggleTheme],
+    [feitas, notas, open, query, toggleCinema, toggleSound, toggleTheme],
   );
 
   useEffect(() => {
@@ -82,6 +84,7 @@ const CommandPalette = () => {
       aria-modal="true"
       aria-labelledby="cmd-dialog-title"
       aria-hidden={!isOpen}
+      data-lenis-prevent=""
       onClick={(event) => {
         if (event.target === event.currentTarget) close();
       }}

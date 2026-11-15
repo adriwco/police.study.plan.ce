@@ -1,5 +1,6 @@
 import { useActiveHeading } from '@/hooks/useActiveHeading';
 import { TocItem } from '@/utils/lessonDocument';
+import { scrollToElement } from '@/utils/smoothScroll';
 
 interface LessonTocProps {
   items: TocItem[];
@@ -17,7 +18,7 @@ const LessonToc = ({ items }: LessonTocProps) => {
             className={`toc-link ${activeId === item.id ? 'active' : ''}`}
             onClick={(event) => {
               event.preventDefault();
-              document.getElementById(item.id)?.scrollIntoView({ behavior: 'smooth' });
+              scrollToElement(document.getElementById(item.id));
             }}
           >
             <span className="mr-1.5 font-mono text-[0.68rem] opacity-65">{item.num}</span>

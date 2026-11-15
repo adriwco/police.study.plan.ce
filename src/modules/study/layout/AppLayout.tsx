@@ -5,11 +5,13 @@ import { Outlet, useLocation } from 'react-router-dom';
 import { usePreferences } from '@/contexts/PreferencesContext';
 import { useCinematicLinks } from '@/hooks/useCinematicLinks';
 import { useKeyboardShortcuts } from '@/hooks/useKeyboardShortcuts';
+import { useSmoothScroll } from '@/hooks/useSmoothScroll';
 import AppHeader from '@/modules/study/components/AppHeader/AppHeader';
 import BackupModal from '@/modules/study/components/BackupModal/BackupModal';
 import CinematicLayers from '@/modules/study/components/CinematicLayers/CinematicLayers';
 import CommandPalette from '@/modules/study/components/CommandPalette/CommandPalette';
 import Sidebar from '@/modules/study/components/Sidebar/Sidebar';
+import { scrollToTopInstantly } from '@/utils/smoothScroll';
 
 const MAIN_CONTENT_ID = 'main-content';
 
@@ -23,10 +25,11 @@ const AppLayout = () => {
   const { menuOpen, setMenuOpen } = usePreferences();
   useCinematicLinks();
   useKeyboardShortcuts();
+  useSmoothScroll();
 
   useLayoutEffect(() => {
     setMenuOpen(false);
-    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    scrollToTopInstantly();
   }, [pathname, setMenuOpen]);
 
   return (

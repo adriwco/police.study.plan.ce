@@ -9,6 +9,8 @@ const baseOptions = {
   notas: {},
   toggleTheme: vi.fn(),
   openBackup: vi.fn(),
+  toggleCinema: vi.fn(),
+  toggleSound: vi.fn(),
 };
 
 describe('buildCommandItems', () => {
@@ -42,5 +44,15 @@ describe('buildCommandItems', () => {
     expect(buildCommandItems({ ...baseOptions, query: 'a' }).length).toBeLessThanOrEqual(
       20,
     );
+  });
+
+  it('oferece comandos para alternar modo cinema e som', () => {
+    const items = buildCommandItems({ ...baseOptions, query: 'cinema' });
+    items.find((item) => item.key === 'cmd-cinema')?.run?.();
+    expect(baseOptions.toggleCinema).toHaveBeenCalled();
+    buildCommandItems({ ...baseOptions, query: 'som' })
+      .find((item) => item.key === 'cmd-sound')
+      ?.run?.();
+    expect(baseOptions.toggleSound).toHaveBeenCalled();
   });
 });
