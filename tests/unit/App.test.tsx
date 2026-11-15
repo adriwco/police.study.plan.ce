@@ -57,4 +57,19 @@ describe('App', () => {
     renderWithProviders(<App />);
     expect(await screen.findByText('ÍNDICE GERAL DO CURSO')).toBeInTheDocument();
   });
+
+  it('mostra o botão de som só com o modo cinema ligado', async () => {
+    const user = userEvent.setup();
+    renderWithProviders(<App />);
+    const cinemaButton = screen.getByRole('button', { name: 'Cinema' });
+    expect(cinemaButton).toHaveAttribute('aria-pressed', 'true');
+    expect(
+      screen.getByRole('button', { name: 'Ligar som cinematográfico' }),
+    ).toBeInTheDocument();
+    await user.click(cinemaButton);
+    expect(cinemaButton).toHaveAttribute('aria-pressed', 'false');
+    expect(
+      screen.queryByRole('button', { name: /som cinematográfico/ }),
+    ).not.toBeInTheDocument();
+  });
 });
