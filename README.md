@@ -16,7 +16,7 @@
 
 ## Interface e Sistema Editorial
 
-A interface foi desenhada sobre princípios de **Grade Arquitetural Suíça** e leitura técnica de longa duração (inspirada em sistemas como *Readwise Reader*, *Linear*, *Craft* e *LeapNotes*), eliminando distrações visuais e priorizando contraste tipográfico, hierarquia normativa e velocidade por teclado.
+A interface foi desenhada sobre princípios de **Grade Arquitetural Suíça** e leitura técnica de longa duração, eliminando distrações visuais e priorizando contraste tipográfico, hierarquia normativa e velocidade por teclado.
 
 ### 01 · Painel Geral — Temas Papel Editorial (`Light`) e Carbono Obsidiana (`Dark`)
 
