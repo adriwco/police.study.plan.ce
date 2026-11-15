@@ -9,6 +9,8 @@ export const STORAGE_KEYS = {
   pomodoroStats: 'pcce.pomoStats',
   theme: 'pcce.tema',
   fontScale: 'pcce.escalaFonte',
+  cinemaMode: 'pcce.cinema',
+  cinemaSound: 'pcce.somCinema',
   notePrefix: 'pcce.nota.',
 } as const;
 

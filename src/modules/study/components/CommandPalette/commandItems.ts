@@ -16,6 +16,8 @@ interface BuildCommandItemsOptions {
   notas: NoteMap;
   toggleTheme: () => void;
   openBackup: () => void;
+  toggleCinema: () => void;
+  toggleSound: () => void;
 }
 
 const MAX_LESSON_MATCHES = 18;
@@ -36,6 +38,8 @@ export const buildCommandItems = ({
   notas,
   toggleTheme,
   openBackup,
+  toggleCinema,
+  toggleSound,
 }: BuildCommandItemsOptions): CommandItem[] => {
   const normalized = query.trim().toLowerCase();
 
@@ -81,6 +85,18 @@ export const buildCommandItems = ({
       title: 'Backup e Exportação de Dados',
       sub: 'Salvar ou restaurar arquivo JSON',
       run: openBackup,
+    },
+    {
+      key: 'cmd-cinema',
+      title: 'Alternar Modo Cinema',
+      sub: 'Rolagem suave, cenas na rolagem e luz animada no painel',
+      run: toggleCinema,
+    },
+    {
+      key: 'cmd-sound',
+      title: 'Alternar Som Cinematográfico',
+      sub: 'Efeitos sonoros discretos nas trocas de tela e no Modo Foco',
+      run: toggleSound,
     },
   ];
 

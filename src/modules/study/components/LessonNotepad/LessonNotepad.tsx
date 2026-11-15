@@ -129,6 +129,7 @@ const LessonNotepad = ({ lesson }: LessonNotepadProps) => {
       <textarea
         ref={textareaRef}
         id="nota"
+        data-lenis-prevent=""
         className="notepad-textarea"
         placeholder="Registre seu resumo com suas próprias palavras, artigos de lei ou digite /resumo, /lei, /pegadinha..."
         value={note}

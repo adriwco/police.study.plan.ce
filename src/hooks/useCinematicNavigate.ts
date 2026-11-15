@@ -4,8 +4,10 @@ import { flushSync } from 'react-dom';
 import { useNavigate } from 'react-router-dom';
 
 import { GUIDE_FILE, ROUTES } from '@/constants/navigation';
+import { usePreferences } from '@/contexts/PreferencesContext';
 import { findLesson } from '@/service/catalogService';
 import { loadDocument } from '@/service/markdownService';
+import { playWhoosh } from '@/utils/cinemaSound';
 import { canUseViewTransition } from '@/utils/motion';
 
 const MATCH_CUT_NAME = 'lesson-title';
@@ -31,9 +33,11 @@ const setTransitionName = (element: HTMLElement | null | undefined, name: string
 
 export const useCinematicNavigate = () => {
   const navigate = useNavigate();
+  const { cinemaMode, soundOn } = usePreferences();
 
   return useCallback(
     (path: string, matchCutSource?: HTMLElement | null) => {
+      if (cinemaMode && soundOn) playWhoosh();
       if (!canUseViewTransition()) {
         navigate(path);
         return;
@@ -56,6 +60,6 @@ export const useCinematicNavigate = () => {
         setTransitionName(matchCutTarget, '');
       });
     },
-    [navigate],
+    [cinemaMode, navigate, soundOn],
   );
 };

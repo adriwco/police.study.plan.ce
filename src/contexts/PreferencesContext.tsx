@@ -14,6 +14,7 @@ import { STORAGE_KEYS } from '@/constants/storageKeys';
 import { useToast } from '@/contexts/ToastContext';
 import { usePersistentState } from '@/hooks/usePersistentState';
 import { FontScale, Theme } from '@/types/study';
+import { playProjectorRoll, playWhoosh } from '@/utils/cinemaSound';
 import { canUseViewTransition } from '@/utils/motion';
 
 interface PreferencesContextProps {
@@ -26,6 +27,10 @@ interface PreferencesContextProps {
   toggleFocusMode: () => void;
   setMenuOpen: (open: boolean) => void;
   toggleMenu: () => void;
+  cinemaMode: boolean;
+  soundOn: boolean;
+  toggleCinema: () => void;
+  toggleSound: () => void;
 }
 
 const PreferencesContext = createContext<PreferencesContextProps | undefined>(undefined);
@@ -48,6 +53,8 @@ export const PreferencesProvider: React.FC<{ children: React.ReactNode }> = ({
     STORAGE_KEYS.fontScale,
     'md',
   );
+  const [cinemaMode, setCinemaMode] = usePersistentState(STORAGE_KEYS.cinemaMode, true);
+  const [soundOn, setSoundOn] = usePersistentState(STORAGE_KEYS.cinemaSound, false);
   const [focusMode, setFocusMode] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -62,6 +69,10 @@ export const PreferencesProvider: React.FC<{ children: React.ReactNode }> = ({
   useLayoutEffect(() => {
     document.body.classList.toggle('focus-mode', focusMode);
   }, [focusMode]);
+
+  useLayoutEffect(() => {
+    document.documentElement.dataset.cinema = cinemaMode ? 'on' : 'off';
+  }, [cinemaMode]);
 
   const toggleTheme = useCallback(
     (origin?: HTMLElement | null) => {
@@ -94,8 +105,22 @@ export const PreferencesProvider: React.FC<{ children: React.ReactNode }> = ({
   const toggleFocusMode = useCallback(() => {
     const enabled = !focusMode;
     setFocusMode(enabled);
+    if (enabled && cinemaMode && soundOn) playProjectorRoll();
     toast(enabled ? 'Modo Foco ativo (F para sair)' : 'Modo Foco desativado');
-  }, [focusMode, toast]);
+  }, [cinemaMode, focusMode, soundOn, toast]);
+
+  const toggleCinema = useCallback(() => {
+    const enabled = !cinemaMode;
+    setCinemaMode(enabled);
+    toast(enabled ? 'Modo Cinema ativo' : 'Modo Cinema desativado');
+  }, [cinemaMode, setCinemaMode, toast]);
+
+  const toggleSound = useCallback(() => {
+    const enabled = !soundOn;
+    setSoundOn(enabled);
+    if (enabled) playWhoosh();
+    toast(enabled ? 'Som cinematográfico ligado' : 'Som cinematográfico desligado');
+  }, [setSoundOn, soundOn, toast]);
 
   const toggleMenu = useCallback(() => setMenuOpen((open) => !open), []);
 
@@ -110,6 +135,10 @@ export const PreferencesProvider: React.FC<{ children: React.ReactNode }> = ({
       toggleFocusMode,
       setMenuOpen,
       toggleMenu,
+      cinemaMode,
+      soundOn,
+      toggleCinema,
+      toggleSound,
     }),
     [
       theme,
@@ -120,6 +149,10 @@ export const PreferencesProvider: React.FC<{ children: React.ReactNode }> = ({
       cycleFontScale,
       toggleFocusMode,
       toggleMenu,
+      cinemaMode,
+      soundOn,
+      toggleCinema,
+      toggleSound,
     ],
   );
 

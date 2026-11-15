@@ -51,6 +51,7 @@ const BackupModal = () => {
       aria-modal="true"
       aria-labelledby="backup-dialog-title"
       aria-hidden={!isOpen}
+      data-lenis-prevent=""
       onClick={(event) => {
         if (event.target === event.currentTarget) close();
       }}

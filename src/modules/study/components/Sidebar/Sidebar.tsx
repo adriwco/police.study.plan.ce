@@ -34,6 +34,7 @@ const Sidebar = () => {
       id="side"
       className={`app-sidebar ${menuOpen ? 'show' : ''}`}
       aria-label="Navegação e trilha de estudos"
+      data-lenis-prevent=""
     >
       <nav className="sidebar-nav-section" aria-label="Seções principais">
         {SIDEBAR_SECTIONS.map((section) => {

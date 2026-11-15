@@ -22,6 +22,10 @@ const AppHeader = () => {
     cycleFontScale,
     theme,
     toggleTheme,
+    cinemaMode,
+    toggleCinema,
+    soundOn,
+    toggleSound,
   } = usePreferences();
   const { open } = useOverlay();
   const { feitas, dias } = useStudy();
@@ -133,6 +137,33 @@ const AppHeader = () => {
         >
           <span>Foco</span>
         </button>
+
+        <button
+          type="button"
+          id="cinema-btn"
+          className={`icon-btn ${cinemaMode ? 'active' : ''}`}
+          onClick={toggleCinema}
+          aria-pressed={cinemaMode}
+          title="Rolagem suave, cenas na rolagem e luz animada"
+        >
+          <span>Cinema</span>
+        </button>
+
+        {cinemaMode ? (
+          <button
+            type="button"
+            id="sound-btn"
+            className={`icon-btn ${soundOn ? 'active' : ''}`}
+            onClick={toggleSound}
+            aria-pressed={soundOn}
+            aria-label={
+              soundOn ? 'Desligar som cinematográfico' : 'Ligar som cinematográfico'
+            }
+            title="Som cinematográfico"
+          >
+            <span aria-hidden="true">Som</span>
+          </button>
+        ) : null}
 
         <button
           type="button"

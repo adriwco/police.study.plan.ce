@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 import { Link, Navigate, useParams } from 'react-router-dom';
 
@@ -6,19 +6,24 @@ import { ROUTES } from '@/constants/navigation';
 import { useStudy } from '@/contexts/StudyContext';
 import { useDocumentTitle } from '@/hooks/useDocumentTitle';
 import { useLessonDocument } from '@/hooks/useLessonDocument';
+import { useScrollScene } from '@/hooks/useScrollScene';
 import LessonArticle from '@/modules/study/components/LessonArticle/LessonArticle';
 import LessonNotepad from '@/modules/study/components/LessonNotepad/LessonNotepad';
 import LessonPager from '@/modules/study/components/LessonPager/LessonPager';
 import LessonSkeleton from '@/modules/study/components/LessonSkeleton/LessonSkeleton';
 import LessonToc from '@/modules/study/components/LessonToc/LessonToc';
+import { buildLessonScene } from '@/modules/study/scenes/lessonScene';
 import { findLesson, findNeighbourLessons } from '@/service/catalogService';
 import { prefetchDocument } from '@/service/markdownService';
 import { Lesson } from '@/types/study';
 import { formatBrDate, padIndex } from '@/utils/dateUtils';
+import { scrollToElement } from '@/utils/smoothScroll';
 
 const LessonView = ({ lesson }: { lesson: Lesson }) => {
   const { modulo } = lesson;
+  const workspaceRef = useRef<HTMLDivElement>(null);
   const lessonDocument = useLessonDocument(lesson.arquivo);
+  useScrollScene(workspaceRef, buildLessonScene, lessonDocument ? lesson.id : 'loading');
   const { feitas, favoritos, toggleCompleted, toggleFavorite, visitLesson } = useStudy();
   const { previous, next } = findNeighbourLessons(lesson.id);
   const isDone = !!feitas[lesson.id];
@@ -39,7 +44,7 @@ const LessonView = ({ lesson }: { lesson: Lesson }) => {
   if (!lessonDocument) return <LessonSkeleton />;
 
   return (
-    <div className="lesson-workspace">
+    <div ref={workspaceRef} className="lesson-workspace">
       <div className="lesson-primary-col">
         <div className="lesson-topbar">
           <nav className="breadcrumbs" aria-label="Trilha de navegação">
@@ -66,11 +71,7 @@ const LessonView = ({ lesson }: { lesson: Lesson }) => {
             <button
               type="button"
               className="icon-btn"
-              onClick={() =>
-                document
-                  .getElementById('lesson-notepad')
-                  ?.scrollIntoView({ behavior: 'smooth' })
-              }
+              onClick={() => scrollToElement(document.getElementById('lesson-notepad'))}
             >
               <span>Caderno</span>
             </button>
@@ -134,7 +135,11 @@ const LessonView = ({ lesson }: { lesson: Lesson }) => {
         <LessonPager previous={previous} next={next} />
       </div>
 
-      <aside className="lesson-toc-aside" aria-label="Sumário da aula">
+      <aside
+        className="lesson-toc-aside"
+        aria-label="Sumário da aula"
+        data-lenis-prevent=""
+      >
         <div className="toc-card">
           <h2 className="toc-title">Sumário da Aula</h2>
           <LessonToc items={lessonDocument.toc} />
