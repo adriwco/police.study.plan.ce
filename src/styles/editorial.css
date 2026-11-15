@@ -2065,7 +2065,9 @@ body.focus-mode .lesson-toc-aside {
   .lesson-toc-aside,
   .lesson-quick-tools,
   .lesson-pager,
-  .reading-progress-track {
+  .reading-progress-track,
+  .cine-stage,
+  .cine-letterbox {
     display: none !important;
   }
   .workspace-layout,

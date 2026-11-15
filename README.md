@@ -144,6 +144,12 @@ Cada uma das **272 aulas** segue rigorosamente uma estrutura em **9 seções pad
 
 ## Engenharia Front-End e Pilares Técnicos
 
+- **Stack:** React 18 + TypeScript (estrito) + Vite 5, React Router (rotas em `#/` compatíveis com GitHub Pages), Tailwind CSS sobre os tokens do sistema editorial, `marked` para as aulas e Vitest + Testing Library nos testes. Qualidade garantida por ESLint, Prettier, Husky, lint-staged e commitlint.
+- **Direção de cena (camada cinematográfica):**
+  - Corte entre telas com *View Transitions API*: o título da aula na trilha ou em "Continuar leitura" se transforma no H1 da aula (*match cut*); a troca de tema abre em íris a partir do botão.
+  - Abertura do painel com revelação tipográfica por máscara, contagem dos indicadores e matriz de constância acendendo em sequência (somente na primeira visita da sessão).
+  - Barra de leitura e entrada das seções `§` guiadas pela rolagem (`animation-timeline`), com *fallback* para navegadores sem suporte.
+  - Modo Foco em "sala escura" (faixas de cinema e vinheta) e granulação de filme sutil no tema escuro. Tudo desligado com `prefers-reduced-motion`.
 - **Tipografia Tripartida:**
   - `Newsreader` (serifada editorial para subtítulos em itálico e dispositivos de lei seca em `blockquote`).
   - `Plus Jakarta Sans` + `Inter` (estrutura Neo-Grotesca com largura de linha travada em `66ch` para conforto ocular).
@@ -153,7 +159,7 @@ Cada uma das **272 aulas** segue rigorosamente uma estrutura em **9 seções pad
   - Navegação integral por teclado: `Ctrl+K` ou `/` (busca global), `F` (modo foco), `[` e `]` (aula anterior/próxima), `Esc` (fechar modais).
   - Suporte a `prefers-reduced-motion: reduce`, 4 escalas de fonte (`Aa`) e estilo dedicado de impressão (`@media print`).
 - **Performance e Resiliência:**
-  - Cache em memória das aulas renderizadas e *prefetch* automático da próxima aula em segundo plano via `requestIdleCallback`.
+  - Cada aula vira um *chunk* próprio no build (`import.meta.glob`), com cache em memória do conteúdo renderizado e *prefetch* automático da próxima aula via `requestIdleCallback`.
   - Persistência 100% local (`localStorage`) retrocompatível (`pcce.feitas`, `pcce.abertos`, `pcce.tema`, `pcce.nota.<id>`, `pcce.dias`, `pcce.revisoes`, `pcce.questoes`, `pcce.favoritos`) com exportação e restauração em `.json` e `.md`.
 - **Segurança Web:**
   - Política de Segurança de Conteúdo (`Content-Security-Policy`) declarada e sanitização de DOM pós-renderização Markdown contra injeção de scripts ou atributos `on*`.
@@ -164,16 +170,26 @@ Cada uma das **272 aulas** segue rigorosamente uma estrutura em **9 seções pad
 
 ```text
 .
-├── index.html                  aplicação principal (SPA acessível, SEO + JSON-LD)
-├── manifest.webmanifest        manifesto Web App (PWA)
+├── index.html                  ponto de entrada do Vite (SEO, CSP e JSON-LD)
 ├── GUIA-COMPLETO-PCCE.md       plano diretor completo (edital, ciclos, TAF e bibliografia)
-├── assets/
-│   ├── styles.css              sistema de design Swiss Editorial, temas e responsividade
-│   ├── app.js                  motor de rotas, estado local, busca Ctrl+K, revisões e caderno
-│   └── favicon.svg             emblema vetorial da plataforma
 ├── aulas/
 │   ├── trilha.json             índice estruturado dos 19 módulos e 272 aulas
 │   └── 00-comece-aqui/ ... 18  272 arquivos Markdown (.md) organizados por módulo
+├── public/                     favicon e manifesto Web App (PWA)
+├── src/
+│   ├── main.tsx · App.tsx      inicialização, provedores e rotas
+│   ├── config/ constants/      configuração do roteador, metadados do edital, chaves e atalhos
+│   ├── contexts/               estudo, preferências, cronômetro, avisos e janelas
+│   ├── hooks/                  navegação cinematográfica, atalhos, leitura e sumário
+│   ├── modules/study/
+│   │   ├── layout/             estrutura com cabeçalho, trilha lateral e conteúdo
+│   │   ├── components/         cabeçalho, trilha, busca Ctrl+K, backup, aula, caderno, sumário
+│   │   └── screens/            Painel, Aula, Edital, Revisões, Caderno e Guia
+│   ├── service/                catálogo da trilha e carregamento das aulas
+│   ├── styles/                 sistema Swiss Editorial e camada cinematográfica
+│   ├── types/ utils/           tipos, datas, métricas, sanitização e exportação
+│   └── index.css               Tailwind + estilos do projeto
+├── tests/                      testes unitários e de integração (Vitest)
 ├── docs/
 │   ├── charts/                 infográficos vetoriais (.svg) da matriz do edital e retenção
 │   └── screenshots/            capturas de tela em alta definição da interface
@@ -183,19 +199,30 @@ Cada uma das **272 aulas** segue rigorosamente uma estrutura em **9 seções pad
 
 ## Como Executar Localmente
 
-Como os arquivos `.md` e `aulas/trilha.json` são carregados via `fetch`, sirva o diretório com um servidor HTTP estático:
+Requer Node.js 20 ou superior.
 
 ```bash
-python3 -m http.server 8000
+npm install
+npm run dev
 ```
 
-Acesse `http://localhost:8000` no navegador.
+Acesse o endereço exibido pelo Vite (por padrão `http://localhost:5173`).
+
+| Comando | Descrição |
+| --- | --- |
+| `npm run dev` | servidor de desenvolvimento com recarga instantânea |
+| `npm run build` | verificação de tipos e build de produção em `dist/` |
+| `npm run preview` | serve o build de produção localmente |
+| `npm run lint` | ESLint sem avisos tolerados |
+| `npm test` | suíte de testes (Vitest) |
 
 Para adicionar uma nova aula, crie o arquivo `.md` dentro da pasta do respectivo módulo em `aulas/<modulo>/` e atualize o índice:
 
 ```bash
 python3 scripts/atualizar_trilha.py
 ```
+
+A publicação no GitHub Pages é feita pelo fluxo `.github/workflows/deploy.yml` a cada push na `main` (lint, testes e build).
 
 ---
 
