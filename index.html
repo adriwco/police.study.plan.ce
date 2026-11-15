@@ -9,7 +9,7 @@
   <meta name="author" content="Curso PCCE">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#111110">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; object-src 'none'; base-uri 'self';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; object-src 'none'; base-uri 'self';">
   <link rel="canonical" href="https://adriwco.github.io/police.study.plan.ce/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
@@ -19,12 +19,11 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="PCCE · Plano de Estudos — Oficial Investigador">
   <meta name="twitter:description" content="Formação jurídica e exata do zero absoluto para Oficial Investigador da Polícia Civil do Ceará.">
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <link rel="manifest" href="./manifest.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/styles.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -42,152 +41,7 @@
   </script>
 </head>
 <body>
-  <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
-
-  <div class="reading-progress-track" aria-hidden="true">
-    <div id="reading-progress-bar" class="reading-progress-bar"></div>
-  </div>
-  <div class="cine-stage" aria-hidden="true"></div>
-  <div class="cine-letterbox" aria-hidden="true"></div>
-
-  <header class="app-header" role="banner">
-    <div class="brand-group">
-      <button type="button" id="menu-btn" class="icon-btn" onclick="ui.toggleMenu()" aria-label="Abrir navegação lateral" aria-expanded="false" aria-controls="side">
-        <svg class="svg-ic" viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-      </button>
-      <a href="#/" class="brand-link" aria-label="Ir para o painel inicial">
-        <span class="brand-mark" aria-hidden="true">PC</span>
-        <div class="brand-titles">
-          <span class="brand-title">PCCE.ESTUDO</span>
-          <span class="brand-subtitle">CEV/UECE · 272 Aulas</span>
-        </div>
-      </a>
-    </div>
-
-    <button type="button" class="search-trigger" onclick="ui.openCommandPalette()" aria-label="Abrir busca global (Control K)">
-      <span class="search-trigger-left">
-        <svg class="svg-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        <span>Buscar aula, lei ou nota...</span>
-      </span>
-      <kbd class="search-kbd">Ctrl+K</kbd>
-    </button>
-
-    <div class="header-right">
-      <button type="button" id="header-pomo-btn" class="header-pomo-pill" onclick="ui.togglePomodoro()" title="Iniciar ou pausar sessão">
-        <span class="pomo-dot" aria-hidden="true"></span>
-        <span id="header-pomo-time">25:00</span>
-      </button>
-
-      <div id="header-streak" class="header-streak-badge" title="Constância de estudo">
-        <span>RITMO</span><b>0d</b>
-      </div>
-
-      <div id="g-progress-wrap" class="header-progress" role="progressbar" aria-label="Progresso geral do curso" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-        <div class="header-progress-top">
-          <span id="g-text">0/272</span>
-          <span id="g-pct">0%</span>
-        </div>
-        <div class="progress-track">
-          <div id="g-bar" class="progress-fill accent"></div>
-        </div>
-      </div>
-
-      <button type="button" id="focus-btn" class="icon-btn" onclick="ui.toggleFocusMode()" aria-pressed="false" title="Modo foco de leitura (tecla F)">
-        <span>Foco</span>
-      </button>
-
-      <button type="button" id="font-btn" class="icon-btn" onclick="ui.cycleFontScale()" aria-label="Ajustar tamanho da fonte" title="Escala tipográfica">
-        <span>Aa</span>
-      </button>
-
-      <button type="button" id="theme-btn" class="icon-btn" onclick="ui.toggleTheme()" aria-label="Alternar tema claro e escuro">Escuro</button>
-    </div>
-  </header>
-
-  <div id="sidebar-backdrop" class="sidebar-backdrop" onclick="ui.toggleMenu(false)" aria-hidden="true"></div>
-
-  <div class="workspace-layout">
-    <aside id="side" class="app-sidebar" aria-label="Navegação e trilha de estudos">
-      <nav class="sidebar-nav-section" aria-label="Seções principais">
-        <a href="#/" class="sidebar-nav-link">
-          <span class="sidebar-nav-left"><span style="font-family:var(--font-mono);font-size:0.68rem;opacity:0.6">01</span><span>Painel Geral</span></span>
-        </a>
-        <a href="#/edital" class="sidebar-nav-link">
-          <span class="sidebar-nav-left"><span style="font-family:var(--font-mono);font-size:0.68rem;opacity:0.6">02</span><span>Edital Verticalizado</span></span>
-        </a>
-        <a href="#/revisoes" class="sidebar-nav-link">
-          <span class="sidebar-nav-left"><span style="font-family:var(--font-mono);font-size:0.68rem;opacity:0.6">03</span><span>Revisões (24h·7d·30d)</span></span>
-          <span id="nav-rev-count" class="nav-pill-count">0</span>
-        </a>
-        <a href="#/caderno" class="sidebar-nav-link">
-          <span class="sidebar-nav-left"><span style="font-family:var(--font-mono);font-size:0.68rem;opacity:0.6">04</span><span>Caderno de Notas</span></span>
-          <span id="nav-notes-count" class="nav-pill-count">0</span>
-        </a>
-        <a href="#/guia" class="sidebar-nav-link">
-          <span class="sidebar-nav-left"><span style="font-family:var(--font-mono);font-size:0.68rem;opacity:0.6">05</span><span>Guia Diretor PCCE</span></span>
-        </a>
-      </nav>
-
-      <div class="sidebar-filter-box" role="search" aria-label="Filtrar trilha lateral">
-        <div class="sidebar-filter-input-wrap">
-          <input type="search" id="sidebar-filter-input" class="sidebar-filter-input" placeholder="Filtrar módulo ou aula..." aria-label="Filtrar módulo ou aula">
-          <button type="button" id="sidebar-filter-clear" class="sidebar-filter-clear" onclick="ui.clearSidebarFilter()" aria-label="Limpar filtro">✕</button>
-        </div>
-        <div class="sidebar-chips" role="group" aria-label="Filtro por estado">
-          <button type="button" class="filter-chip active" data-side-chip="all" aria-pressed="true" onclick="ui.setSidebarChip('all')">Todas</button>
-          <button type="button" class="filter-chip" data-side-chip="pending" aria-pressed="false" onclick="ui.setSidebarChip('pending')">Pendentes</button>
-          <button type="button" class="filter-chip" data-side-chip="done" aria-pressed="false" onclick="ui.setSidebarChip('done')">Feitas</button>
-          <button type="button" class="filter-chip" data-side-chip="fav" aria-pressed="false" onclick="ui.setSidebarChip('fav')">★</button>
-          <button type="button" class="filter-chip" onclick="ui.expandAllModules(true)" title="Expandir todos">+</button>
-          <button type="button" class="filter-chip" onclick="ui.expandAllModules(false)" title="Recolher todos">−</button>
-        </div>
-      </div>
-
-      <nav id="tree" class="sidebar-tree" aria-label="Índice de módulos e aulas"></nav>
-    </aside>
-
-    <main id="main-content" class="app-main" tabindex="-1"></main>
-  </div>
-
-  <div id="cmd-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="cmd-dialog-title" onclick="if(event.target===this)ui.closeCommandPalette()">
-    <div class="cmd-dialog">
-      <div class="cmd-input-row">
-        <svg class="svg-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        <label id="cmd-dialog-title" for="cmd-input" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">Pesquisar aulas, módulos e notas</label>
-        <input type="search" id="cmd-input" class="cmd-input" placeholder="Buscar por aula, disciplina, artigo ou anotação..." autocomplete="off">
-        <button type="button" class="btn sm" onclick="ui.closeCommandPalette()">ESC</button>
-      </div>
-      <div id="cmd-results" class="cmd-results" role="listbox" aria-label="Resultados da pesquisa"></div>
-      <div class="cmd-foot">
-        <span>SETAS ↑↓ PARA NAVEGAR · ENTER PARA ABRIR</span>
-        <span>272 AULAS INDEXADAS</span>
-      </div>
-    </div>
-  </div>
-
-  <div id="backup-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="backup-dialog-title" onclick="if(event.target===this)ui.closeBackupModal()">
-    <div class="cmd-dialog" style="padding:24px">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
-        <h2 id="backup-dialog-title" style="margin:0;font-size:1.1rem">Portabilidade e Cópia de Segurança</h2>
-        <button type="button" class="btn sm" onclick="ui.closeBackupModal()">Fechar</button>
-      </div>
-      <p style="font-size:0.86rem;color:var(--text-secondary);margin:0 0 18px;line-height:1.55">
-        O progresso das aulas, o registro de constância, a fila de revisões espaçadas e o caderno ficam armazenados localmente neste navegador. Exporte um arquivo JSON para preservar seus dados ou restaurar em outro computador.
-      </p>
-      <div style="display:flex;gap:10px;flex-wrap:wrap">
-        <button type="button" class="btn primary" onclick="ui.exportFullBackupJson()">Baixar Backup (.json)</button>
-        <button type="button" class="btn" onclick="ui.exportAllNotesMarkdown()">Exportar Caderno (.md)</button>
-        <label class="btn" style="cursor:pointer">
-          Restaurar Backup (.json)
-          <input type="file" accept=".json,application/json" style="display:none" onchange="ui.importFullBackupJson(this)">
-        </label>
-      </div>
-    </div>
-  </div>
-
-  <div id="toast-region" class="toast-region" role="status" aria-live="polite" aria-atomic="true"></div>
-
-  <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
-  <script src="assets/app.js"></script>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
 </body>
 </html>
