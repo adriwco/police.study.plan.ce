@@ -177,8 +177,83 @@ const ui = {
 
     this.renderTree();
     this.updateHeaderIndicators();
-    window.addEventListener("hashchange", () => this.route());
+    window.addEventListener("hashchange", () => this.cinematicRoute());
+    this.bindMatchCut();
     await this.route();
+  },
+
+  prefersMotion() {
+    return !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  },
+
+  canUseViewTransition() {
+    return typeof document.startViewTransition === "function" && this.prefersMotion();
+  },
+
+  bindMatchCut() {
+    document.addEventListener("click", event => {
+      const link = event.target.closest('a[href^="#/aula/"]');
+      if (!link) return;
+      this.clearMatchCut();
+      const source = link.classList.contains("lesson-link")
+        ? link.querySelector(".lesson-title-text")
+        : link.closest(".resume-strip")?.querySelector(".resume-lesson-name");
+      if (!source) return;
+      source.style.viewTransitionName = "lesson-title";
+      this.matchCutSource = source;
+    });
+  },
+
+  clearMatchCut() {
+    [this.matchCutSource, this.matchCutTarget].forEach(el => {
+      if (el) el.style.viewTransitionName = "";
+    });
+    this.matchCutSource = null;
+    this.matchCutTarget = null;
+  },
+
+  cinematicRoute() {
+    if (!this.canUseViewTransition()) {
+      this.clearMatchCut();
+      return this.route();
+    }
+    const transition = document.startViewTransition(async () => {
+      await this.route();
+      const target = this.matchCutSource ? document.querySelector("#lesson-body-content h1") : null;
+      if (target) {
+        target.style.viewTransitionName = "lesson-title";
+        this.matchCutTarget = target;
+      }
+    });
+    transition.finished.finally(() => this.clearMatchCut());
+  },
+
+  splitWords(text, startIndex = 0) {
+    return text
+      .split(" ")
+      .map((word, i) => `<span class="cine-line"><span class="cine-word" style="--i:${startIndex + i}">${escapeHtml(word)}</span></span>`)
+      .join(" ");
+  },
+
+  playDashboardIntro(main) {
+    if (this.introPlayed) return;
+    this.introPlayed = true;
+    if (!this.prefersMotion()) return;
+    const board = main.querySelector(".swiss-board");
+    if (board) board.classList.add("cine-intro");
+    main.querySelectorAll(".cine-count").forEach(el => this.countUp(el));
+  },
+
+  countUp(el, delay = 650, duration = 1200) {
+    const target = Number(el.dataset.target) || 0;
+    const start = performance.now() + delay;
+    el.textContent = "0";
+    const tick = now => {
+      const t = Math.min(1, Math.max(0, (now - start) / duration));
+      el.textContent = String(Math.round(target * (1 - Math.pow(1 - t, 4))));
+      if (t < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
   },
 
   syncStudyDaysFromCompleted() {
@@ -319,9 +394,21 @@ const ui = {
   toggleTheme() {
     const root = document.documentElement;
     const next = root.dataset.theme === "dark" ? "light" : "dark";
-    root.dataset.theme = next;
-    store.set("pcce.tema", next);
-    this.updateThemeButtonLabel();
+    const applyTheme = () => {
+      root.dataset.theme = next;
+      store.set("pcce.tema", next);
+      this.updateThemeButtonLabel();
+    };
+    if (this.canUseViewTransition()) {
+      const btn = document.getElementById("theme-btn");
+      const rect = btn ? btn.getBoundingClientRect() : { left: innerWidth, top: 0, width: 0, height: 0 };
+      root.style.setProperty("--iris-x", `${rect.left + rect.width / 2}px`);
+      root.style.setProperty("--iris-y", `${rect.top + rect.height / 2}px`);
+      root.classList.add("cine-iris");
+      document.startViewTransition(applyTheme).finished.finally(() => root.classList.remove("cine-iris"));
+    } else {
+      applyTheme();
+    }
     this.toast(next === "dark" ? "Tema Escuro (Carbon)" : "Tema Claro (Editorial Paper)");
   },
 
@@ -647,7 +734,7 @@ const ui = {
         <div class="swiss-hero-cell">
           <div>
             <div class="eyebrow-mono">POLÍCIA CIVIL DO CEARÁ · OFICIAL INVESTIGADOR · 272 AULAS</div>
-            <h1 id="hero-title" class="editorial-headline">Formação jurídica e exata <em>do zero absoluto.</em></h1>
+            <h1 id="hero-title" class="editorial-headline">${this.splitWords("Formação jurídica e exata")} <em>${this.splitWords("do zero absoluto.", 4)}</em></h1>
             <p class="editorial-lead">Estrutura progressiva de 19 módulos desenhada para quem nunca estudou Direito, Matemática ou Raciocínio Lógico. Cada tópico avança da intuição prática até a letra da lei e o padrão da banca CEV/UECE.</p>
           </div>
           <div class="resume-strip">
@@ -668,7 +755,7 @@ const ui = {
               <span class="metric-label">01 / Cobertura</span>
               <span class="metric-tag">${concluidas} de ${prontas.length} aulas</span>
             </div>
-            <div class="metric-big-num">${pctGlobal}%</div>
+            <div class="metric-big-num"><span class="cine-count" data-target="${pctGlobal}">${pctGlobal}</span>%</div>
             <div class="blocks-compact">
               ${blockMetrics
                 .map(
@@ -687,9 +774,9 @@ const ui = {
               <span class="metric-label">02 / Constância</span>
               <span class="metric-tag">${totalDays}d registrados</span>
             </div>
-            <div class="metric-big-num">${streak}d <span style="font-size:0.75rem;font-weight:400;color:var(--text-muted)">seguidos</span></div>
+            <div class="metric-big-num"><span class="cine-count" data-target="${streak}">${streak}</span>d <span style="font-size:0.75rem;font-weight:400;color:var(--text-muted)">seguidos</span></div>
             <div class="streak-matrix" title="Registro dos últimos 28 dias" aria-label="Matriz de constância dos últimos 28 dias">
-              ${last28.map(d => `<span class="streak-cell ${d.active ? "on" : ""} ${d.isToday ? "today" : ""}" title="${formatBrDate(d.date)}${d.active ? " · Ativo" : ""}"></span>`).join("")}
+              ${last28.map((d, i) => `<span style="--i:${i}" class="streak-cell ${d.active ? "on" : ""} ${d.isToday ? "today" : ""}" title="${formatBrDate(d.date)}${d.active ? " · Ativo" : ""}"></span>`).join("")}
             </div>
           </div>
 
@@ -790,6 +877,7 @@ const ui = {
           .join("")}
       </section>
     </div>`;
+    this.playDashboardIntro(main);
   },
 
   setHomeBlockFilter(block) {
