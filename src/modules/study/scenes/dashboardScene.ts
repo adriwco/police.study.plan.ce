@@ -41,7 +41,7 @@ export const buildDashboardScene = (scope: HTMLElement) => {
     transformPerspective: 900,
   });
   ScrollTrigger.batch('.module-cell', {
-    start: 'top 92%',
+    start: 'top bottom',
     once: true,
     onEnter: (batch) =>
       gsap.to(batch, {

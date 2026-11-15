@@ -20,6 +20,13 @@ export const useScrollScene = (
     gsap.registerPlugin(ScrollTrigger);
     const context = gsap.context(() => build(scope), scope);
     ScrollTrigger.refresh();
-    return () => context.revert();
+    let disposed = false;
+    document.fonts?.ready.then(() => {
+      if (!disposed) ScrollTrigger.refresh();
+    });
+    return () => {
+      disposed = true;
+      context.revert();
+    };
   }, [active, build, scopeRef, sceneKey]);
 };

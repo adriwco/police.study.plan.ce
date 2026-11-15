@@ -26,7 +26,7 @@ export const buildLessonScene = (scope: HTMLElement) => {
 
   gsap.set('.table-scroll-wrap, .quiz-card', { opacity: 0, y: 28 });
   ScrollTrigger.batch('.table-scroll-wrap, .quiz-card', {
-    start: 'top 90%',
+    start: 'top bottom',
     once: true,
     onEnter: (batch) =>
       gsap.to(batch, { opacity: 1, y: 0, duration: 0.9, ease: 'expo.out', stagger: 0.1 }),

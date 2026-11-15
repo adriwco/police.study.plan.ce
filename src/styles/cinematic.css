@@ -292,7 +292,7 @@ html.lenis.lenis-smooth {
 }
 
 :root[data-theme='dark'] .cine-shader {
-  opacity: 0.58;
+  opacity: 0.5;
   mix-blend-mode: screen;
 }
 
